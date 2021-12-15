@@ -1,37 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>My Profile</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+   <!-- <link rel="stylesheet" href="assets/css/normalize.css">-->
+    <style>
+
+        * { margin: 0; padding: 0; }
+
+        header{
+            background-color: #444444;
+            width: 100%;
+            height: 40px;
+        }
+
+        header nav ul{
+            list-style-type: none;
+            display: flex;
+            position: absolute;
+            right: 8px;
+            top: 3px;
+        }
+
+
+       header nav a{
+           font-family: Quicksand;
+           text-decoration: none;
+           color: #F9CA24;
+           float: right;
+           padding-left: 10px;
+           padding-right: 20px;
+           padding-top: 4px;
+           font-size: 20px;
+           display: flex;
+
+       }
+
+        #HomeSec {
+            background-color: #000000;
+            width: 100%;
+            height: 600px;
+
+            color: #ffffff;
+            font-size: 40px;
+            font-family: Quicksand;
+        }
+
+
+        #HomeSec h1{
+            padding-left: 450px;
+            padding-top: 65px;
+            font-size: 80px;
+        }
+
+        #HomeSec h2{
+            padding-left: 450px;
+            font-size: 55px;
+            font-weight: normal;
+        }
+
+        #HomeSec a{
+            padding-left: 50px;
+            padding-bottom: 50px;
+        }
+
+        #HomeSec #mypic{
+         position: absolute;
+            right: 1050px;
+            bottom:24px;
+            height: 550px;
+            width: 550px;
+        }
+
+        main section ul{
+            display: flex;
+           position: absolute;
+            bottom: 160px;
+            left: 400px;
+            list-style-type: none;
+        }
+
+        main>section>ul>#cv{
+            color: white;
+            font-size: 20px;
+            font-family: "Roboto Light";
+            text-decoration: none;
+            display: flex;
+            position: absolute;
+            left: 880px;
+            clear: both;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+
+        main>section>ul>#dIcon{
+            display: flex;
+            position: absolute;
+            left: 840px;
+        }
+
+        #EducationSection{
+            background-color: #282828;
+            width: 100%;
+            height: 500px;
+
+        }
+
+        #sd{
+            font-family: Quicksand;
+            font-size: 45px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #EducationSection>pre{
+            color: white;
+        }
+
+        #SkillSection{
+            background-color: #171717;
+            width: 100%;
+            height: 600px;
+        }
+
+        #sd1{
+            font-family: Quicksand;
+            font-size: 45px;
+            color: white;
+            font-weight: bold;
+        }
+
+        main>section>section>h1{
+            font-family: Arial;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            padding-left: 200px;
+
+        }
+
+        #AssignmentSection{
+            background-color: #0B0B0B;
+            width: 100%;
+            height: 550px;
+        }
+
+       #sd2{
+            font-family: Quicksand;
+            font-size: 45px;
+            color: white;
+            font-weight: bold;
+        }
+
+       #ProjectSection{
+           background-color: #171717;
+           width: 100%;
+           height: 550px;
+       }
+
+       #sd3{
+           font-family: Quicksand;
+           font-size: 45px;
+           color: white;
+           font-weight: bold;
+       }
+
+    </style>
 </head>
+
+
 <body>
 
 <header>
     <nav>
-       Home  <a href="#sd">Education</a>    <a href="#sd1">Skills</a>    <a href="#sd2">Assignments</a>   <a href="#sd3">Projects</a>    <a href="#sd4">Gallery</a>      <a href="#sd5">Activities</a>       <a href="#sd6">Contact</a>
+        <ul>
+            <li>
+                <a href="#sd0">Home</a>
+            </li>
+
+            <li>
+                <a href="#sd">Education</a>
+            </li>
+
+            <li>
+                <a href="#sd1">Skills</a>
+            </li>
+            <li>
+                <a href="#sd2">Assignments</a>
+            </li>
+            <li>
+                <a href="#sd3">Projects</a>
+            </li>
+            <li>
+                <a href="#sd4">Gallery</a>
+            </li>
+            <li>
+                <a href="#sd5">Activities</a>
+            </li>
+            <li>
+                <a href="#sd6">Contact</a>
+            </li>
+
+        </ul>
+
     </nav>
 </header>
 
 <main>
     <!-- Start Home Slide    -->
-    <section>
-        <h1> Hi,I'm Lasan Kariyawasam</h1>
+    <section id="HomeSec">
+        <h1>
+                Hi, I'm Lasan Kariyawasam
+        </h1>
         <h2> I'm a Software Developer</h2>
-        <img src="assets/images/My%20Pic.png" height="400" width="400" alt="My Picture">
+        <img id="mypic" src="assets/images/myPic-removebg-preview.png" height="400" width="550" alt="My Picture">
 
-        <a href="https://www.facebook.com"><img src="assets/icon/facebok_icon.png" height="50" width="50" alt=""></a>
-        <a href="https://lasanakriyawasam123@gmail.com"><img src="assets/icon/email_icon.png" height="50" width="50" alt=""></a>
-        <a href="https://www.instagram.com"><img src="assets/icon/instagram.png" height="50" width="50" alt=""></a>
-        <a href=""><img src="assets/icon/whatsapp_icon.png" height="50" width="50" alt=""></a>
+        <ul>
+            <a href="https://www.facebook.com"><img src="assets/icon/facebook%20(1).png" height="50" width="50" alt=""></a>
+            <a href="https://lasanakriyawasam123@gmail.com"><img src="assets/icon/gmail%20(1).png" height="50" width="50" alt=""></a>
+            <a href="https://www.instagram.com"><img src="assets/icon/instagram%20(1).png" height="58" width="58" alt=""></a>
+            <a href=""><img src="assets/icon/whatsapp.png" height="50" width="50" alt=""></a>
 
-        <a href="assets/images/linkedin.png" download="Download CV.png">Download CV</a>
+            <a id="cv" href="assets/images/linkedin.png" download="Download CV.png">Download CV</a>
+            <a id="dIcon" href=""><img src="assets/icon/download_Icon.png" height="20" width="20" alt=""></a>
+        </ul>
+
 
     </section>
     <!-- End Home Slide    -->
 
 
     <!--Start Education Slide    -->
-    <section>
+    <section id="EducationSection">
         <h1>
             <dfn id="sd">EDUCATION</dfn>
         </h1>
@@ -52,7 +257,7 @@
 
 
     <!--Start Skill Slide    -->
-    <section>
+    <section id="SkillSection">
         <h1>
             <dfn id="sd1">SKILLS</dfn>
         </h1>
@@ -61,18 +266,21 @@
             <h1>Languages</h1>
             <figure>
                 <figcaption>
+                    <img src="assets/icon/java.png" height="150px" width="150px" alt="java icon">
                     JAVA
                 </figcaption>
             </figure>
 
             <figure>
                 <figcaption>
+                    <img src="assets/icon/mysql.png" height="110px" width="110px" alt="mysql icon">
                     MYSQL
                 </figcaption>
             </figure>
 
             <figure>
                 <figcaption>
+                    <img src="assets/icon/js.png" height="110px" width="110px" alt="java script icon">
                     JAVA SCRIPT
                 </figcaption>
             </figure>
@@ -84,18 +292,21 @@
 
             <figure>
                 <figcaption>
+                    <img src="assets/icon/netbeans.png" height="110px" width="110px" alt="netbeans icon">
                     NETBEANS
                 </figcaption>
             </figure>
 
             <figure>
                 <figcaption>
+                    <img src="assets/icon/nodejs.png" height="110px" width="110px" alt="node js icon">
                     NODE JS
                 </figcaption>
             </figure>
 
             <figure>
                 <figcaption>
+                    <img src="assets/icon/idea.png" height="110px" width="110px" alt="intelij idea icon">
                     INTELIJ IDEA
                 </figcaption>
             </figure>
@@ -107,7 +318,7 @@
 
 
     <!--Start Assignments Slide    -->
-    <section>
+    <section id="AssignmentSection">
         <h1>
             <dfn id="sd2">ASSIGNMENTS</dfn>
         </h1>
@@ -116,7 +327,7 @@
 
 
     <!--Start Projects Slide    -->
-    <section>
+    <section id="ProjectSection">
         <h1>
             <dfn id="sd3">PROJECTS</dfn>
         </h1>
@@ -176,7 +387,7 @@
         <img src="assets/icon/whatsapp.png" height="50" width="50" alt="">
         <a href="">+943456744</a>
 
-        <img src="assets/icon/instagram.png" height="50" width="50" alt="">
+        <img src="assets/icon/instagram%20(1).png" height="50" width="50" alt="">
         <a href="https://www.instagram.com">+Laz Wizever</a>
 
     </section>
