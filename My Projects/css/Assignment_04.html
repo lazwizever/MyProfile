@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-03</title>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+
+
+  <style>
+    /* ------------All Section Headers And Topic-------------*/
+    body>section>section:nth-child(1){
+      height: 10vh;
+      width: 100%;
+      color: white;
+      font-size: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      font-family: Arial;
+    }
+
+    /* ------------All Section Mains-------------*/
+    body>section>section:nth-child(2){
+      height: 90vh;
+      width: 100%;
+      color: black;
+      font-size: 45px;
+      position: relative;
+    }
+
+    span{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      height: fit-content;
+      width: fit-content;
+      font-family: Arial;
+      font-size: 95px;
+      font-weight: bold;
+    }
+    /* ------------Card1 Header-------------*/
+    body>section:nth-child(1)>section:nth-child(1){
+      background-color: red;
+    }
+    /* ------------Card1 Main-------------*/
+    body>section:nth-child(1)>section:nth-child(2){
+      background-color: white;
+    }
+
+    /* ------------Card 2 Header-------------*/
+    body>section:nth-child(2)>section:nth-child(1){
+      background-color: darkblue;
+    }
+
+    /* ------------Card 2 Main-------------*/
+    body>section:nth-child(2)>section:nth-child(2){
+      background-color: dodgerblue;
+    }
+
+    /* ------------Card 3 Header-------------*/
+    body>section:nth-child(3)>section:nth-child(1){
+      background-color: #0e0e0e;
+    }
+
+    /* ------------Card1 Main-------------*/
+    body>section:nth-child(3)>section:nth-child(2){
+      background-color: grey;
+    }
+
+    /* ------------Card 4 Header-------------*/
+    body>section:nth-child(4)>section:nth-child(1){
+      background-color: #891313;
+    }
+    /* ------------Card1 Main-------------*/
+    body>section:nth-child(4)>section:nth-child(2){
+      background-color: #ed341b;
+    }
+
+  </style>
+</head>
+
+
+<body>
+<section>
+  <section>Card 1</section>
+  <section><span>Hello</span></section>
+</section>
+
+<section>
+  <section>Card 2</section>
+  <section><span>How</span></section>
+</section>
+
+<section>
+  <section>Card 3</section>
+  <section><span>Are</span></section>
+</section>
+
+<section>
+  <section>Card 4</section>
+  <section><span>You..?</span></section>
+</section>
+</body>
+</html>
