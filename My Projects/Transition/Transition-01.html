@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <link rel="stylesheet" href="assets/css/normalize.css">
+
   <style>
 
     body{
-      background-color: #273c75;
+      background-image: url("../css/images/photo-1497864149936-d3163f0c0f4b.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
-    body>section:nth-child(1){
+    section{
       top: 100px;
       position: relative;
       width: 300px;
@@ -31,6 +35,7 @@
       border-top-right-radius:20px;
       border-bottom-right-radius: 20px;
       border-left: none;
+      transition-duration: 1s;
     }
 
     h1{
@@ -49,17 +54,23 @@
     }
 
     div:hover{
-      left: 220px;
+      left: 212px;
       transition-duration: 1s;
     }
 
     h2{
-      position: relative;
-      font-size: 100px;
-      left: 450px;
-      bottom: 330px;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: max-content;
+      height: max-content;
+      font-size: 98px;
       font-family: Arial;
       color: #7f8fa6;
+
     }
 
   </style>
@@ -69,27 +80,26 @@
 <section>
   <div>
     <h1>Home</h1>
-    <img src="assets/images/home12345.png " alt="">
+    <img src="../css/images/home12345.png " alt="">
   </div>
   <div>
     <h1>Registration</h1>
-    <img src="assets/images/pngaaa.com-263515.png " alt="">
+    <img src="../css/images/pngaaa.com-263515.png " alt="">
   </div>
   <div>
     <h1>Add Subjects</h1>
-    <img src="assets/images/pngkit_teaching-icon-png_3812397.png" alt="">
+    <img src="../css/images/pngkit_teaching-icon-png_3812397.png" alt="">
   </div>
   <div>
     <h1>Payment</h1>
-    <img src="assets/images/Payment.png " alt="">
+    <img src="../css/images/Payment.png " alt="">
   </div>
   <div>
     <h1>Search Student</h1>
-    <img src="assets/images/PngItem_307511.png " alt="">
+    <img src="../css/images/PngItem_307511.png " alt="">
   </div>
 
 </section>
-
   <h2>Lasan Kariyawasam</h2>
 </body>
 </html>
