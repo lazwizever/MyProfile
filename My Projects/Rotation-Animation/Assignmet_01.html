@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotation-Animation</title>
+
+    <style>
+
+        body{
+            background-image: url("assets/images/wallpapers-hd-7974-8304-hd-wallpapers.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        section{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 130px;
+            height: 90px;
+            margin: auto;
+            background-color: #2f3640;
+
+            animation-name: testOne;
+            animation-duration: 6s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            animation-delay: 1s;
+
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            border: white solid 4px;
+
+        }
+
+        @keyframes  testOne{
+            0%{
+                left: 0;
+                top: 10px;
+                background-color: #2980b9;
+                transform: rotate(0deg);
+            }
+
+            25%{
+                left: 89vw;
+                top: 30px;
+                background-color: #44bd32;
+                transform: rotate(90deg);
+            }
+
+            50%{
+                top: 80vh;
+                left: 89vw;
+                background-color: #be2edd;
+                transform: rotate(180deg);
+            }
+
+            75%{
+                top: 81vh;
+                left: 0;
+                background-color: #EA2027;
+                transform: rotate(275deg);
+            }
+
+            100%{
+                left: 0;
+                top: 0;
+                background-color: goldenrod;
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+<section></section>
+</body>
+</html>
