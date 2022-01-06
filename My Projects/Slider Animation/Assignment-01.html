@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider Animation</title>
+
+    <style>
+
+        * { margin: 0; padding: 0; }
+
+
+        body{
+            overflow: hidden;
+        }
+
+        section{
+            position: relative;
+            display: flex;
+            width: 500vw;
+            height: 100vh;
+
+            animation-name: slide;
+            animation-duration: 10s;
+            animation-iteration-count: 2;
+            animation-direction: alternate-reverse;
+        }
+
+        img{
+            width: 100vw;
+        }
+
+        @keyframes slide {
+            0%{
+               right: 0;
+            }
+
+            25%{
+                right: 100vw;
+            }
+
+            50%{
+                right: 200vw;
+            }
+
+            75%{
+                right: 300vw;
+            }
+
+            100%{
+                right: 400vw;
+            }
+
+        }
+
+
+    </style>
+</head>
+
+<body>
+<section>
+    <img src="asset/images/Free-Download-Lamborghini-Logo-Car-Hd-Wallpapers.jpg" alt="">
+    <img src="asset/images/1f600f98959d202872e7c117a27ce164--ferrari-logo-ferrari-car.jpg" alt="">
+    <img src="asset/images/1272617.jpg" alt="">
+    <img src="asset/images/2K87Uf.jpg" alt="">
+    <img src="asset/images/tesla-logo-background-wallpaper-66062-68305-hd-wallpapers-thumb.jpg" alt="">
+</section>
+</body>
+</html>
