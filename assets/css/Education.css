@@ -77,6 +77,78 @@ pre{
     left: 7vw;
 }
 
-#EducationSection>section:nth-child(2){
+#EducationSection>section:nth-child(6){
+    background-color: #A3A3A3;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 5vw;
+    top: -3.9vh;
+    transform: rotate(45deg);
 
 }
+
+#EducationSection>section:nth-child(7)>div{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: relative;
+
+}
+
+/*-----------------for circles-------------------*/
+#EducationSection>section:nth-child(7)>div:nth-child(1){
+    background-color: #0097E6;
+    left: 30vw;
+    top: -8.1vh;
+}
+
+#EducationSection>section:nth-child(7)>div:nth-child(2){
+    background-color: #E1B12C;
+    left: 70vw;
+    top: -12vh;
+}
+
+#EducationSection>section:nth-child(7)>div:nth-child(3){
+    background-color: #273c75;
+    left: 50vw;
+    top: -16.1vh;
+}
+
+/*-----------------for circles-------------------*/
+
+
+#EducationSection>section:nth-child(8)>div{
+    width: 1vw;
+    height: 12vh;
+    position: relative;
+}
+
+#EducationSection>section:nth-child(8)>div:nth-child(1){
+    background-color: #0097E6;
+    position: relative;
+    left: 30.5vw;
+    top: -32vh;
+}
+
+#EducationSection>section:nth-child(8)>div:nth-child(2){
+    background-color: #E1B12C;
+    position: relative;
+    left: 70.5vw;
+    top: -43vh;
+}
+
+#EducationSection>section:nth-child(8)>div:nth-child(3){
+    background-color: #273c75;
+    position: relative;
+    left: 50.4vw;
+    top: -20vw;
+}
+
+#EducationSection>section:nth-child(9)>i{
+    position: relative;
+    left: 88vw;
+    top: -58.7vh;
+    font-size: 64px;
+}
+
