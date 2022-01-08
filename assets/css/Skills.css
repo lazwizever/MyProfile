@@ -39,7 +39,7 @@
     color: white;
     font-weight: bold;
     padding-left: 200px;
-    left: 60vw;
+    left: 61.5vw;
     margin-top: 0;
     margin-bottom: 0;
     top: 25vh;
@@ -164,6 +164,200 @@
 /*-----------------------------------------------------------*/
 
 
-#SkillSection>section:nth-child(3)>div:nth-child(1){
+/*----------------------Netbeans section-----------------------*/
+#SkillSection>section:nth-child(3)>div:nth-child(2){
+    left: 63vw;
+    top: 37vh;
+    border-radius: 17px;
+    position: absolute;
+    width: 8vw;
+    height: 26vh;
+    background-color: #8C9396;
+}
+
+#SkillSection>section:nth-child(3)>div:nth-child(2)>figure>figcaption>img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#SkillSection>section:nth-child(3)>div:nth-child(2)>figure>figcaption>h1{
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    left: 1.2vw;
+    bottom: 0vh;
+    position: absolute;
+    margin: auto;
+    color: white;
 
 }
+/*-----------------------------------------------------------*/
+
+
+
+/*--------------------------Node js----------------------------*/
+#SkillSection>section:nth-child(3)>div:nth-child(3){
+    z-index: 1;
+    top: 34vh;
+    border-radius: 17px;
+    left: 70.6vw;
+    background-color: #277567;
+    position: absolute;
+    width: 11vw;
+    height: 32vh;
+}
+
+#SkillSection>section:nth-child(3)>div:nth-child(3)>figure>figcaption>img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#SkillSection>section:nth-child(3)>div:nth-child(3)>figure>figcaption>h1{
+    font-family: Arial;
+    font-size: 21px;
+    font-weight: bold;
+    left: 2.8vw;
+    bottom: 2vh;
+    position: absolute;
+    margin: auto;
+    color: white;
+}
+/*------------------------------------------------------------*/
+
+
+/*--------------------------intelij idea section----------------------------*/
+
+#SkillSection>section:nth-child(3)>div:nth-child(4){
+    left: 81vw;
+    top: 37vh;
+    border-radius: 17px;
+    position: absolute;
+    width: 8vw;
+    height: 26vh;
+    background-color: #8C9396;
+}
+
+#SkillSection>section:nth-child(3)>div:nth-child(4)>figure>figcaption>img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#SkillSection>section:nth-child(3)>div:nth-child(4)>figure>figcaption>h1{
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    left: 2.6vw;
+    bottom: 0vh;
+    position: absolute;
+    margin: auto;
+    color: white;
+}
+
+
+#circles{
+position: absolute;
+    left: 0.3vw;
+}
+
+#circles>div{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+}
+
+#circles>div:nth-child(1){
+    left: 21vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
+
+#circles>div:nth-child(2){
+    top: 68vh;
+    left: 23.5vw;
+    background-color: #6F6D6D;
+}
+
+#circles>div:nth-child(3){
+    left: 26.2vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
+
+#circles1{
+    position: absolute;
+    left: 52.2vw;
+}
+
+#circles1>div{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+}
+
+/*------------Arrows--------------*/
+#circles1>div:nth-child(1){
+    left: 21vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
+
+#circles1>div:nth-child(2){
+    top: 68vh;
+    left: 23.5vw;
+    background-color: #6F6D6D;
+}
+
+#circles1>div:nth-child(3){
+    left: 26.2vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
+
+#SkillSection>i:nth-child(7){
+    color: white;
+    left: 92vw;
+    font-size: 70px;
+    position: absolute;
+    top: 45vh;
+}
+
+#SkillSection>i:nth-child(8){
+    color: white;
+    left: 41vw;
+    font-size: 70px;
+    position: absolute;
+    top: 45vh;
+}
+
+#SkillSection>i:nth-child(9){
+    transform: rotate(180deg);
+    color: white;
+    left: 56vw;
+    font-size: 70px;
+    position: absolute;
+    top: 45vh;
+}
+
+#SkillSection>i:nth-child(10){
+    transform: rotate(180deg);
+    color: white;
+    left: 5vw;
+    font-size: 70px;
+    position: absolute;
+    top: 45vh;
+}
+/*--------------------------------*/
