@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Animation</title>
+
+    <style>
+        body{
+            background-image: url("asset/images/sky.jpg");
+            overflow: hidden;
+        }
+
+        section:nth-child(1){
+            background-image: url("asset/images/road.jpg");
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150%;
+            height: 16vw;
+
+            animation-name: road;
+            animation-iteration-count: 4;
+            animation-duration: 4s;
+        }
+
+        @keyframes road {
+            0%{
+               left: 0;
+            }
+
+            100%{
+                left: -50vw;
+            }
+        }
+
+        section:nth-child(2){
+            background-image: url("asset/images/city.png");
+            left: 0;
+            position: absolute;
+            width: 150%;
+            height: 33vh;
+            top: 33vh;
+
+            animation-name: road;
+            animation-iteration-count: 4;
+            animation-duration: 4s;
+        }
+
+
+        section:nth-child(3){
+            position: fixed;
+            left: 39vw;
+            width: 250px;
+            height: 99px;
+            top: 64vh;
+        }
+
+        section:nth-child(3)>img:nth-child(2){
+            left: 1.5vw;
+            position: absolute;
+            bottom: 0;
+
+            animation-name: wheels;
+            animation-duration: 4s;
+            animation-iteration-count: 4;
+        }
+
+        section:nth-child(3)>img:nth-child(3){
+            left: 11.5vw;
+            bottom: 0;
+            position: absolute;
+            left: 11.2vw;
+            animation-name: wheels;
+            animation-duration: 4s;
+            animation-iteration-count: 4;
+        }
+
+        @keyframes wheels {
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<section></section>
+<section></section>
+
+<section>
+    <img src="asset/images/car.png"width="250px" alt="">
+
+        <img src="asset/images/wheel.png" width="44px" alt="">
+
+        <img src="asset/images/wheel.png" width="44px" alt="">
+    
+</section>
+</body>
+</html>
