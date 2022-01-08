@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Drop</title>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
+  <style>
+
+      body{
+          overflow: hidden;
+          background-image: url("asset/images/night sky.jpg");
+      }
+
+    section{
+      position: absolute;
+      border-radius: 100%;
+
+      animation-name: waterDrop;
+      animation-duration: 3s;
+      animation-direction: normal;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes waterDrop {
+      0% {
+          height: 20px;
+          width: 20px;
+      }
+
+      100%{
+          border: black solid 4px;
+      }
+
+    }
+
+    section:nth-child(1){
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        border: red solid 4px;
+    }
+    section:nth-child(2){
+        width: 300px;
+        height: 300px;
+        top: -10vh;
+        left: 31vw;
+        border: orange solid 4px;
+    }
+    section:nth-child(3){
+        width: 300px;
+        height: 300px;
+        left: 70vw;
+        top: 21vw;
+        border: yellow solid 4px;
+    }
+    section:nth-child(4){
+        width: 300px;
+        height: 300px;
+        left: 37vw;
+        top: 76vh;
+        border: #44bd32 solid 4px;
+    }
+    section:nth-child(5){
+        width: 300px;
+        height: 300px;
+        left: 2vw;
+        top: 42vh;
+        border: #0FC0FC solid 4px;
+    }
+    section:nth-child(6){
+        width: 60px;
+        height: 60px;
+        left: 69vw;
+        top: 15vh;
+        border: #7B1DAF solid 4px;
+    }
+    section:nth-child(7){
+        width: 60px;
+        height: 60px;
+        left: 87vw;
+        top: 87vh;
+        border: #FF2FB9 solid 4px;
+    }
+    section:nth-child(8){
+        width: 200px;
+        height: 200px;
+        left: 81vw;
+        top: -4vh;
+        border: #D4FF47 solid 4px;
+    }
+    section:nth-child(9){
+        width: 200px;
+        height: 200px;
+        top: -4vh;
+        border: #6075ff solid 4px;
+    }
+
+    h1{
+        color: white;
+        font-family: Quicksand;
+        font-size: 90px;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: max-content;
+        width: max-content;
+        text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<section></section>
+<section></section>
+<section></section>
+<section></section>
+<section></section>
+<section></section>
+<section></section>
+<section></section>
+<section></section>
+<h1>HAPPY NEW YEAR <br> 2022</h1>
+</body>
+</html>
