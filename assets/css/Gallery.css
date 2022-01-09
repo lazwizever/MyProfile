@@ -1,0 +1,101 @@
+#GalleySection{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background-color: #000000;
+    top: -13vh;
+}
+
+#GalleySection>h1{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#sd4{
+    color: white;
+    font-size: 45px;
+    font-family: Quicksand;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: normal;
+    position: absolute;
+    top: 7vh;
+    left: 5vw;
+}
+
+/*------------looping 1st section--------------*/
+#GalleySection>section:nth-child(2){
+    border-radius: 10px;
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    top: 26vh;
+    left: 12vw;
+    border: #969696 solid 6px;
+}
+
+#GalleySection>section:nth-child(2)>img{
+    position: absolute;
+    width: 340px;
+    height: 340px;
+}
+/*----------------------------------------------*/
+
+
+/*------------looping 2nd section--------------*/
+#GalleySection>section:nth-child(3){
+    border-radius: 10px;
+    position: absolute;
+    width: 441px;
+    height: 475px;
+    top: 18vh;
+    left: 36vw;
+    border: #969696 solid 6px;
+}
+
+#GalleySection>section:nth-child(3)>img{
+    position: absolute;
+    width: 440px;
+    height: 475px;
+    top: 0vh;
+    left: 0;
+}
+/*----------------------------------------------*/
+
+
+/*------------looping 3rd section--------------*/
+#GalleySection>section:nth-child(4){
+    border-radius: 10px;
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    top: 26vh;
+    left: 66.5vw;
+    border: #969696 solid 6px;
+}
+
+#GalleySection>section:nth-child(4)>img{
+    position: absolute;
+    width: 340px;
+    height: 340px;
+}
+/*----------------------------------------------*/
+
+#GalleySection>i:nth-child(5){
+    color: #bdc3c7;
+    ledt: 5vw;
+    left: 5vw;
+    top: 45vh;
+    position: absolute;
+    font-size: 70px;
+    transform: rotate(180deg);
+
+}
+
+#GalleySection>i:nth-child(6){
+    color: #bdc3c7;
+    position: absolute;
+    left: 92vw;
+    font-size: 70px;
+    top: 45vh;
+}
