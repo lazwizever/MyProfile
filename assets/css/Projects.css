@@ -1,0 +1,165 @@
+#ProjectSection{
+    background-color: #171717;
+    width: 100%;
+    height: 700px;
+    top: -10vh;
+    position: relative;
+}
+
+#sd3{
+    color: white;
+    font-size: 45px;
+    font-family: Quicksand;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: normal;
+    position: absolute;
+    top: 7vh;
+    left: 5vw;
+}
+
+#ProjectSection>i:nth-child(2){
+    color: #bdc3c7;
+    position: absolute;
+    left: 92vw;
+    font-size: 70px;
+    top: 45vh;
+}
+
+#ProjectSection>i:nth-child(3){
+    color: #bdc3c7;
+    ledt: 5vw;
+    left: 5vw;
+    top: 45vh;
+    position: absolute;
+    font-size: 70px;
+    transform: rotate(180deg);
+}
+
+/*-------------------looping 1st-----------------------*/
+#ProjectSection>section:nth-child(4){
+    position: absolute;
+    width: 21vw;
+    height: 48vh;
+    background-color: #2F2F2F;
+    left: 13vw;
+    top: 27vh;
+}
+
+#ProjectSection>section:nth-child(4)>img{
+    position: absolute;
+    width: 321px;
+    height: 300px;
+    top: 0vh;
+    left: 0vw;
+}
+
+#ProjectSection>section:nth-child(4)>h1{
+    left: 3vw;
+    color: white;
+    position: absolute;
+    top: 42vh;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: Arial;
+    font-style: normal;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*------------------------------------------*/
+
+
+/*-----------------looping 2nd-------------------------*/
+#ProjectSection>section:nth-child(5){
+    position: absolute;
+    width: 29vw;
+    height: 64vh;
+    background-color: #026028;
+    left: 35vw;
+    top: 18vh;
+}
+
+#ProjectSection>section:nth-child(5)>h1{
+    left: 3vw;
+    color: white;
+    position: absolute;
+    top: 56vh;
+    font-size: 22px;
+    font-weight: normal;
+    font-family: Arial;
+    font-style: normal;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#ProjectSection>section:nth-child(5)>img{
+    height: 54vh;
+    width: 29vw;
+}
+/*------------------------------------------*/
+
+
+/*---------------looping 3rd---------------------------*/
+#ProjectSection>section:nth-child(6){
+    position: absolute;
+    width: 21vw;
+    height: 48vh;
+    background-color: #7C4A43;
+    left: 65vw;
+    top: 27vh;
+}
+
+#ProjectSection>section:nth-child(6)>img{
+    position: absolute;
+    width: 322px;
+    height: 300px;
+    top: 0vh;
+    left: 0vw;
+}
+
+#ProjectSection>section:nth-child(6)>h1{
+    left: 5vw;
+    color: white;
+    position: absolute;
+    top: 44vh;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: Arial;
+    font-style: normal;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#circle{
+    position: absolute;
+    left: 25.3vw;
+    top: 20vh;
+}
+
+#circle>div{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+}
+
+#circle>div:nth-child(1){
+    left: 21vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
+
+#circle>div:nth-child(2){
+    top: 68vh;
+    left: 23.5vw;
+    background-color: #6F6D6D;
+}
+
+#circle>div:nth-child(3){
+    left: 26.2vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
