@@ -1,9 +1,13 @@
 #SkillSection{
     background-color: #171717;
     width: 100%;
-    height: 700px;
     position: relative;
-    top: -3vh;
+}
+#SkillSection>h1{
+    margin: 0;
+    top: 7vh;
+    left: 5vw;
+    position: relative;
 }
 
 #sd1{
