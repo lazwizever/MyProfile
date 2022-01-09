@@ -1,0 +1,122 @@
+#ActivitiesSection{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background-color: #232323;
+    top: -16vh;
+}
+
+#sd5{
+    color: white;
+    font-size: 45px;
+    font-family: Quicksand;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: normal;
+    position: absolute;
+    top: 7vh;
+    left: 5vw;
+}
+
+#ActivitiesSection>i:nth-child(2){
+    color: #bdc3c7;
+    position: absolute;
+    left: 83vw;
+    font-size: 70px;
+    top: 70vh;
+}
+
+#ActivitiesSection>i:nth-child(3){
+    color: #bdc3c7;
+    ledt: 5vw;
+    left: 11vw;
+    top: 70vh;
+    position: absolute;
+    font-size: 70px;
+    transform: rotate(180deg);
+}
+
+/*------------------COD black ops------------*/
+#ActivitiesSection>img:nth-child(4){
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: 22vh;
+    left: 24vw;
+}
+
+/*------------------COD Ghost------------*/
+#ActivitiesSection>img:nth-child(5){
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: 22vh;
+    left: 41vw;
+}
+
+/*------------------COD Modern Warfare------------*/
+#ActivitiesSection>img:nth-child(6){
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: 22vh;
+    left: 58vw;
+}
+
+/*------------------Prison break------------*/
+#ActivitiesSection>img:nth-child(7){
+    position: absolute;
+    width: 241px;
+    height: 158px;
+    top: 64vh;
+    left: 24vw;
+}
+
+/*------------------Game of Thrones------------*/
+#ActivitiesSection>img:nth-child(8){
+    position: absolute;
+    width: 223px;
+    height: 227px;
+    top: 59vh;
+    left: 41vw;
+}
+
+/*------------------Last Ship------------*/
+#ActivitiesSection>img:nth-child(9){
+    position: absolute;
+    width: 241px;
+    height: 158px;
+    top: 64vh;
+    left: 56.8vw;
+}
+
+#BottomCircle{
+    position: absolute;
+    left: 24.3vw;
+    top: 25vh;
+}
+
+#BottomCircle>div{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+}
+
+#BottomCircle>div:nth-child(1){
+    left: 21vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
+
+#BottomCircle>div:nth-child(2){
+    top: 68vh;
+    left: 23.5vw;
+    background-color: #6F6D6D;
+}
+
+#BottomCircle>div:nth-child(3){
+    left: 26.2vw;
+    top: 68vh;
+    background-color: #B7B6B6;
+}
