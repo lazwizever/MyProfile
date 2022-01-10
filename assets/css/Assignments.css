@@ -72,7 +72,7 @@
     border: #888888 solid 6px;
 }
 
-#AssignmentSection>div:nth-child(5)>img{
+#AssignmentSection>div:nth-child(5)>a>img{
     position: absolute;
     width: 360px;
     height: 360px;

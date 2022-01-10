@@ -117,3 +117,65 @@ button>img{
     top: 0.5vh;
     position: relative;
 }
+
+
+
+@media all and (min-width: 414px){
+
+    /*header>nav>ul{
+        margin: auto;
+        left: 0;
+        right: 0;
+        justify-content: space-between;
+    }
+
+    header>nav>ul>li:nth-child(1){
+        top: -1vh;
+        position: absolute;
+        width: 7vw;
+    }
+
+    header>nav>ul>li:nth-child(2){
+        top: -1vh;
+        position: absolute;
+        width: 35vw;
+    }
+
+    header>nav>ul>li:nth-child(3){
+        top: -1vh;
+        position: absolute;
+        width: 56vw;
+    }
+
+    header>nav>ul>li:nth-child(4){
+        top: -1vh;
+        position: absolute;
+        width: 89vw;
+    }
+
+    header>nav>ul>li:nth-child(5){
+        top: 2vh;
+        position: absolute;
+        width: 18vw;
+    }
+
+    header>nav>ul>li:nth-child(6){
+        top: 2vh;
+        position: absolute;
+        width: 41vw;
+    }
+
+    header>nav>ul>li:nth-child(7){
+        top: 2vh;
+        position: absolute;
+        width: 68vw;
+    }
+
+    header>nav>ul>li:nth-child(8){
+        top: 2vh;
+        position: absolute;
+        width: 94vw;
+    }*/
+
+
+}
