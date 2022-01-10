@@ -2,7 +2,7 @@
 
 ## Who am I?
 
-Public class WhoAmI{
+class WhoAmI{
     String user_Name            =  "Lasan Kariyawaasam";
     String current_Education    =  "IJSE (institute Of JAVA Software Engineering)";
     String[] current_Learning   =  {"JAVA","MYSQL","HTML","CSS","JAVASCRIPT"};
