@@ -9,9 +9,15 @@
 	public String getcurrentEducation(){
 	        return "IJSE (Institute Of JAVA Software Engineering)";
     }
+	
 	public String[] getcurrentlearn(){
-	        String[] learning = "JAVA","MYSQL","HTML","CSS","JAVASCRIPT"};
+	        String[] learning = {"JAVA","MYSQL","HTML","CSS","JAVASCRIPT"};
 		return learning;
+    }
+	
+	public String[] getHobbiees(){
+	        String[] hobbies = {"Gaming","Travelling","Playing Cricket","Swimming","Ridding bicycle"};;
+		return hobbies;
     }
 
     public String getAmbition(){
