@@ -16,11 +16,7 @@ class WhoAmI{
 
 
 ## Github Stats
-<img src="https://github-readme-stats.vercel.app/api?username=lazwizever&&show_icons=true&count_private=true&theme=github_dark">|
-
-### 🔥 Streak Stats
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=lazwizever&theme=blueberry_duo"/>
-|---|---|
+<img src="https://github-readme-stats.vercel.app/api?username=lazwizever&&show_icons=true&count_private=true&theme=github_dark">### 🔥 Streak Stats<img src="https://github-readme-streak-stats.herokuapp.com/?user=lazwizever&theme=blueberry_duo"/>
 <p align="center">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lazwizever&layout=compact&theme=github_dark"/>|
 
