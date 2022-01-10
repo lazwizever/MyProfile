@@ -2,15 +2,9 @@
 
 ## Who am I?
 
-class WhoAmI{
-	
-public static void main(String[] args){
-    String user_Name            =  "Lasan Kariyawaasam";
-    String current_Education    =  "IJSE (institute Of JAVA Software Engineering)";
-    String[] current_Learning   =  {"JAVA","MYSQL","HTML","CSS","JAVASCRIPT"};
-    String[] hobbies            =  {"Gaming","Travelling","Playing Cricket","Swimming","Ridding bicycle"};
-    String city                 =   "Galle,Sri Lanka"
-}
+    public String getWhoAmI(){
+	return "Lasan Kariyawasam";
+    }
 
     public String getAmbition(){
             return "Become an Software Engineer";
