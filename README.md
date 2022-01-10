@@ -9,6 +9,10 @@
 	public String getcurrentEducation(){
 	        return "IJSE (Institute Of JAVA Software Engineering)";
     }
+	public String[] getcurrentlearn(){
+	        String[] learning = "JAVA","MYSQL","HTML","CSS","JAVASCRIPT"};
+		return learning;
+    }
 
     public String getAmbition(){
             return "Become an Software Engineer";
