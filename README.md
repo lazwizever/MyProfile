@@ -1,9 +1,3 @@
-# This is My Profile
-## Institute Of Software Engineering
-![This is my Profile Picture](assets/images/File_102.png)
-
-
-
 <h1> Hello Fellow < I'm Lasan Kariyawasam >! <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> </h1>
 
 ## Who am I?
