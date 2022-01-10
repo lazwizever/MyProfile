@@ -16,7 +16,7 @@
     }
 	
 	public String[] getHobbiees(){
-	        String[] hobbies = {"Gaming","Travelling","Playing Cricket","Swimming","Ridding bicycle"};;
+	        String[] hobbies = {"Gaming","Travelling","Playing Cricket","Swimming","Ridding bicycle"};
 		return hobbies;
     }
 
