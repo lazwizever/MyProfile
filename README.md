@@ -73,7 +73,7 @@
   <a href="https://github.com/lazwizever"><img alt="Github" title="Lasan Kariyawasam Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
   <a href="https://www.facebook.com/"><img alt="Facebook" title="Lasan Kariyawasam Facebook" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"></a>
 </p>
-<p align="left">
+<p align="center">
   <a href="mailto:lasankariyawasam123@gmail.com"><img alt="Gmail" title="Lasan Kariyawasam Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
   <a href="https://web.telegram.org/k/"><img alt="Telegram" title="Lasan Kariyawasam Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a> 
 
