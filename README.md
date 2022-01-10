@@ -75,5 +75,5 @@ class WhoAmI{
 
 
 <a href="https://github.com/lazwizever/Hibernate-Sipsewana-Project">
-    <img align="right" src="https://github-readme-stats.vercel.app/api/pin/?username=RaminduA&repo=Vocational_Training_System-Hibernate&theme=github_dark" />
+    <img align="right" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Vocational_Training_System-Hibernate&theme=github_dark" />
 </a>
