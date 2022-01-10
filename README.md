@@ -1,4 +1,4 @@
-<h1> Hello Fellow < I'm Lasan Kariyawasam , I'm a software Developer > <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> </h1>
+<h1> Hello Fellow <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> < I'm Lasan Kariyawasam , I'm a software Developer ></h1>
 	
 	
 ## Who am I?
