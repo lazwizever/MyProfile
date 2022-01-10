@@ -22,7 +22,6 @@ class WhoAmI{
 
 
 ## Programming Languages
-<p align="center">
 <p>
     <a href="#"><img alt="Java" src="https://img.shields.io/badge/Java-EC2025.svg?logo=java&logoColor=white"></a>
     <a href="#"><img alt="CSS" src="https://img.shields.io/badge/CSS%20-%231572B6.svg?logo=css3&logoColor=white"></a>
@@ -32,26 +31,25 @@ class WhoAmI{
 </p>
 
 ## Frameworks and Libraries
-<p align="center">
 <p>
    <a href="#"><img alt="Hibernate" src="https://img.shields.io/badge/Hibernate-B2A573?logo=hibernate&logoColor=B2A573&color=black&labelColor=black"></a>
 </p>
 
 ## Operating Systems
-<p align="center">
+
 <p>
 	<a href="#"><img alt="Windows" src="https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white"></a>
 </p>
 
 ## Databases and Cloud hosting
-<p align="center">
+
 <p>
     <a href="#"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-%23327FC7.svg?logo=github&logoColor=white"></a>
     <a href="#"><img alt="Xampp" src="https://img.shields.io/badge/Xampp%20-%23430098.svg?logo=xampp&logoColor=white"></a>
 </p> 
 
 ## Software and Tools
-<p align="center">
+
 <p>
     <a href="#"><img alt="Git" src="https://img.shields.io/badge/Git%20-%23F05033.svg?logo=git&logoColor=white"></a>
     <a href="#"><img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white"></a>
@@ -60,13 +58,13 @@ class WhoAmI{
 
 ## Connect with Me
 
-<p align="center">
+
   <a href="https://www.linkedin.com/in/lasan-kariyawasam-5a62b0226/"><img alt="Linkedin" title="Lasan Kariyawasam Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="https://github.com/lazwizever"><img alt="Github" title="Lasan Kariyawasam Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
   <a href="https://www.facebook.com/"><img alt="Facebook" title="Lasan Kariyawasam Facebook" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"></a>
 
 </p>
-<p align="center">
+<p align="left">
   <a href="mailto:lasankariyawasam123@gmail.com"><img alt="Gmail" title="Lasan Kariyawasam Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
   <a href="https://web.telegram.org/k/"><img alt="Telegram" title="Lasan Kariyawasam Telegram" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a> 
 
