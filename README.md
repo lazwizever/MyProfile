@@ -62,7 +62,6 @@ class WhoAmI{
   <a href="https://www.linkedin.com/in/lasan-kariyawasam-5a62b0226/"><img alt="Linkedin" title="Lasan Kariyawasam Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="https://github.com/lazwizever"><img alt="Github" title="Lasan Kariyawasam Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
   <a href="https://www.facebook.com/"><img alt="Facebook" title="Lasan Kariyawasam Facebook" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"></a>
-
 </p>
 <p align="left">
   <a href="mailto:lasankariyawasam123@gmail.com"><img alt="Gmail" title="Lasan Kariyawasam Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
