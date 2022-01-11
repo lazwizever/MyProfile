@@ -83,6 +83,10 @@
 &nbsp;
 
 
-<a href="https://github.com/lazwizever/Hibernate-Sipsewana-Project">
-    <img align="right" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Hibernate-Sipsewana-Project=github_dark" />
+<a href="https://github.com/lazwizever/Student-Managemet-System">
+    <img align="right" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Student-Managemet-System&theme=github_dark" />
+</a>
+
+<a href="https://github.com/lazwizever/Student-Managemet-System">
+    <img align="right" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Student-Managemet-System&theme=github_dark" />
 </a>
