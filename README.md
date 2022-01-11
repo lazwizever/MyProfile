@@ -87,7 +87,7 @@
 
 &nbsp;
 
-### My Projects
+### My Projects ✔
 <a href="https://github.com/lazwizever/Student-Managemet-System">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Student-Managemet-System&theme=github_dark" />
 </a>
