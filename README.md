@@ -1,6 +1,6 @@
 <h1>Hey... <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> <br>I'm Lasan Kariyawasam</h1>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&color=7AF79A&size=30&lines=Welome+To+My+Github+Profile+I'm+a+Software+Developer)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&color=7AF79A&size=30&lines=Welome+To+My+Github;Profile+I'm+a+Software+Developer)](https://git.io/typing-svg)
 
 ![Github banner](assets/images/banner.png)
 
