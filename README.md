@@ -12,11 +12,11 @@
 	        return "Lasan Kariyawasam";
     }
 	
-	public String getcurrentEducation(){
+	public String getCurrentEducation(){
 	        return "IJSE (Institute Of JAVA Software Engineering)";
     }
 	
-	public String[] getcurrentlearn(){
+	public String[] getCurrentlearn(){
 	        String[] learning = {"JAVA","MYSQL","HTML","CSS","JAVASCRIPT"};
 		return learning;
     }
