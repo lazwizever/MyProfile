@@ -86,7 +86,7 @@
 </p>
 
 &nbsp;
-
+<br>
 ### <h3 align="center">My Projects ✔</h3>
 <a href="https://github.com/lazwizever/Student-Managemet-System">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Student-Managemet-System&theme=github_dark" />
