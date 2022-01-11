@@ -1,4 +1,4 @@
-<h1>Hey... nI'm Lasan Kariyawasam  <a target="_blank">
+<h1>Hey... I'm Lasan Kariyawasam  <a target="_blank">
     <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Earth.gif" width="24px" style="max-width:100%;">
   </a></h1>
 
