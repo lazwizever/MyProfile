@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <h1> Hello Fellow <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> < I'm Lasan Kariyawasam , I'm a Software Developer ></h1>
 
 ![Github banner](assets/images/banner.png)
 
+=======
+![Github banner](assets/images/banner.png)
+<h1> Hello Fellow <img src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 30px> < I'm Lasan Kariyawasam , I'm a Software Developer ></h1>
+	
+	
+>>>>>>> f7584d88358a360c47d2cbe754da654167c7d528
 ## Who am I?
 
     public String getWhoAmI(){
@@ -26,7 +33,11 @@
             return "Become an Software Engineer";
     }
 
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> f7584d88358a360c47d2cbe754da654167c7d528
 ## Github Stats🔥
 <img src="https://github-readme-stats.vercel.app/api?username=lazwizever&&show_icons=true&count_private=true&theme=github_dark">|<img src="https://github-readme-streak-stats.herokuapp.com/?user=lazwizever&theme=blueberry_duo"/>
 |---|---|
