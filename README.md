@@ -1,4 +1,6 @@
-<h1>Hey..! I'm Lasan Kariyawasam </h1>
+<h1>Hey.. I'm Lasan Kariyawasam  <a target="_blank">
+    <img src="https://github.com/JayantGoel001/JayantGoel001/blob/master/GIF/Earth.gif" width="24px" style="max-width:100%;">
+  </a></h1>
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Architects+Daughter&color=7AF79A&size=30&lines=Welome+To+My+Github+Profile;I'm+a+Software+Developer)](https://git.io/typing-svg)
 
