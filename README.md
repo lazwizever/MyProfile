@@ -35,6 +35,7 @@
 |---|---|
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lazwizever&layout=compact&theme=github_dark"/>|
 
+[![lazwizever github activity graph](https://activity-graph.herokuapp.com/graph?username=lazwizever&theme=react-dark)](https://github.com/lazwizever/github-readme-activity-graph)
 
 ## Programming Languages
 <p>
