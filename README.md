@@ -95,3 +95,7 @@
 <a href="https://github.com/lazwizever/Hibernate-Sipsewana-Project">
     <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=Hibernate-Sipsewana-Project&theme=github_dark" />
 </a>
+
+<a href="https://github.com/lazwizever/POS-System-Layerd-Architecture">
+    <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=lazwizever&repo=POS-System-Layerd-Architecture&theme=github_dark" />
+</a>
