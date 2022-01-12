@@ -71,6 +71,7 @@
     position: absolute;
     width: 11vw;
     height: 32vh;
+
 }
 
 #SkillSection>section>section:nth-child(3)>figure>figcaption>img{
@@ -80,6 +81,11 @@
     top: 0;
     bottom: 0;
     margin: auto;
+}
+
+#SkillSection>section>section:nth-child(3)>figure>figcaption>img:hover{
+    width: 132px;
+    height: 132px;
 }
 
 #SkillSection>section>section:nth-child(3)>figure>figcaption>h1{
@@ -224,6 +230,11 @@
     margin: auto;
 }
 
+#SkillSection>section:nth-child(3)>div:nth-child(3)>figure>figcaption>img:hover{
+    width: 132px;
+    height: 132px;
+}
+
 #SkillSection>section:nth-child(3)>div:nth-child(3)>figure>figcaption>h1{
     font-family: Arial;
     font-size: 21px;
@@ -234,6 +245,7 @@
     margin: auto;
     color: white;
 }
+
 /*------------------------------------------------------------*/
 
 
