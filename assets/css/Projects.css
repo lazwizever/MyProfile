@@ -167,3 +167,153 @@
     top: 68vh;
     background-color: #B7B6B6;
 }
+
+@media all and (max-width: 376px){
+    #ProjectSection>h1{
+        margin: 0;
+        position: relative;
+        top: 1vh;
+        left: 5vw;
+    }
+
+    #sd3{
+        font-family: Quicksand;
+        font-size: 22px;
+        font-style: normal;
+        color: white;
+        font-weight: bold;
+    }
+
+    #ProjectSection>i:nth-child(3){
+        color: #bdc3c7;
+        ledt: 5vw;
+        left: 1vw;
+        top: 50vh;
+        position: absolute;
+        font-size: 20px;
+        transform: rotate(180deg);
+    }
+
+    #ProjectSection>section:nth-child(4){
+        position: absolute;
+        width: 25vw;
+        height: 26vh;
+        background-color: #2F2F2F;
+        left: 6vw;
+        top: 42vh;
+    }
+
+    #ProjectSection>section:nth-child(4)>img{
+        position: absolute;
+        width: 93px;
+        height: 100px;
+        top: 0vh;
+        left: 0vw;
+    }
+
+    #ProjectSection>section:nth-child(4)>h1{
+        left: -1vw;
+        color: white;
+        position: absolute;
+        top: 20vh;
+        font-size: 8px;
+        font-weight: normal;
+        font-family: Arial;
+        font-style: normal;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #ProjectSection>section:nth-child(5){
+        position: absolute;
+        width: 31vw;
+        height: 50vh;
+        background-color: #026028;
+        left: 33vw;
+        top: 33vh;
+    }
+
+    #ProjectSection>section:nth-child(5)>img{
+        height: 40vh;
+        width: 31vw;
+    }
+
+    #ProjectSection>section:nth-child(5)>h1{
+        left: 1vw;
+        color: white;
+        position: absolute;
+        top: 43vh;
+        font-size: 8px;
+        font-weight: normal;
+        font-family: Arial;
+        font-style: normal;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #ProjectSection>section:nth-child(6)>img{
+        position: absolute;
+        width: 91px;
+        height: 102px;
+        top: 0vh;
+        left: 0vw;
+    }
+
+    #ProjectSection>section:nth-child(6){
+        position: absolute;
+        width: 28vw;
+        height: 26vh;
+        background-color: #7C4A43;
+        left: 66vw;
+        top: 42vh;
+    }
+
+    #ProjectSection>section:nth-child(6)>h1{
+        left: 2vw;
+        color: white;
+        position: absolute;
+        top: 22vh;
+        font-size: 8px;
+        font-weight: normal;
+        font-family: Arial;
+        font-style: normal;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #ProjectSection>i:nth-child(2){
+        color: #bdc3c7;
+        position: absolute;
+        left: 95vw;
+        font-size: 20px;
+        top: 50vh;
+    }
+
+    #circle>div:nth-child(1){
+        width: 10px;
+        height: 10px;
+        top: 68vh;
+        background-color: #B7B6B6;
+        left: 19vw;
+        top: 68vh;
+        background-color: #B7B6B6;
+    }
+
+    #circle>div:nth-child(2){
+        top: 68vh;
+        left: 22.5vw;
+        background-color: #6F6D6D;
+        width: 10px;
+        height: 10px;
+    }
+
+    #circle>div{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+    }
+}

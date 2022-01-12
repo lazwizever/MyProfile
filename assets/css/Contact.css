@@ -77,3 +77,82 @@ footer>h2{
     top: 60vh;
     left: 40vw;
 }
+
+@media all and (max-width: 376px){
+    footer>h1{
+        margin: 0;
+        top: 1vh;
+        left: 5vw;
+        position: relative;
+    }
+
+    #sd6{
+        color: #ABABAB;
+        font-size: 22px;
+        font-family: Quicksand;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-style: normal;
+        position: absolute;
+    }
+
+    footer>div:nth-child(4){
+        background-color: #ABABAB;
+        left: 39vw;
+        width: 50vw;
+        position: absolute;
+        height: 3px;
+        top: 3vh;
+    }
+
+    footer>section:nth-child(2)>ul{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 38vh;
+        position: absolute;
+        display: flex;
+        margin: 0;
+        top: 14vh;
+        left: -9vw;
+        text-decoration: none;
+    }
+
+    img{
+        width: 30px;
+        height: 30px;
+    }
+
+    footer>section>ul>li>div>a{
+        font-family: Quicksand;
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        left: 24.7vw;
+        width: max-content;
+    }
+
+    footer>section:nth-child(3)>ul{
+        left: 45vw;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        height: 38vh;
+        justify-content: space-between;
+        margin: 0;
+        top: 22vh;
+        text-decoration: none;
+    }
+
+    footer>h2{
+        color: #B8B8B8;
+        position: absolute;
+        font-family: Quicksand;
+        font-weight: lighter;
+        margin: 0;
+        font-size: 11px;
+        top: 61vh;
+        left: 25vw;
+    }
+}

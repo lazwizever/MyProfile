@@ -122,27 +122,27 @@ header a:hover{
     padding-bottom: 50px;
 }
 
-#HomeSec>ul>a:nth-child(1)>img:hover{
+#HomeSec>ul>li>a:nth-child(1)>img:hover{
  height: 57px;
     width: 57px;
 }
 
-#HomeSec>ul>a:nth-child(2)>img:hover{
+#HomeSec>ul>li>a:nth-child(2)>img:hover{
     height: 57px;
     width: 57px;
 }
 
-#HomeSec>ul>a:nth-child(3)>img:hover{
-    height: 61px;
-    width: 61px;
+#HomeSec>ul>li>a:nth-child(3)>img:hover{
+    height: 63px;
+    width: 63px;
 }
 
-#HomeSec>ul>a:nth-child(4)>img:hover{
+#HomeSec>ul>li>a:nth-child(4)>img:hover{
     height: 57px;
     width: 57px;
 }
 
-#HomeSec>ul>a:nth-child(5)>img:hover{
+#HomeSec>ul>li>a:nth-child(5)>img:hover{
     height: 57px;
     width: 57px;
 }
@@ -161,6 +161,8 @@ header a:hover{
 
 /*-----------------Main Section--------------------*/
 main section ul{
+    display: flex;
+    justify-content: space-between;
     position: absolute;
     bottom: 123px;
     left: 365px;
@@ -189,64 +191,239 @@ button>img{
     position: relative;
 }
 
+/*@media all and (max-width: 425px){
+    header{
+        background-color: #444444;
+        width: 100%;
+        height: 40px;
+        position: fixed;
+        overflow: hidden;
+        z-index: 2;
+    }
 
+    !*----------Start Header navigations----------*!
 
-@media all and (min-width: 414px){
-
-    /*header>nav>ul{
-        margin: auto;
-        left: 0;
-        right: 0;
+    header nav ul{
+        list-style-type: none;
+        display: flex;
+        position: absolute;
+        right: 8px;
+        top: -3px;
+        width: 96%;
         justify-content: space-between;
     }
 
-    header>nav>ul>li:nth-child(1){
-        top: -1vh;
-        position: absolute;
-        width: 7vw;
+    header nav a{
+        font-family: Quicksand;
+        text-decoration: none;
+        color: #F9CA24;
+        float: right;
+        font-size: 11px;
+
+
+        }
+
+    header a:hover{
+            color: black;
+            font-weight: bold;
+        }
+    !*----------End Header navigations----------*!
+
+
+
+}*/
+
+@media all and (max-width: 376px) {
+    header {
+        background-color: #444444;
+        width: 100%;
+        height: 55px;
+        position: fixed;
+        overflow: hidden;
+        z-index: 2;
     }
 
-    header>nav>ul>li:nth-child(2){
-        top: -1vh;
-        position: absolute;
-        width: 35vw;
-    }
-
-    header>nav>ul>li:nth-child(3){
-        top: -1vh;
-        position: absolute;
-        width: 56vw;
-    }
-
-    header>nav>ul>li:nth-child(4){
-        top: -1vh;
-        position: absolute;
-        width: 89vw;
-    }
-
-    header>nav>ul>li:nth-child(5){
+    /*----------Start Header navigations----------*/
+    header nav ul {
+        margin: auto;
+        left: 0;
+        right: 0;
         top: 2vh;
+        width: 87%;
+        justify-content: space-between;
+        list-style-type: none;
+        display: flex;
         position: absolute;
-        width: 18vw;
+        flex-wrap: wrap;
     }
 
-    header>nav>ul>li:nth-child(6){
-        top: 2vh;
-        position: absolute;
-        width: 41vw;
+    header nav a {
+        font-family: Quicksand;
+        text-decoration: none;
+        color: #F9CA24;
+        float: right;
+        font-size: 10px;
+        display: flex;
     }
 
-    header>nav>ul>li:nth-child(7){
-        top: 2vh;
-        position: absolute;
-        width: 68vw;
+    header a:hover {
+        color: black;
+        font-weight: bold;
     }
 
-    header>nav>ul>li:nth-child(8){
-        top: 2vh;
+    /*----------End Header navigations----------*/
+    #HomeSec h1 {
         position: absolute;
-        width: 94vw;
-    }*/
+        width: max-content;
+        right: 0;
+        bottom: 0;
+        top: -10vh;
+        margin: auto;
+        font-size: 24px;
+        position: absolute;
+    }
+
+    #HomeSec h2 {
+        bottom: 0;
+        margin: auto;
+        top: 16vh;
+        left: 16vw;
+        position: absolute;
+        font-size: 22px;
+        font-weight: normal;
+        animation-name: topic2;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-duration: 6s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.2s;
+
+    }
+
+    #HomeSec #mypic {
+        position: absolute;
+        right: 0px;
+        left: 0vw;
+        bottom: 0;
+        top: -15px;
+        margin: auto;
+        height: 250px;
+        width: 250px;
+    }
+
+    #HomeSec a {
+        position: relative;
+        left: 0;
+        padding: 0;
+        right: 0;
+    }
+
+
+    #HomeSec > ul >li> a:nth-child(1) > img {
+        height: 5vh;
+        width: 8vw;
+    }
+
+    #HomeSec > ul > li>a:nth-child(2) > img {
+        height: 5vh;
+        width: 8vw;
+    }
+
+    #HomeSec > ul >li> a:nth-child(3) > img {
+        height: 5vh;
+        width: 8vw;
+    }
+
+    #HomeSec > ul >li> a:nth-child(4) > img {
+        height: 5vh;
+        width: 8vw;
+    }
+
+    #HomeSec > ul >li> a:nth-child(5) > img {
+        height: 5vh;
+        width: 8vw;
+    }
+
+    #HomeSec > ul > li>a:nth-child(1) > img:hover {
+        height: 7vh;
+        width: 9vw;
+    }
+
+    #HomeSec > ul > li>a:nth-child(2) > img:hover {
+        height: 7vh;
+        width: 9vw;
+    }
+
+    #HomeSec > ul >li> a:nth-child(3) > img:hover {
+        height: 7vh;
+        width: 9vw;
+    }
+
+    #HomeSec > ul >li> a:nth-child(4) > img:hover {
+        height: 7vh;
+        width: 9vw;
+    }
+
+    #HomeSec > ul >li> a:nth-child(5) > img:hover {
+        height: 7vh;
+        width: 9vw;
+    }
+
+    button {
+        border: #AEAEAE solid 2px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        text-align: center;
+        font-size: 11px;
+        height: 22px;
+        width: 140px;
+        background-color: #000000;
+        color: white;
+        position: absolute;
+        top: 460px;
+
+        right: 0;
+        left: 0;
+        top: 89vh;
+        margin: auto;
+
+    }
+
+    button > img {
+        width: 15px;
+        height: 15px;
+        top: 0.5vh;
+        position: relative;
+    }
+
+    #HomeSec {
+        background-color: #000000;
+        width: 100%;
+        height: 515px;
+        position: relative;
+        /*top: 22px;*/
+
+        color: #ffffff;
+        font-size: 40px;
+        font-family: Quicksand;
+    }
+
+    main section ul{
+        right: 0;
+        width: 71%;
+        margin: auto;
+        top: 73vh;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        list-style-type: none;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
 
 
 }
+

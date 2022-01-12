@@ -97,3 +97,93 @@
     top: 0;
     left: 0;
 }
+
+@media all and (max-width: 376px){
+   #sd2{
+       font-family: Quicksand;
+       font-size: 22px;
+       font-style: normal;
+       color: white;
+       font-weight: bold;
+   }
+
+    #AssignmentSection>h1{
+        margin: 0;
+        top: 1vh;
+        left: 5vw;
+        position: relative;
+    }
+
+    #AssignmentSection>div:nth-child(4){
+        border-radius: 10px;
+        position: absolute;
+        width: 82px;
+        height: 82px;
+        top: 42vh;
+        left: 7vw;
+        border: #888888 solid 6px;
+    }
+
+    #AssignmentSection>div:nth-child(4)>img{
+        position: absolute;
+        width: 82px;
+        height: 82px;
+        top: 0vh;
+        left: 0vw;
+    }
+
+    #AssignmentSection>div:nth-child(5){
+        border-radius: 10px;
+        position: absolute;
+        width: 82px;
+        height: 82px;
+        top: 42vh;
+        left: 37vw;
+        border: #888888 solid 6px;
+    }
+
+    #AssignmentSection>div:nth-child(5)>a>img{
+        position: absolute;
+        width: 82px;
+        height: 82px;
+        top: 0;
+        left: 0;
+    }
+
+    #AssignmentSection>div:nth-child(6){
+        border-radius: 10px;
+        position: absolute;
+        width: 82px;
+        height: 82px;
+        top: 42vh;
+        left: 67vw;
+        border: #888888 solid 6px;
+    }
+
+    #AssignmentSection>div:nth-child(6)>img{
+        position: absolute;
+        width: 82px;
+        height: 82px;
+        top: 0;
+        left: 0;
+    }
+
+    #AssignmentSection>i:nth-child(2){
+        color: #bdc3c7;
+        position: absolute;
+        left: 96vw;
+        font-size: 21px;
+        top: 49vh;
+    }
+
+    #AssignmentSection>i:nth-child(3){
+        color: #bdc3c7;
+        ledt: 5vw;
+        left: 2vw;
+        top: 49vh;
+        position: absolute;
+        font-size: 21px;
+        transform: rotate(180deg);
+    }
+
+}

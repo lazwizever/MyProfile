@@ -377,3 +377,337 @@ position: absolute;
     top: 45vh;
 }
 /*--------------------------------*/
+
+
+@media all and (max-width: 376px){
+    #sd1{
+        font-family: Quicksand;
+        font-size: 22px;
+        font-style: normal;
+        color: white;
+        font-weight: bold;
+    }
+
+    #SkillSection>h1{
+        margin: 0;
+        top: 1vh;
+        left: 5vw;
+        position: relative;
+    }
+
+    #SkillSection>section:nth-child(2)>h1{
+        font-family: Arial;
+        font-size: 10px;
+        color: white;
+        font-weight: bold;
+        padding-left: 200px;
+        left: -21vw;
+        margin-top: 0;
+        margin-bottom: 0;
+        top: 10vh;
+        position: absolute;
+
+    }
+
+    #SkillSection>section>section:nth-child(2){
+        left: 11.5vw;
+        top: 16vh;
+        border-radius: 5px;
+        position: absolute;
+        width: 21vw;
+        height: 18vh;
+        background-color: #8C9396;
+    }
+
+    #SkillSection>section>section:nth-child(2)>figure>figcaption>img{
+        height: 70px;
+        position: absolute;
+        left: 0;
+        width: 70px;
+        right: 0;
+        top: -4vh;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #SkillSection>section>section:nth-child(2)>figure>figcaption>h1{
+        font-family: Arial;
+        font-size: 9px;
+        font-weight: bold;
+        left: 7vw;
+        bottom: 1vh;
+        position: absolute;
+        margin: auto;
+        color: white;
+    }
+
+    #SkillSection>section>section:nth-child(3){
+        z-index: 1;
+        top: 13vh;
+        border-radius: 5px;
+        left: 31vw;
+        background-color: #273C75;
+        position: absolute;
+        width: 35vw;
+        height: 25vh;
+
+    }
+    #SkillSection>section>section:nth-child(3)>figure>figcaption>img{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 80px;
+        height: 80px
+    }
+
+    #SkillSection>section>section:nth-child(3)>figure>figcaption>h1{
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: bold;
+        left: 12vw;
+        bottom: 1vh;
+        position: absolute;
+        margin: auto;
+        color: white;
+    }
+
+    #SkillSection>section>section:nth-child(4){
+        left: 65.5vw;
+        top: 16vh;
+        border-radius: 5px;
+        position: absolute;
+        width: 21vw;
+        height: 18vh;
+        background-color: #8C9396;
+    }
+
+    #SkillSection>section>section:nth-child(4)>figure>figcaption>img{
+        height:50px;
+        position: absolute;
+        left: 0;
+        width: 50px;
+        right: 0;
+        top: 2vh;
+        bottom: 0;
+        margin: auto;
+    }
+
+    #SkillSection>section>section:nth-child(4)>figure>figcaption>h1{
+        font-family: Arial;
+        font-size: 8px;
+        font-weight: bold;
+        left: 2.2vw;
+        bottom: 1vh;
+        position: absolute;
+        margin: auto;
+        color: white;
+    }
+
+    #SkillSection>i:nth-child(10){
+        transform: rotate(180deg);
+        color: white;
+        left: 5vw;
+        font-size: 21px;
+        position: absolute;
+        top: 23vh;
+    }
+
+    #SkillSection>i:nth-child(8){
+        color: white;
+        left: 89vw;
+        font-size: 21px;
+        position: absolute;
+        top: 23vh;
+    }
+
+    #SkillSection>div{
+        visibility: hidden;
+        background-color: #C0C0C0;
+        width: 4px;
+        position: absolute;
+        height: 44vh;
+        left: 50vw;
+        top: 28vh;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(2){
+        left: 12vw;
+        top: 62vh;
+        border-radius: 5px;
+        position: absolute;
+        width: 21vw;
+        height: 18vh;
+        background-color: #8C9396;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(2)>figure>figcaption>img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 50px;
+        height: 50px;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(2)>figure>figcaption>h1{
+        font-family: Arial;
+        font-size: 9px;
+        font-weight: bold;
+        left: 2.2vw;
+        bottom: 1vh;
+        position: absolute;
+        margin: auto;
+        color: white;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(3){
+        z-index: 1;
+        top: 59vh;
+        border-radius: 5px;
+        left: 32.6vw;
+        background-color: #277567;
+        position: absolute;
+        width: 34vw;
+        height: 24vh;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(3)>figure>figcaption>img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 80px;
+        height: 80px;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(3)>figure>figcaption>h1{
+        font-family: Arial;
+        font-size: 11px;
+        font-weight: bold;
+        left: 9.8vw;
+        bottom: 1vh;
+        position: absolute;
+        margin: auto;
+        color: white;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(4){
+        left: 66vw;
+        top: 62vh;
+        border-radius: 5px;
+        position: absolute;
+        width: 22vw;
+        height: 18vh;
+        background-color: #8C9396
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(4)>figure>figcaption>img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 50px;
+        height: 50px;
+    }
+
+    #SkillSection>section:nth-child(3)>div:nth-child(4)>figure>figcaption>h1{
+        font-family: Arial;
+        font-size: 9px;
+        font-weight: bold;
+        left: 7.6vw;
+        bottom: 0vh;
+        position: absolute;
+        margin: auto;
+        color: white;
+    }
+
+    #SkillSection>i:nth-child(7){
+        color: white;
+        left: 90vw;
+        font-size: 21px;
+        position: absolute;
+        top: 69vh;
+    }
+
+    #SkillSection>i:nth-child(9){
+        transform: rotate(180deg);
+        color: white;
+        left: 5vw;
+        font-size: 21px;
+        position: absolute;
+        top: 69vh;
+    }
+    #circles>div:nth-child(1){
+       width: 10px;
+        height: 10px;
+        background-color: #B7B6B6;
+        left: 42vw;
+        top: 81vh;
+        background-color: #B7B6B6;
+    }
+
+    #circles>div:nth-child(2){
+        width: 10px;
+        height: 10px;
+        background-color: #6F6D6D;
+        top: 81vh;
+        left: 47.5vw;
+        background-color: #6F6D6D;
+    }
+
+    #circles>div:nth-child(3){
+       width: 10px;
+        height: 10px;
+        background-color: #B7B6B6;
+        left: 53.2vw;
+        top: 81vh;
+        background-color: #B7B6B6;
+    }
+
+    #circles1>div:nth-child(1){
+        left: 1vw;
+        top: 36vh;
+        background-color: #B7B6B6;
+
+        width: 10px;
+        height: 10px;
+    }
+
+    #circles1>div{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        top: 36vh;
+        left: -4.5vw;
+        background-color: #6F6D6D;
+
+    }
+
+    #circles1>div:nth-child(2){
+        top: 36vh;
+        left: -4.5vw;
+        background-color: #6F6D6D;
+        width: 10px;
+        height: 10px;
+    }
+
+    #circles1>div:nth-child(3){
+        left: -9.8vw;
+        top: 36vh;
+        background-color: #B7B6B6;
+        width: 10px;
+        height: 10px;
+    }
+
+
+}

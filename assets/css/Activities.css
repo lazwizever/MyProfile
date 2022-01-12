@@ -139,3 +139,109 @@
     top: 68vh;
     background-color: #B7B6B6;
 }
+
+@media all and (max-width: 376px){
+    #ActivitiesSection>h1{
+        margin: 0;
+        position: relative;
+        top: 1vh;
+        left: 5vw;
+    }
+
+    #sd5{
+        font-family: Quicksand;
+        font-size: 22px;
+        font-style: normal;
+        color: white;
+        font-weight: bold;
+    }
+
+    #ActivitiesSection>img:nth-child(4){
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 13vh;
+        left: 3vw;
+    }
+
+    #ActivitiesSection>img:nth-child(5){
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 13vh;
+        left: 36vw;
+    }
+
+    #ActivitiesSection>img:nth-child(6){
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 13vh;
+        left: 69vw;
+    }
+
+    #ActivitiesSection>img:nth-child(7){
+        position: absolute;
+        width: 84px;
+        height: 93px;
+        top: 56vh;
+        left: 6vw;
+    }
+
+    #ActivitiesSection>img:nth-child(8){
+        position: absolute;
+        width: 103px;
+        height: 125px;
+        top: 53vh;
+        left: 33vw;
+    }
+
+    #ActivitiesSection>img:nth-child(9){
+        position: absolute;
+        width: 100px;
+        height: 93px;
+        top: 56vh;
+        left: 64.8vw;
+    }
+
+    #ActivitiesSection>i:nth-child(2){
+        color: #bdc3c7;
+        position: absolute;
+        left: 96vw;
+        font-size: 21px;
+        top: 63vh;
+    }
+    #ActivitiesSection>i:nth-child(3){
+        color: #bdc3c7;
+        ledt: 5vw;
+        left: 1vw;
+        top: 64vh;
+        position: absolute;
+        font-size: 21px;
+        transform: rotate(180deg);
+    }
+
+    #BottomCircle>div:nth-child(1){
+        background-color: #B7B6B6;
+        left: 18vw;
+        top: 57vh;
+        width: 10px;
+        height: 10px;
+    }
+
+    #BottomCircle>div:nth-child(2){
+        top: 57vh;
+        left: 23.5vw;
+        background-color: #6F6D6D;
+        width: 10px;
+        height: 10px;
+    }
+
+    #BottomCircle>div:nth-child(3){
+        left: 29.2vw;
+        top: 57vh;
+        background-color: #B7B6B6;
+        width: 10px;
+        height: 10px;
+    }
+}
