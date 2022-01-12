@@ -1,5 +1,5 @@
 ## This is my own website 🔥
-![Github Banner](assets/images/banner.png)
+![Github Banner](assets/images/mysite.PNG)
 
 ## About My WebSite
 
@@ -28,6 +28,7 @@
 </a> &nbsp;&nbsp;
 <a href="https://www.facebook.com/">
     <img align="center" alt="Lasan Kariyawasam Facebook | Facebook" width="24px" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/100px-Facebook_f_logo_%282021%29.svg.png" />
+<br>
+<p align="center">
 &copy; 2021 Lazwizever
-</a> &nbsp;&nbsp;
 <p>
