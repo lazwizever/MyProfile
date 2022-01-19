@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order</title>
+  <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <style>
+    header{
+      position: absolute;
+      width: 80%;
+      height: 10vh;
+      background-color: #273c75;
+      top: 0;
+      right: 0;
+      margin: auto;
+      border-bottom-left-radius: 40px;
+    }
+
+    main>h1:nth-child(1){
+        position: absolute;
+        font-size: 24px;
+        top: 12vh;
+        left: 10px;
+        z-index: 2;
+    }
+
+    main>h1:nth-child(2){
+        position: absolute;
+        font-size: 24px;
+        top: 12vh;
+        left: 67vw;
+        z-index: 2;
+    }
+
+    main>section:nth-child(3){
+        position: absolute;
+        top: 19vh;
+    }
+
+    main>section:nth-child(4){
+        top: 81vh;
+        position: absolute;
+        width: 20vw;
+        height: 16vh;
+        background-color: #273c75;
+        left: 1vw;
+        border-radius: 18px;
+
+    }
+
+    main>section:nth-child(5){
+        position: absolute;
+        width: 20vw;
+        height: 16vh;
+        left: 1vw;
+        top: 81vh;
+    }
+
+    main>section:nth-child(5)>ul>li>h2:nth-child(1){
+        position: absolute;
+        color: white;
+        font-size: 18px;
+        left: 6px;
+        width: 10vw;
+
+    }
+
+    main>section:nth-child(5)>ul>li>h2:nth-child(2){
+        width: 10vw;
+        top: 4vh;
+        position: absolute;
+        color: white;
+        font-size: 18px;
+        left: 6px;
+    }
+
+    main>section:nth-child(5)>ul>li>h2:nth-child(3){
+        top: 8vh;
+        width: 11vw;
+        position: absolute;
+        color: white;
+        font-size: 18px;
+        left: 6px;
+    }
+
+    main>section:nth-child(5)>ul>li>h2:nth-child(4){
+        top: 12vh;
+        width: 10vw;
+        position: absolute;
+        color: white;
+        font-size: 18px;
+        left: 6px;
+    }
+
+    main>section:nth-child(5)>ul{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        flex-direction: column;
+    }
+
+    main>h2{
+        position: absolute;
+        font-size: 28px;
+        color: red;
+        left: 40vw;
+        top: 85vh;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<header></header>
+
+<main>
+    <h1>Search Order</h1>
+    <h1>Place Order</h1>
+
+    <section class="container-fluid">
+
+        <!--search bar-->
+        <section class="col-3">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search Order" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </section>
+
+       <!-- order info and place order-->
+        <section class="row mt-4">
+
+            <div class="col-6" >
+                <form class="row g-3">
+
+                    <div class="col-md-2">
+                        <label for="orderId" class="form-label">Order Id</label>
+                        <input type="text" placeholder="O-001" class="form-control" id="orderId" >
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="customerId" class="form-label">Customer Id</label>
+                        <input type="text" placeholder="C-001" class="form-control" id="customerId">
+                    </div>
+
+                    <div class="col-md-5">
+                        <label for="customerName" class="form-label">Customer Name</label>
+                        <input type="text" placeholder="Lasan Kariyawasam" class="form-control" id="customerName">
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <label for="itemCode" class="form-label">Item Code</label>
+                        <select id="itemCode" class="form-select">
+                            <option selected>I-001</option>
+                            <option>I-002</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-5">
+                        <label for="oDate" class="form-label">Order Date</label>
+                        <input type="text" placeholder="18-01-2022" class="form-control" id="oDate">
+                    </div>
+
+                </form>
+            </div>
+
+            <!--place order-->
+            <div class="col-6 bg-light">
+                <form class="row">
+
+                    <div class="col-md-2">
+                        <label for="itemId" class="form-label">Item Code</label>
+                        <select id="itemId" class="form-select">
+                            <option selected>I-001</option>
+                            <option>I-002</option>
+                            <option>I-003</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="qTY" class="form-label">QTY On Hand</label>
+                        <input type="text" placeholder="50" class="form-control" id="qTY">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="discount" class="form-label">Discount (Rs)</label>
+                        <input type="text" placeholder="10" class="form-control" id="discount">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="custQTY" class="form-label">Customer QTY</label>
+                        <input type="text" placeholder="2" class="form-control" id="custQTY">
+                    </div>
+
+                    <div class="col-2">
+                        <label for="unitPrice" class="form-label">Unit Price (Rs)</label>
+                        <input type="text" placeholder="420" class="form-control" id="unitPrice">
+                    </div>
+
+                    <div class="col-md-6 col mt-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" placeholder="Red Bull (375ml)" class="form-control" id="description">
+                    </div>
+
+                </form>
+            </div>
+
+        </section>
+
+        <!--table-->
+        <section class="row mt-5">
+            <div class="col-12 bg-light">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Customer QTY</th>
+                        <th scope="col">Unit Price (Rs)</th>
+                        <th scope="col">Discount (Rs)</th>
+                        <th scope="col">Total (Rs)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">I-001</th>
+                        <td>Red Bull (375ml)</td>
+                        <td>2</td>
+                        <td>420</td>
+                        <td>10</td>
+                        <td>410</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I-002</th>
+                        <td>Gold Body Spray</td>
+                        <td>1</td>
+                        <td>620</td>
+                        <td>15</td>
+                        <td>605</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end col mt-5">
+                <button type="submit" class="btn btn-secondary">Place Order</button>
+                <button type="submit" class="btn btn-success">Update</button>
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </div>
+        </section>
+
+    </section>
+
+    <section></section>
+
+    <section>
+        <ul>
+            <li>
+                <h2>Gross Amount :</h2>
+                <h2>Total Discount :</h2>
+                <h2>Net Amount :</h2>
+                <h2>Cash :</h2>
+            </li>
+        </ul>
+
+    </section>
+
+    <h2>Balance :</h2>
+
+
+</main>
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

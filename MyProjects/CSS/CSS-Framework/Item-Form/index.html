@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Item</title>
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <style>
+        header{
+            position: absolute;
+            width: 80%;
+            height: 10vh;
+            background-color: #273c75;
+            top: 0;
+            right: 0;
+            margin: auto;
+            border-bottom-left-radius: 40px;
+        }
+
+        main>h1:nth-child(1){
+            position: absolute;
+            font-size: 24px;
+            top: 12vh;
+            left: 10px;
+            z-index: 2;
+        }
+
+        main>h1:nth-child(2){
+            position: absolute;
+            font-size: 24px;
+            top: 59vh;
+            left: 10px;
+        }
+
+        main>section:nth-child(3){
+            position: absolute;
+            top: 20vh;
+        }
+
+        main>section:nth-child(4){
+            position: absolute;
+            top: 20vh;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header></header>
+
+<main>
+
+    <h1>Modify Item</h1>
+    <h1>Item Details</h1>
+
+    <section class="container-fluid">
+
+        <section>
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </section>
+
+        <section class="row mt-4">
+            <div class="col-12">
+                <form class="row g-3">
+
+                    <div class="col-md-2">
+                        <label for="itemCode" class="form-label"> Item Code</label>
+                        <input type="text" placeholder="I-001" class="form-control" id="itemCode" >
+                    </div>
+
+                    <div class="col-md-8">
+                        <label for="inputDescription" class="form-label">Description</label>
+                        <input type="text" placeholder="Red Bull (375ml)" class="form-control" id="inputDescription">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="packSize" class="form-label">Pack Size</label>
+                        <input type="text" placeholder="50" class="form-control" id="packSize">
+                    </div>
+
+                    <div class="col-2">
+                        <label for="unitPrice" class="form-label">Unit Price</label>
+                        <input type="text" placeholder="420" class="form-control" id="unitPrice">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputQTy" class="form-label">Qty On Hand</label>
+                        <input type="text" placeholder="15" class="form-control" id="inputQTy">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputDiscount" class="form-label">Discount</label>
+                        <input type="text" placeholder="10" class="form-control" id="inputDiscount">
+                    </div>
+
+                    <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-secondary">Add new Item</button>
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="row mt-5">
+            <div class="col-12">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item Code</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Pack Size</th>
+                        <th scope="col">Unit Price (Rs)</th>
+                        <th scope="col">Qty On Hand</th>
+                        <th scope="col">Discount (Rs)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">I-001</th>
+                        <td>Red Bull (375ml)</td>
+                        <td>50</td>
+                        <td>420</td>
+                        <td>15</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I-002</th>
+                        <td>Gold Body Spray</td>
+                        <td>60</td>
+                        <td>620</td>
+                        <td>26</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">I-003</th>
+                        <td>Munchi Cheese Button</td>
+                        <td>100</td>
+                        <td>180</td>
+                        <td>38</td>
+                        <td>12</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </section>
+
+</main>
+
+<script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
