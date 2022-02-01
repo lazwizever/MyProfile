@@ -328,28 +328,28 @@
 
                     <div class="col-md-2">
                         <label for="inputnewId" class="form-label">Customer Id</label>
-                        <input type="text" class="form-control" placeholder="C-001" id="inputnewId">
+                        <input type="text" class="form-control" id="inputnewId">
                     </div>
 
                     <div class="col-md-10">
                         <label for="custName" class="form-label">Customer Name</label>
-                        <input type="customer Name" placeholder="Lasan Kariyawasam" class="form-control" id="custName">
+                        <input type="customer Name" class="form-control" id="custName">
                     </div>
 
                     <div class="col-12">
                         <label for="custAddress" class="form-label">Customer Address</label>
-                        <input type="text" placeholder="Balagoda,Poddala" class="form-control" id="custAddress">
+                        <input type="text"  class="form-control" id="custAddress">
                     </div>
 
                     <div class="col-md-4">
                         <label for="inputCity" class="form-label">City</label>
-                        <input type="text" placeholder="Galle" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" id="inputCity">
                     </div>
 
                     <div class="col-md-2">
                         <label for="postalCode" class="form-label">Province</label>
                         <select id="postalCode" class="form-select">
-                            <option selected>Southern Province</option>
+                            <option>Southern Province</option>
                             <option>North Province</option>
                             <option>Western Province</option>
                             <option>Eastern Province</option>
@@ -358,11 +358,11 @@
 
                     <div class="col-md-2">
                         <label for="inputCode" class="form-label">Postal Code</label>
-                        <input type="text" placeholder="80170" class="form-control" id="inputCode">
+                        <input type="text" class="form-control" id="inputCode">
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" class="btn btn-secondary">Register</button>
+                        <button type="submit" id="btnCustomerRegister" class="btn btn-secondary">Register</button>
                         <button type="submit" style="background-color:#4cd137; color:white"  class="btn">Update</button>
                         <button type="submit" class="btn btn-danger">Delete </button>
                     </div>
@@ -372,7 +372,7 @@
 
         <section class="row mt-5">
             <div class="col-12">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover" id="customerTable">
                     <thead>
                     <tr style="color: white;background-color: #7f8c8d">
                         <th scope="col">Customer Id</th>
@@ -383,27 +383,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+
+                   <!-- <tr>
                         <th scope="row">C-001</th>
                         <td>Lasan Kariyawasam</td>
                         <td>Balagoda,Poddala</td>
                         <td>Galle</td>
                         <td>80170</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">C-002</th>
-                        <td>Rashmi Liyanage</td>
-                        <td>Balagoda,Poddala</td>
-                        <td>Galle</td>
-                        <td>80170</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">C-003</th>
-                        <td>Thisadu Kariyawasam</td>
-                        <td>Athurugiriya</td>
-                        <td>Colombo</td>
-                        <td>50160</td>
-                    </tr>
+                    </tr>-->
+
                     </tbody>
                 </table>
             </div>
@@ -433,36 +421,36 @@
 
                     <div class="col-md-2">
                         <label for="itemCode" class="form-label"> Item Code</label>
-                        <input type="text" placeholder="I-001" class="form-control" id="itemCode" >
+                        <input type="text" class="form-control" id="itemCode" >
                     </div>
 
                     <div class="col-md-8">
                         <label for="inputDescription" class="form-label">Description</label>
-                        <input type="text" placeholder="Red Bull (375ml)" class="form-control" id="inputDescription">
+                        <input type="text" class="form-control" id="inputDescription">
                     </div>
 
                     <div class="col-md-2">
                         <label for="packSize" class="form-label">Pack Size</label>
-                        <input type="text" placeholder="50" class="form-control" id="packSize">
+                        <input type="text" class="form-control" id="packSize">
                     </div>
 
                     <div class="col-2">
                         <label for="unitPrice" class="form-label">Unit Price</label>
-                        <input type="text" placeholder="420" class="form-control" id="unitPrice">
+                        <input type="text" class="form-control" id="unitPrice">
                     </div>
 
                     <div class="col-md-2">
                         <label for="inputQTy" class="form-label">Qty On Hand</label>
-                        <input type="text" placeholder="15" class="form-control" id="inputQTy">
+                        <input type="text" class="form-control" id="inputQTy">
                     </div>
 
                     <div class="col-md-2">
                         <label for="inputDiscount" class="form-label">Discount</label>
-                        <input type="text" placeholder="10" class="form-control" id="inputDiscount">
+                        <input type="text" class="form-control" id="inputDiscount">
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" class="btn btn-secondary">Add new Item</button>
+                        <button type="submit" id="btnItemRegister" class="btn btn-secondary">Add new Item</button>
                         <button type="submit" style="background-color:#4cd137; color:white" class="btn">Update</button>
                         <button type="submit" class="btn btn-danger">Remove</button>
                     </div>
@@ -472,7 +460,7 @@
 
         <section class="row mt-5">
             <div class="col-12">
-                <table class="table table-striped table-hover">
+                <table id="itemTable" class="table table-striped table-hover">
                     <thead>
                     <tr style="color: white;background-color: #7f8c8d">
                         <th scope="col">Item Code</th>
@@ -484,30 +472,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">I-001</th>
-                        <td>Red Bull (375ml)</td>
-                        <td>50</td>
-                        <td>420</td>
-                        <td>15</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I-002</th>
-                        <td>Gold Body Spray</td>
-                        <td>60</td>
-                        <td>620</td>
-                        <td>26</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I-003</th>
-                        <td>Munchi Cheese Button</td>
-                        <td>100</td>
-                        <td>180</td>
-                        <td>38</td>
-                        <td>12</td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -696,7 +661,7 @@
         document.getElementById("navPlaceOrder").style.fontWeight = "normal";
     });*/
 
-    document.getElementById("item").addEventListener("click",function () {
+    /*document.getElementById("item").addEventListener("click",function () {
         document.getElementById("m1").style.display="none";
         document.getElementById("m2").style.display="none";
         document.getElementById("m3").style.display="block"
@@ -704,9 +669,9 @@
         document.getElementById("item").style.fontWeight = "bold";
         document.getElementById("navPlaceOrder").style.fontWeight = "normal";
         document.getElementById("navCustomer").style.fontWeight = "normal";
-    });
+    });*/
 
-    document.getElementById("navPlaceOrder").addEventListener("click",function () {
+    /*document.getElementById("navPlaceOrder").addEventListener("click",function () {
         document.getElementById("m1").style.display="none";
         document.getElementById("m2").style.display="none";
         document.getElementById("m3").style.display="none";
@@ -714,7 +679,7 @@
         document.getElementById("navPlaceOrder").style.fontWeight = "bold";
         document.getElementById("navCustomer").style.fontWeight = "normal";
         document.getElementById("item").style.fontWeight = "normal";
-    });
+    });*/
 
 
     /*-------------------------Using jQuery------------------*/
@@ -730,7 +695,7 @@
 
     });
 
-    $("item").click(function (){
+    $("#item").click(function (){
         $("#m1").css("display","none");
         $("#m2").css("display","none");
         $("#m3").css("display","block");
@@ -742,7 +707,7 @@
 
     });
 
-    $("item").click(function (){
+    $("#navPlaceOrder").click(function (){
         $("#m1").css("display","none");
         $("#m2").css("display","none");
         $("#m3").css("display","none");
@@ -755,6 +720,44 @@
     });
 
     /*-------------------------------------------------------*/
+
+
+   /*------------------Adding customer Details To Table--------------------*/
+
+    $("#btnCustomerRegister").click(function (){
+        let customerId = $("#inputnewId").val();
+        let customerName = $("#custName").val();
+        let customerAddress = $("#custAddress").val();
+        let city = $("#inputCity").val();
+        let postalCode = $("#inputCode").val();
+
+
+        let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
+
+        $("#customerTable").append(row);
+
+    });
+    /*---------------------------------------------------------------------*/
+
+
+    /*--------------Adding Item Details To Table---------------------------*/
+
+    $("#btnItemRegister").click(function (){
+        let itemCode = $("#itemCode").val();
+        let itemDescription = $("#inputDescription").val();
+        let packSize = $("#packSize").val();
+        let unitPrice = $("#unitPrice").val();
+        let qty = $("#inputQTy").val();
+        let discount = $("#inputDiscount").val();
+
+
+        let row = `<tr><td>${itemCode}</td><td>${itemDescription}</td><td>${packSize}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
+
+        $("#itemTable").append(row);
+
+    });
+
+    /*---------------------------------------------------------------------*/
 
 </script>
 
