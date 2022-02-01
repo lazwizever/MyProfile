@@ -333,7 +333,7 @@
 
                     <div class="col-md-10">
                         <label for="custName" class="form-label">Customer Name</label>
-                        <input type="customer Name" class="form-control" id="custName">
+                        <input type="text" class="form-control" id="custName">
                     </div>
 
                     <div class="col-12">
@@ -372,7 +372,7 @@
 
         <section class="row mt-5">
             <div class="col-12">
-                <table class="table table-striped table-hover" id="customerTable">
+                <table class="table table-striped table-hover">
                     <thead>
                     <tr style="color: white;background-color: #7f8c8d">
                         <th scope="col">Customer Id</th>
@@ -382,14 +382,14 @@
                         <th scope="col">Postal Code</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="customerTable">
 
                    <!-- <tr>
-                        <th scope="row">C-001</th>
-                        <td>Lasan Kariyawasam</td>
-                        <td>Balagoda,Poddala</td>
-                        <td>Galle</td>
-                        <td>80170</td>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>-->
 
                     </tbody>
@@ -725,6 +725,7 @@
    /*------------------Adding customer Details To Table--------------------*/
 
     $("#btnCustomerRegister").click(function (){
+
         let customerId = $("#inputnewId").val();
         let customerName = $("#custName").val();
         let customerAddress = $("#custAddress").val();
@@ -735,6 +736,18 @@
         let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
 
         $("#customerTable").append(row);
+
+
+
+        $("#customerTable>tr").click(function(){
+            /*console.log(this);*/
+           let cusId = $(this).children(':nth-child(1)').text();
+           $("#inputnewId").val(cusId);
+
+            let cusName = $(this).children(':nth-child(2)').text();
+            $("#custName").val(cusName);
+
+        });
 
     });
     /*---------------------------------------------------------------------*/
