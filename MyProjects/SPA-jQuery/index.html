@@ -594,14 +594,7 @@
                     </tr>
                     </thead>
                     <tbody id="placeOrderTable">
-                   <!-- <tr>
-                        &lt;!&ndash;<th scope="row">I-001</th>
-                        <td>Red Bull (375ml)</td>
-                        <td>2</td>
-                        <td>420</td>
-                        <td>10</td>
-                        <td>410</td>&ndash;&gt;
-                    </tr>-->
+
                     </tbody>
                 </table>
             </div>
@@ -836,13 +829,12 @@
         let description = $("#description").val();
         let customerQty = $("#custQTY").val();
         let unitPrice = $("#unitPrices").val();
-        let qty = $("#inputQTy").val();
         let discount = $("#discount").val();
 
 
        /*-----------Set placeorder vlaues to table----------*/
 
-        let row = `<tr><td>${itemCode}</td><td>${description}</td><td>${customerQty}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
+        let row = `<tr><td>${itemCode}</td><td>${description}</td><td>${customerQty}</td><td>${unitPrice}</td><td>${discount}</td></tr>`;
         $("#placeOrderTable").append(row);
 
         /*--------------------------------------------------*/
