@@ -347,8 +347,8 @@
                     </div>
 
                     <div class="col-md-2">
-                        <label for="postalCode" class="form-label">Province</label>
-                        <select id="postalCode" class="form-select">
+                        <label for="province" class="form-label">Province</label>
+                        <select id="province" class="form-select">
                             <option>Southern Province</option>
                             <option>North Province</option>
                             <option>Western Province</option>
@@ -357,8 +357,8 @@
                     </div>
 
                     <div class="col-md-2">
-                        <label for="inputCode" class="form-label">Postal Code</label>
-                        <input type="text" class="form-control" id="inputCode">
+                        <label for="postalCode" class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCode">
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
@@ -460,7 +460,7 @@
 
         <section class="row mt-5">
             <div class="col-12">
-                <table id="itemTable" class="table table-striped table-hover">
+                <table class="table table-striped table-hover">
                     <thead>
                     <tr style="color: white;background-color: #7f8c8d">
                         <th scope="col">Item Code</th>
@@ -471,7 +471,7 @@
                         <th scope="col">Discount (Rs)</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="itemTable">
 
                     </tbody>
                 </table>
@@ -544,7 +544,7 @@
                     <div class="col-md-2">
                         <label for="itemId" class="form-label">Item Code</label>
                         <select id="itemId" class="form-select">
-                            <option selected>I-001</option>
+                            <option>I-001</option>
                             <option>I-002</option>
                             <option>I-003</option>
                         </select>
@@ -552,27 +552,27 @@
 
                     <div class="col-md-2">
                         <label for="qTY" class="form-label">QTY On Hand</label>
-                        <input type="text" placeholder="50" class="form-control" id="qTY">
+                        <input type="text" class="form-control" id="qTY">
                     </div>
 
                     <div class="col-md-2">
                         <label for="discount" class="form-label">Discount (Rs)</label>
-                        <input type="text" placeholder="10" class="form-control" id="discount">
+                        <input type="text" class="form-control" id="discount">
                     </div>
 
                     <div class="col-md-2">
                         <label for="custQTY" class="form-label">Customer QTY</label>
-                        <input type="text" placeholder="2" class="form-control" id="custQTY">
+                        <input type="text" class="form-control" id="custQTY">
                     </div>
 
                     <div class="col-2">
                         <label for="unitPrices" class="form-label">Unit Price (Rs)</label>
-                        <input type="text" placeholder="420" class="form-control" id="unitPrices">
+                        <input type="text" class="form-control" id="unitPrices">
                     </div>
 
                     <div class="col-md-6 col mt-3">
                         <label for="description" class="form-label">Description</label>
-                        <input type="text" placeholder="Red Bull (375ml)" class="form-control" id="description">
+                        <input type="text" class="form-control" id="description">
                     </div>
 
                 </form>
@@ -591,32 +591,23 @@
                         <th scope="col">Customer QTY</th>
                         <th scope="col">Unit Price (Rs)</th>
                         <th scope="col">Discount (Rs)</th>
-                        <th scope="col">Total (Rs)</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">I-001</th>
+                    <tbody id="placeOrderTable">
+                   <!-- <tr>
+                        &lt;!&ndash;<th scope="row">I-001</th>
                         <td>Red Bull (375ml)</td>
                         <td>2</td>
                         <td>420</td>
                         <td>10</td>
-                        <td>410</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">I-002</th>
-                        <td>Gold Body Spray</td>
-                        <td>1</td>
-                        <td>620</td>
-                        <td>15</td>
-                        <td>605</td>
-                    </tr>
+                        <td>410</td>&ndash;&gt;
+                    </tr>-->
                     </tbody>
                 </table>
             </div>
 
             <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end col mt-5">
-                <button type="submit" class="btn btn-secondary">Place Order</button>
+                <button type="submit" id="btnPlaceOrder" class="btn btn-secondary">Place Order</button>
                 <button type="submit" style="background-color:#4cd137; color:white; " class="btn">Update</button>
                 <button type="submit" class="btn btn-danger">Remove</button>
             </div>
@@ -719,7 +710,6 @@
 
     });
 
-    /*-------------------------------------------------------*/
 
 
    /*------------------Adding customer Details To Table--------------------*/
@@ -730,27 +720,51 @@
         let customerName = $("#custName").val();
         let customerAddress = $("#custAddress").val();
         let city = $("#inputCity").val();
-        let postalCode = $("#inputCode").val();
+        let postalCode = $("#postalCode").val();
 
+
+        /*-----------------Adding values to table---------------------*/
 
         let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
-
         $("#customerTable").append(row);
 
+        /*------------------------------------------------------------*/
 
+
+        /*------------Clear text fields---------------*/
+        $("#inputnewId").val("");
+        $("#custName").val("");
+        $("#custAddress").val("");
+        $("#inputCity").val("");
+        $("#postalCode").val("");
+        /*------------------------------------------------------------*/
+
+
+        /*----------Set table values to text fields------------------*/
 
         $("#customerTable>tr").click(function(){
-            /*console.log(this);*/
+
            let cusId = $(this).children(':nth-child(1)').text();
            $("#inputnewId").val(cusId);
 
             let cusName = $(this).children(':nth-child(2)').text();
             $("#custName").val(cusName);
 
+            let cusAddress = $(this).children(':nth-child(3)').text();
+            $("#custAddress").val(cusAddress);
+
+            let city = $(this).children(':nth-child(4)').text();
+            $("#inputCity").val(city);
+
+            let postalCode = $(this).children(':nth-child(5)').text();
+            $("#postalCode").val(postalCode);
+
         });
+        /*------------------------------------------------------------*/
 
     });
     /*---------------------------------------------------------------------*/
+
 
 
     /*--------------Adding Item Details To Table---------------------------*/
@@ -764,13 +778,117 @@
         let discount = $("#inputDiscount").val();
 
 
-        let row = `<tr><td>${itemCode}</td><td>${itemDescription}</td><td>${packSize}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
+        /*-----------------Set values for table----------------*/
 
+        let row = `<tr><td>${itemCode}</td><td>${itemDescription}</td><td>${packSize}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
         $("#itemTable").append(row);
+        /*-----------------------------------------------------*/
+
+
+        /*-----------------Clear text fields-------------------------*/
+        $("#itemCode").val("");
+        $("#inputDescription").val("");
+        $("#packSize").val("");
+        $("#unitPrice").val("");
+        $("#inputQTy").val("");
+        $("#inputDiscount").val("");
+
+        /*------------------------------------------------------------*/
+
+
+
+        /*---------------Set table values to text fields--------------*/
+
+        $("#itemTable>tr").click(function(){
+
+            let itemCode = $(this).children(':nth-child(1)').text();
+            $("#itemCode").val(itemCode);
+
+            let description = $(this).children(':nth-child(2)').text();
+            $("#inputDescription").val(description);
+
+            let packSize = $(this).children(':nth-child(3)').text();
+            $("#packSize").val(packSize);
+
+            let unitPrice = $(this).children(':nth-child(4)').text();
+            $("#unitPrice").val(unitPrice);
+
+            let QTY = $(this).children(':nth-child(5)').text();
+            $("#inputQTy").val(QTY);
+
+            let discount = $(this).children(':nth-child(6)').text();
+            $("#inputDiscount").val(discount);
+
+        });
+
+        /*------------------------------------------------------------*/
 
     });
 
     /*---------------------------------------------------------------------*/
+
+
+
+    /*--------------Adding placeorder Details To Table---------------------------*/
+    $("#btnPlaceOrder").click(function (){
+
+        let itemCode = $("#itemId").val();
+        let description = $("#description").val();
+        let customerQty = $("#custQTY").val();
+        let unitPrice = $("#unitPrices").val();
+        let qty = $("#inputQTy").val();
+        let discount = $("#discount").val();
+
+
+       /*-----------Set placeorder vlaues to table----------*/
+
+        let row = `<tr><td>${itemCode}</td><td>${description}</td><td>${customerQty}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
+        $("#placeOrderTable").append(row);
+
+        /*--------------------------------------------------*/
+
+
+
+        /*------Clear text fields-----------*/
+        $("#itemId").val("");
+        $("#description").val("");
+        $("#custQTY").val("");
+        $("#qTY").val("");
+        $("#unitPrices").val("");
+        $("#inputQTy").val("");
+        $("#discount").val("");
+        /*----------------------------------*/
+
+
+        /*------Set table values to text fields---*/
+
+        $("#placeOrderTable>tr").click(function(){
+
+            let itemCode = $(this).children(':nth-child(1)').text();
+            $("#itemId").val(itemCode);
+
+            let description = $(this).children(':nth-child(2)').text();
+            $("#description").val(description);
+
+            let customerQTY = $(this).children(':nth-child(3)').text();
+            $("#custQTY").val(customerQTY);
+
+            let unitPrice = $(this).children(':nth-child(4)').text();
+            $("#unitPrices").val(unitPrice);
+
+            let QTY = $(this).children(':nth-child(5)').text();
+            $("#inputQTy").val(QTY);
+
+            let discount = $(this).children(':nth-child(6)').text();
+            $("#discount").val(discount);
+
+        });
+
+        /*----------------------------------------*/
+
+    });
+
+    /*--------------------------------------------------------------------------*/
 
 </script>
 
