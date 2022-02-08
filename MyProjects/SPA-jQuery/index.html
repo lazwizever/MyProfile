@@ -362,7 +362,7 @@
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" id="btnCustomerRegister" class="btn btn-secondary">Register</button>
+                        <button type="button" id="btnCustomerRegister" class="btn btn-secondary">Register</button>
                         <button type="submit" style="background-color:#4cd137; color:white"  class="btn">Update</button>
                         <button type="submit" class="btn btn-danger">Delete </button>
                     </div>
@@ -632,7 +632,6 @@
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 
 
-
 <script>
 
     /*document.getElementById("navCustomer").addEventListener("click",function (){
@@ -709,6 +708,8 @@
 
     $("#btnCustomerRegister").click(function (){
 
+        $("#customerTable>tr").off("click");
+
         let customerId = $("#inputnewId").val();
         let customerName = $("#custName").val();
         let customerAddress = $("#custAddress").val();
@@ -763,6 +764,9 @@
     /*--------------Adding Item Details To Table---------------------------*/
 
     $("#btnItemRegister").click(function (){
+
+        $("#customerTable>tr").off("click");
+
         let itemCode = $("#itemCode").val();
         let itemDescription = $("#inputDescription").val();
         let packSize = $("#packSize").val();
@@ -824,6 +828,8 @@
 
     /*--------------Adding placeorder Details To Table---------------------------*/
     $("#btnPlaceOrder").click(function (){
+
+        $("#customerTable>tr").off("click");
 
         let itemCode = $("#itemId").val();
         let description = $("#description").val();
