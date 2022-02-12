@@ -329,6 +329,7 @@
                     <div class="col-md-2">
                         <label for="inputnewId" class="form-label">Customer Id</label>
                         <input type="text" class="form-control" id="inputnewId">
+                        <p><small id="error" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-10">
@@ -757,6 +758,107 @@
         /*------------------------------------------------------------*/
 
     });
+
+
+   /*------------------Validating Fields-------------------*/
+
+    var regExCusId = /^(C-)[0-9]{3,5}$/;
+    var regExCusName = /^([A-z\s]{3,20})$/;
+    var regExCusAddress = /^([A-z0-9/,\s]{3,})$/;
+    var regExCity = /^([A-z]{3,20})$/;
+    var regExPostalCode = /^^([0-9]{5})$/;
+
+    $("#inputnewId").keyup(function (e) {
+         let input = $("#inputnewId").val();
+
+        if (regExCusId.test(input)) {
+            $("#error").text("");
+            $("#inputnewId").css('border', '2px solid green');
+
+            $("#inputnewId").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#custName").focus();
+                }
+            });
+        } else {
+            $("#inputnewId").css('border', '2px solid red');
+            $("#error").text("Wrong format : "+input);
+        }
+    });
+
+
+    $("#custName").keyup(function () {
+        let input = $("#custName").val();
+
+        if (regExCusName.test(input)) {
+            $("#error").text("");
+            $("#custName").css('border', '2px solid green');
+
+            $("#custName").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#custAddress").focus();
+                }
+            });
+
+        } else {
+            $("#custName").css('border', '2px solid red');
+            /*$("#error").text("Wrong format : "+input);*/
+
+        }
+    });
+
+    $("#custAddress").keyup(function () {
+        let input = $("#custAddress").val();
+
+        if (regExCusAddress.test(input)) {
+            $("#custAddress").css('border', '2px solid green');
+
+            $("#custAddress").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#inputCity").focus();
+                }
+            });
+
+        } else {
+            $("#custAddress").css('border', '2px solid red');
+            /*$("#error").text("Wrong format : C-001");*/
+
+        }
+    });
+
+    $("#inputCity").keyup(function () {
+        let input = $("#inputCity").val();
+
+        if (regExCity.test(input)) {
+            $("#inputCity").css('border', '2px solid green');
+            /* $("#error").text("");*/
+
+            $("#inputCity").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#postalCode").focus();
+                }
+            });
+
+        } else {
+            $("#inputCity").css('border', '2px solid red');
+           /* $("#error").text("Wrong format : C-001");*/
+
+        }
+    });
+
+    $("#postalCode").keyup(function () {
+        let input = $("#postalCode").val();
+
+        if (regExPostalCode.test(input)) {
+            $("#postalCode").css('border', '2px solid green');
+
+        } else {
+            $("#postalCode").css('border', '2px solid red');
+            /*$("#error").text("Wrong format : C-001");*/
+
+        }
+    });
+
     /*---------------------------------------------------------------------*/
 
 
