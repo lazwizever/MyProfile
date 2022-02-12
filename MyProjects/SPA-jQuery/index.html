@@ -335,16 +335,19 @@
                     <div class="col-md-10">
                         <label for="custName" class="form-label">Customer Name</label>
                         <input type="text" class="form-control" id="custName">
+                        <p><small id="error1" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-12">
                         <label for="custAddress" class="form-label">Customer Address</label>
                         <input type="text"  class="form-control" id="custAddress">
+                        <p><small id="error2" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-4">
                         <label for="inputCity" class="form-label">City</label>
                         <input type="text" class="form-control" id="inputCity">
+                        <p><small id="error3" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-2">
@@ -360,6 +363,7 @@
                     <div class="col-md-2">
                         <label for="postalCode" class="form-label">Postal Code</label>
                         <input type="text" class="form-control" id="postalCode">
+                        <p><small id="erro4" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
@@ -423,31 +427,37 @@
                     <div class="col-md-2">
                         <label for="itemCode" class="form-label"> Item Code</label>
                         <input type="text" class="form-control" id="itemCode" >
+                        <p><small id="error0" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-8">
                         <label for="inputDescription" class="form-label">Description</label>
                         <input type="text" class="form-control" id="inputDescription">
+                        <p><small id="error01" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-2">
                         <label for="packSize" class="form-label">Pack Size</label>
                         <input type="text" class="form-control" id="packSize">
+                        <p><small id="error02" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-2">
                         <label for="unitPrice" class="form-label">Unit Price</label>
                         <input type="text" class="form-control" id="unitPrice">
+                        <p><small id="error03" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-2">
                         <label for="inputQTy" class="form-label">Qty On Hand</label>
                         <input type="text" class="form-control" id="inputQTy">
+                        <p><small id="error04" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-2">
                         <label for="inputDiscount" class="form-label">Discount</label>
                         <input type="text" class="form-control" id="inputDiscount">
+                        <p><small id="error05" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
@@ -554,26 +564,31 @@
                     <div class="col-md-2">
                         <label for="qTY" class="form-label">QTY On Hand</label>
                         <input type="text" class="form-control" id="qTY">
+                        <p><small id="error00" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-2">
                         <label for="discount" class="form-label">Discount (Rs)</label>
                         <input type="text" class="form-control" id="discount">
+                        <p><small id="error001" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-2">
                         <label for="custQTY" class="form-label">Customer QTY</label>
                         <input type="text" class="form-control" id="custQTY">
+                        <p><small id="error002" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-2">
                         <label for="unitPrices" class="form-label">Unit Price (Rs)</label>
                         <input type="text" class="form-control" id="unitPrices">
+                        <p><small id="error003" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-md-6 col mt-3">
                         <label for="description" class="form-label">Description</label>
                         <input type="text" class="form-control" id="description">
+                        <p><small id="error004" class="text-danger pl-1"></small></p>
                     </div>
 
                 </form>
@@ -909,7 +924,7 @@
         let input = $("#inputnewId").val();
 
         if (regExCusId.test(input)) {
-            /* $("#error").text("");*/
+             $("#error").text("");
             $("#inputnewId").css('border', '2px solid green');
 
             $("#inputnewId").keydown(function (e){
@@ -919,7 +934,7 @@
             });
         } else {
             $("#inputnewId").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error").text("Wrong format : "+input);
         }
     });
 
@@ -927,7 +942,7 @@
         let input = $("#custName").val();
 
         if (regExCusName.test(input)) {
-            /*$("#error").text("");*/
+            $("#error1").text("");
             $("#custName").css('border', '2px solid green');
 
             $("#custName").keydown(function (e){
@@ -938,7 +953,7 @@
 
         } else {
             $("#custName").css('border', '2px solid red');
-            /*$("#error").text("Wrong format : "+input);*/
+            $("#error1").text("Wrong format : "+input);
 
         }
     });
@@ -947,6 +962,7 @@
         let input = $("#custAddress").val();
 
         if (regExCusAddress.test(input)) {
+            $("#error2").text("");
             $("#custAddress").css('border', '2px solid green');
 
             $("#custAddress").keydown(function (e){
@@ -957,7 +973,7 @@
 
         } else {
             $("#custAddress").css('border', '2px solid red');
-            /*$("#error").text("Wrong format : C-001");*/
+            $("#error2").text("Wrong format : C-001");
 
         }
     });
@@ -966,8 +982,8 @@
         let input = $("#inputCity").val();
 
         if (regExCity.test(input)) {
+            $("#error3").text("");
             $("#inputCity").css('border', '2px solid green');
-            /* $("#error").text("");*/
 
             $("#inputCity").keydown(function (e){
                 if (e.key == 'Enter'){
@@ -977,7 +993,7 @@
 
         } else {
             $("#inputCity").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : C-001");*/
+             $("#error3").text("Wrong format : C-001");
 
         }
     });
@@ -986,11 +1002,12 @@
         let input = $("#postalCode").val();
 
         if (regExPostalCode.test(input)) {
+            $("#error4").text("");
             $("#postalCode").css('border', '2px solid green');
 
         } else {
             $("#postalCode").css('border', '2px solid red');
-            /*$("#error").text("Wrong format : C-001");*/
+            $("#error4").text("Wrong format : C-001");
 
         }
     });
@@ -1009,7 +1026,7 @@
         let input = $("#itemCode").val();
 
         if (regExItemCode.test(input)) {
-            /* $("#error").text("");*/
+             $("#error0").text("");
             $("#itemCode").css('border', '2px solid green');
 
             $("#itemCode").keydown(function (e){
@@ -1019,7 +1036,7 @@
             });
         } else {
             $("#itemCode").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error0").text("Wrong format : "+input);
         }
     });
 
@@ -1027,7 +1044,7 @@
         let input = $("#inputDescription").val();
 
         if (regExDescription.test(input)) {
-            /* $("#error").text("");*/
+             $("#error01").text("");
             $("#inputDescription").css('border', '2px solid green');
 
             $("#inputDescription").keydown(function (e){
@@ -1037,7 +1054,7 @@
             });
         } else {
             $("#inputDescription").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error01").text("Wrong format : "+input);
         }
     });
 
@@ -1045,7 +1062,7 @@
         let input = $("#packSize").val();
 
         if (regExPackSize.test(input)) {
-            /* $("#error").text("");*/
+             $("#error02").text("");
             $("#packSize").css('border', '2px solid green');
 
             $("#packSize").keydown(function (e){
@@ -1055,7 +1072,7 @@
             });
         } else {
             $("#packSize").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error02").text("Wrong format : "+input);
         }
     });
 
@@ -1063,7 +1080,7 @@
         let input = $("#unitPrice").val();
 
         if (regExUnitPrice.test(input)) {
-            /* $("#error").text("");*/
+             $("#error03").text("");
             $("#unitPrice").css('border', '2px solid green');
 
             $("#unitPrice").keydown(function (e){
@@ -1073,7 +1090,7 @@
             });
         } else {
             $("#unitPrice").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error03").text("Wrong format : "+input);
         }
     });
 
@@ -1081,7 +1098,7 @@
         let input = $("#inputQTy").val();
 
         if (regExQty.test(input)) {
-            /* $("#error").text("");*/
+             $("#error04").text("");
             $("#inputQTy").css('border', '2px solid green');
 
             $("#inputQTy").keydown(function (e){
@@ -1091,7 +1108,7 @@
             });
         } else {
             $("#inputQTy").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error04").text("Wrong format : "+input);
         }
     });
 
@@ -1099,16 +1116,16 @@
         let input = $("#inputDiscount").val();
 
         if (regExDiscount.test(input)) {
-            /* $("#error").text("");*/
+             $("#error05").text("");
             $("#inputDiscount").css('border', '2px solid green');
         } else {
             $("#inputDiscount").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error05").text("Wrong format : "+input);
         }
     });
 
 
-    /*---Item Form-----*/
+    /*---PlaceOrder Form-----*/
 
     var regExQtyOnHand = /^([0-9]{1,10})$/;
     var regExDiscounts = /^([0-9.]{1,})$/;
@@ -1120,7 +1137,7 @@
         let input = $("#qTY").val();
 
         if (regExQtyOnHand.test(input)) {
-            /* $("#error").text("");*/
+             $("#error00").text("");
             $("#qTY").css('border', '2px solid green');
 
             $("#qTY").keydown(function (e){
@@ -1130,7 +1147,7 @@
             });
         } else {
             $("#qTY").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+            $("#error00").text("Wrong format : "+input);
         }
     });
 
@@ -1138,7 +1155,7 @@
         let input = $("#discount").val();
 
         if (regExDiscounts.test(input)) {
-            /* $("#error").text("");*/
+             $("#error001").text("");
             $("#discount").css('border', '2px solid green');
 
             $("#discount").keydown(function (e){
@@ -1148,7 +1165,7 @@
             });
         } else {
             $("#discount").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error001").text("Wrong format : "+input);
         }
     });
 
@@ -1156,7 +1173,7 @@
         let input = $("#custQTY").val();
 
         if (regExCustomerQty.test(input)) {
-            /* $("#error").text("");*/
+             $("#error002").text("");
             $("#custQTY").css('border', '2px solid green');
 
             $("#custQTY").keydown(function (e){
@@ -1166,7 +1183,7 @@
             });
         } else {
             $("#custQTY").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error002").text("Wrong format : "+input);
         }
     });
 
@@ -1174,7 +1191,7 @@
         let input = $("#unitPrices").val();
 
         if (regExUnitPrices.test(input)) {
-            /* $("#error").text("");*/
+             $("#error003").text("");
             $("#unitPrices").css('border', '2px solid green');
 
             $("#unitPrices").keydown(function (e){
@@ -1184,7 +1201,7 @@
             });
         } else {
             $("#unitPrices").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error003").text("Wrong format : "+input);
         }
     });
 
@@ -1192,12 +1209,12 @@
         let input = $("#description").val();
 
         if (regExItemDescription.test(input)) {
-            /* $("#error").text("");*/
+             $("#error004").text("");
             $("#description").css('border', '2px solid green');
 
         } else {
             $("#description").css('border', '2px solid red');
-            /* $("#error").text("Wrong format : "+input);*/
+             $("#error004").text("Wrong format : "+input);
         }
     });
 
