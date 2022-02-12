@@ -451,7 +451,7 @@
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" id="btnItemRegister" class="btn btn-secondary">Add new Item</button>
+                        <button type="button" id="btnItemRegister" class="btn btn-secondary">Add new Item</button>
                         <button type="submit" style="background-color:#4cd137; color:white" class="btn">Update</button>
                         <button type="submit" class="btn btn-danger">Remove</button>
                     </div>
@@ -759,107 +759,7 @@
 
     });
 
-
-   /*------------------Validating Fields-------------------*/
-
-    var regExCusId = /^(C-)[0-9]{3,5}$/;
-    var regExCusName = /^([A-z\s]{3,20})$/;
-    var regExCusAddress = /^([A-z0-9/,\s]{3,})$/;
-    var regExCity = /^([A-z]{3,20})$/;
-    var regExPostalCode = /^^([0-9]{5})$/;
-
-    $("#inputnewId").keyup(function (e) {
-         let input = $("#inputnewId").val();
-
-        if (regExCusId.test(input)) {
-            $("#error").text("");
-            $("#inputnewId").css('border', '2px solid green');
-
-            $("#inputnewId").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#custName").focus();
-                }
-            });
-        } else {
-            $("#inputnewId").css('border', '2px solid red');
-            $("#error").text("Wrong format : "+input);
-        }
-    });
-
-
-    $("#custName").keyup(function () {
-        let input = $("#custName").val();
-
-        if (regExCusName.test(input)) {
-            $("#error").text("");
-            $("#custName").css('border', '2px solid green');
-
-            $("#custName").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#custAddress").focus();
-                }
-            });
-
-        } else {
-            $("#custName").css('border', '2px solid red');
-            /*$("#error").text("Wrong format : "+input);*/
-
-        }
-    });
-
-    $("#custAddress").keyup(function () {
-        let input = $("#custAddress").val();
-
-        if (regExCusAddress.test(input)) {
-            $("#custAddress").css('border', '2px solid green');
-
-            $("#custAddress").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#inputCity").focus();
-                }
-            });
-
-        } else {
-            $("#custAddress").css('border', '2px solid red');
-            /*$("#error").text("Wrong format : C-001");*/
-
-        }
-    });
-
-    $("#inputCity").keyup(function () {
-        let input = $("#inputCity").val();
-
-        if (regExCity.test(input)) {
-            $("#inputCity").css('border', '2px solid green');
-            /* $("#error").text("");*/
-
-            $("#inputCity").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#postalCode").focus();
-                }
-            });
-
-        } else {
-            $("#inputCity").css('border', '2px solid red');
-           /* $("#error").text("Wrong format : C-001");*/
-
-        }
-    });
-
-    $("#postalCode").keyup(function () {
-        let input = $("#postalCode").val();
-
-        if (regExPostalCode.test(input)) {
-            $("#postalCode").css('border', '2px solid green');
-
-        } else {
-            $("#postalCode").css('border', '2px solid red');
-            /*$("#error").text("Wrong format : C-001");*/
-
-        }
-    });
-
-    /*---------------------------------------------------------------------*/
+    /*--------------------------------------------------------------------------------------------------*/
 
 
 
@@ -928,7 +828,8 @@
 
 
 
-    /*--------------Adding placeorder Details To Table---------------------------*/
+    /*--------------Adding placeOrder Details To Table---------------------------*/
+
     $("#btnPlaceOrder").click(function (){
 
         $("#customerTable>tr").off("click");
@@ -989,6 +890,316 @@
     });
 
     /*--------------------------------------------------------------------------*/
+
+
+
+    /*------------------Validating Fields (Customer form, Item form, PlaceOrder form)-------------------*/
+
+
+    /*---Customer Form-----*/
+
+    var regExCusId = /^(C-)[0-9]{3,5}$/;
+    var regExCusName = /^([A-z\s]{3,20})$/;
+    var regExCusAddress = /^([A-z0-9/,\s]{3,})$/;
+    var regExCity = /^([A-z]{3,20})$/;
+    var regExPostalCode = /^([0-9]{3,5})$/;
+
+
+    $("#inputnewId").keyup(function (e) {
+        let input = $("#inputnewId").val();
+
+        if (regExCusId.test(input)) {
+            /* $("#error").text("");*/
+            $("#inputnewId").css('border', '2px solid green');
+
+            $("#inputnewId").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#custName").focus();
+                }
+            });
+        } else {
+            $("#inputnewId").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#custName").keyup(function () {
+        let input = $("#custName").val();
+
+        if (regExCusName.test(input)) {
+            /*$("#error").text("");*/
+            $("#custName").css('border', '2px solid green');
+
+            $("#custName").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#custAddress").focus();
+                }
+            });
+
+        } else {
+            $("#custName").css('border', '2px solid red');
+            /*$("#error").text("Wrong format : "+input);*/
+
+        }
+    });
+
+    $("#custAddress").keyup(function () {
+        let input = $("#custAddress").val();
+
+        if (regExCusAddress.test(input)) {
+            $("#custAddress").css('border', '2px solid green');
+
+            $("#custAddress").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#inputCity").focus();
+                }
+            });
+
+        } else {
+            $("#custAddress").css('border', '2px solid red');
+            /*$("#error").text("Wrong format : C-001");*/
+
+        }
+    });
+
+    $("#inputCity").keyup(function () {
+        let input = $("#inputCity").val();
+
+        if (regExCity.test(input)) {
+            $("#inputCity").css('border', '2px solid green');
+            /* $("#error").text("");*/
+
+            $("#inputCity").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#postalCode").focus();
+                }
+            });
+
+        } else {
+            $("#inputCity").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : C-001");*/
+
+        }
+    });
+
+    $("#postalCode").keyup(function () {
+        let input = $("#postalCode").val();
+
+        if (regExPostalCode.test(input)) {
+            $("#postalCode").css('border', '2px solid green');
+
+        } else {
+            $("#postalCode").css('border', '2px solid red');
+            /*$("#error").text("Wrong format : C-001");*/
+
+        }
+    });
+
+
+    /*---Item Form-----*/
+
+    var regExItemCode = /^(I-)[0-9]{3,5}$/;
+    var regExDescription = /^([A-z0-9/,\s]{3,})$/;
+    var regExPackSize = /^([0-9]{1,10})$/;
+    var regExUnitPrice = /^([0-9.]{1,})$/;
+    var regExQty = /^([0-9]{1,10})$/;
+    var regExDiscount = /^([0-9.]{1,})$/;
+
+    $("#itemCode").keyup(function (e) {
+        let input = $("#itemCode").val();
+
+        if (regExItemCode.test(input)) {
+            /* $("#error").text("");*/
+            $("#itemCode").css('border', '2px solid green');
+
+            $("#itemCode").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#inputDescription").focus();
+                }
+            });
+        } else {
+            $("#itemCode").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#inputDescription").keyup(function (e) {
+        let input = $("#inputDescription").val();
+
+        if (regExDescription.test(input)) {
+            /* $("#error").text("");*/
+            $("#inputDescription").css('border', '2px solid green');
+
+            $("#inputDescription").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#packSize").focus();
+                }
+            });
+        } else {
+            $("#inputDescription").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#packSize").keyup(function (e) {
+        let input = $("#packSize").val();
+
+        if (regExPackSize.test(input)) {
+            /* $("#error").text("");*/
+            $("#packSize").css('border', '2px solid green');
+
+            $("#packSize").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#unitPrice").focus();
+                }
+            });
+        } else {
+            $("#packSize").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#unitPrice").keyup(function (e) {
+        let input = $("#unitPrice").val();
+
+        if (regExUnitPrice.test(input)) {
+            /* $("#error").text("");*/
+            $("#unitPrice").css('border', '2px solid green');
+
+            $("#unitPrice").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#inputQTy").focus();
+                }
+            });
+        } else {
+            $("#unitPrice").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#inputQTy").keyup(function (e) {
+        let input = $("#inputQTy").val();
+
+        if (regExQty.test(input)) {
+            /* $("#error").text("");*/
+            $("#inputQTy").css('border', '2px solid green');
+
+            $("#inputQTy").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#inputDiscount").focus();
+                }
+            });
+        } else {
+            $("#inputQTy").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#inputDiscount").keyup(function (e) {
+        let input = $("#inputDiscount").val();
+
+        if (regExDiscount.test(input)) {
+            /* $("#error").text("");*/
+            $("#inputDiscount").css('border', '2px solid green');
+        } else {
+            $("#inputDiscount").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+
+    /*---Item Form-----*/
+
+    var regExQtyOnHand = /^([0-9]{1,10})$/;
+    var regExDiscounts = /^([0-9.]{1,})$/;
+    var regExCustomerQty = /^([0-9]{1,10})$/;
+    var regExUnitPrices = /^([0-9.]{1,})$/;
+    var regExItemDescription = /^([A-z0-9/,\s]{3,})$/;
+
+    $("#qTY").keyup(function (e) {
+        let input = $("#qTY").val();
+
+        if (regExQtyOnHand.test(input)) {
+            /* $("#error").text("");*/
+            $("#qTY").css('border', '2px solid green');
+
+            $("#qTY").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#discount").focus();
+                }
+            });
+        } else {
+            $("#qTY").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#discount").keyup(function (e) {
+        let input = $("#discount").val();
+
+        if (regExDiscounts.test(input)) {
+            /* $("#error").text("");*/
+            $("#discount").css('border', '2px solid green');
+
+            $("#discount").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#custQTY").focus();
+                }
+            });
+        } else {
+            $("#discount").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#custQTY").keyup(function (e) {
+        let input = $("#custQTY").val();
+
+        if (regExCustomerQty.test(input)) {
+            /* $("#error").text("");*/
+            $("#custQTY").css('border', '2px solid green');
+
+            $("#custQTY").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#discount").focus();
+                }
+            });
+        } else {
+            $("#custQTY").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#unitPrices").keyup(function (e) {
+        let input = $("#unitPrices").val();
+
+        if (regExUnitPrices.test(input)) {
+            /* $("#error").text("");*/
+            $("#unitPrices").css('border', '2px solid green');
+
+            $("#unitPrices").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#description").focus();
+                }
+            });
+        } else {
+            $("#unitPrices").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
+
+    $("#description").keyup(function (e) {
+        let input = $("#description").val();
+
+        if (regExItemDescription.test(input)) {
+            /* $("#error").text("");*/
+            $("#description").css('border', '2px solid green');
+
+        } else {
+            $("#description").css('border', '2px solid red');
+            /* $("#error").text("Wrong format : "+input);*/
+        }
+    });
 
 </script>
 
