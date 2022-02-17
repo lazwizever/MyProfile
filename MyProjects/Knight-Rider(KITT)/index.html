@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Js-Events</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+
+    <style>
+
+    body>div{
+        position: absolute;
+        width: 200px;
+        height: 100px;
+    }
+
+    body>div:nth-child(1){
+        top: 40vh;
+        left: 19.8vw;
+        background-color: #eb2f06;
+    }
+
+    body>div:nth-child(2){
+        top: 40vh;
+        left: 32.8vw;
+        background-color:#000000 ;
+    }
+
+    body>div:nth-child(3){
+        top: 40vh;
+        left: 45.8vw;
+        background-color: #4cd137;
+    }
+
+    body>div:nth-child(4){
+        top: 40vh;
+        left: 58.8vw;
+        background-color: #0652DD;
+    }
+
+    body>div:nth-child(5){
+        top: 40vh;
+        left: 71.8vw;
+        background-color: deeppink;
+    }
+
+    body>button{
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        top: 60vh;
+        left: 30vw;
+
+    }
+
+    #btnStart{
+       top: 80vh;
+        left: 40vw;
+    }
+
+    #btnStop{
+        top: 80vh;
+        left: 20vw;
+    }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<div id="d5"></div>
+
+<button id="btnStart">Start</button>
+<button id="btnStop">Stop</button>
+
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    let interval = setInterval(changeColour,900);
+   setTimeout(interval,100);
+    function changeColour(){
+
+        let d1 = $("#d1").css('background-color');
+        let d2 = $("#d2").css('background-color');
+        let d3 = $("#d3").css('background-color');
+        let d4 = $("#d4").css('background-color');
+        let d5 = $("#d5").css('background-color');
+
+        $("#d1").css('background-color',d5);
+        $("#d2").css('background-color',d1);
+        $("#d3").css('background-color',d2);
+        $("#d4").css('background-color',d3);
+        $("#d5").css('background-color',d4);
+
+    }
+
+    setInterval(changeColour1,2000);
+    
+    function changeColour1(){
+
+        let d1 = $("#d1").css('background-color');
+        let d2 = $("#d2").css('background-color');
+        let d3 = $("#d3").css('background-color');
+        let d4 = $("#d4").css('background-color');
+        let d5 = $("#d5").css('background-color');
+
+        $("#d1").css('background-color',d2);
+        $("#d2").css('background-color',d3);
+        $("#d3").css('background-color',d4);
+        $("#d4").css('background-color',d5);
+        $("#d5").css('background-color',d1);
+
+    }
+
+
+
+    $("#btnStart").click(function (){
+
+    });
+
+
+</script>
+
+</body>
+</html>
