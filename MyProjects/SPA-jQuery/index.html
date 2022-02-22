@@ -6,6 +6,8 @@
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
+    <link href="db/DB.js" rel="stylesheet">
+
 
     <style>
         header{
@@ -332,19 +334,19 @@
                         <p><small id="error" class="text-danger pl-1"></small></p>
                     </div>
 
-                    <div class="col-md-10">
+                    <div class="col-md-4">
                         <label for="custName" class="form-label">Customer Name</label>
                         <input type="text" class="form-control" id="custName">
                         <p><small id="error1" class="text-danger pl-1"></small></p>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-6">
                         <label for="custAddress" class="form-label">Customer Address</label>
                         <input type="text"  class="form-control" id="custAddress">
                         <p><small id="error2" class="text-danger pl-1"></small></p>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <label for="inputCity" class="form-label">City</label>
                         <input type="text" class="form-control" id="inputCity">
                         <p><small id="error3" class="text-danger pl-1"></small></p>
@@ -368,8 +370,8 @@
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
                         <button type="button" id="btnCustomerRegister" class="btn btn-secondary">Register</button>
-                        <button type="submit" style="background-color:#4cd137; color:white"  class="btn">Update</button>
-                        <button type="submit" class="btn btn-danger">Delete </button>
+                        <button type="button" style="background-color:#4cd137; color:white" id="btnCustomerDelete" class="btn">Update</button>
+                        <button type="button" class="btn btn-danger">Delete </button>
                     </div>
                 </form>
             </div>
@@ -646,6 +648,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script src="db/DB.js"></script>
+<script src="controller/CustomerController.js"></script>
+<script src="module/Customer.js"></script>
 
 
 <script>
@@ -717,66 +722,6 @@
 
 
     });
-
-
-
-   /*------------------Adding customer Details To Table--------------------*/
-
-    $("#btnCustomerRegister").click(function (){
-
-        $("#customerTable>tr").off("click");
-
-        let customerId = $("#inputnewId").val();
-        let customerName = $("#custName").val();
-        let customerAddress = $("#custAddress").val();
-        let city = $("#inputCity").val();
-        let postalCode = $("#postalCode").val();
-
-
-        /*-----------------Adding values to table---------------------*/
-
-        let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
-        $("#customerTable").append(row);
-
-        /*------------------------------------------------------------*/
-
-
-        /*------------Clear text fields---------------*/
-        $("#inputnewId").val("");
-        $("#custName").val("");
-        $("#custAddress").val("");
-        $("#inputCity").val("");
-        $("#postalCode").val("");
-        /*------------------------------------------------------------*/
-
-
-        /*----------Set table values to text fields------------------*/
-
-        $("#customerTable>tr").click(function(){
-
-           let cusId = $(this).children(':nth-child(1)').text();
-           $("#inputnewId").val(cusId);
-
-            let cusName = $(this).children(':nth-child(2)').text();
-            $("#custName").val(cusName);
-
-            let cusAddress = $(this).children(':nth-child(3)').text();
-            $("#custAddress").val(cusAddress);
-
-            let city = $(this).children(':nth-child(4)').text();
-            $("#inputCity").val(city);
-
-            let postalCode = $(this).children(':nth-child(5)').text();
-            $("#postalCode").val(postalCode);
-
-        });
-        /*------------------------------------------------------------*/
-
-    });
-
-    /*--------------------------------------------------------------------------------------------------*/
-
-
 
     /*--------------Adding Item Details To Table---------------------------*/
 
