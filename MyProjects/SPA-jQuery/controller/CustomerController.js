@@ -1,9 +1,4 @@
-
-/*------------------Adding customer Details To Table--------------------*/
-
-$("#btnCustomerRegister").click(function (){
-
-    alert("Customer has been added successfully");
+function saveCustomer(){
 
     $("#customerTable>tr").off("click");
 
@@ -15,6 +10,18 @@ $("#btnCustomerRegister").click(function (){
     let postalCode = $("#postalCode").val();
 
 
+    for (let i = 0; i < customerArray.length; i++) {
+        if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
+            alert("This customer has been added added");
+
+        }else {
+            alert("Customer has been added successfully");
+            var customer = new Customer(customerId,customerName,customerAddress,city,province,postalCode);
+            customerArray.push(customer);
+        }
+    }
+
+
     /*-----------------Adding values to table---------------------*/
 
     let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
@@ -22,54 +29,17 @@ $("#btnCustomerRegister").click(function (){
 
     /*------------------------------------------------------------*/
 
+}
 
-    var customer = {
-        cusId : customerId,
-        cusName : customerName,
-        cusAddress : customerAddress,
-        cusCity : city,
-        cusProvince : province,
-        cusPostalCode : postalCode,
-    }
-
-    customerArray.unshift(customer);
-
-    /*------------Clear text fields---------------*/
+function clearTextFields(){
     $("#inputnewId").val("");
     $("#custName").val("");
     $("#custAddress").val("");
     $("#inputCity").val("");
     $("#postalCode").val("");
-    /*------------------------------------------------------------*/
+}
 
-
-    /*-------------Delete Customer-------------------------*/
-
-    $("#customerTable>tr").dblclick(function (){
-        confirmMessage = confirm("Do you really want to remove this customer...?");
-
-        if (confirmMessage){
-            for (let i = 0; i < customerArray.length; i++) {
-                if ( $(this).children(":eq(0)").text() == customerArray[i].cusId) {
-                    customerArray.splice(i, 1);
-
-                    $("#customerTable>tr").remove();
-                    $("#custName").val("");
-                    $("#inputnewId").val("");
-                    $("#custName").val("");
-                    $("#custAddress").val("");
-                    $("#inputCity").val("");
-                    $("#postalCode").val("");
-                }
-            }
-        }
-    });
-
-    /*-----------------------------------------------------*/
-
-
-    /*----------Set table values to text fields------------------*/
-
+function setCustomerDetailsToFields(){
     $("#customerTable>tr").click(function(){
 
         let cusId = $(this).children(':nth-child(1)').text();
@@ -88,7 +58,38 @@ $("#btnCustomerRegister").click(function (){
         $("#postalCode").val(postalCode);
 
     });
-    /*------------------------------------------------------------*/
+}
+
+function deleteCustomerDoubleClickRow(){
+    $("#customerTable>tr").dblclick(function (){
+       confirm("Do you really want to remove this customer...?");
+
+            for (let i = 0; i < customerArray.length; i++) {
+                if ( $(this).children(":eq(0)").text() == customerArray[i].getCustomerId()) {
+                    customerArray.splice(i, 1);
+
+                    $(this).remove();
+
+                    $("#custName").val("");
+                    $("#inputnewId").val("");
+                    $("#custName").val("");
+                    $("#custAddress").val("");
+                    $("#inputCity").val("");
+                    $("#postalCode").val("");
+                }
+            }
+    });
+}
+
+
+
+/*------------------Save Customer--------------------*/
+
+$("#btnCustomerRegister").click(function (){
+    saveCustomer();
+    clearTextFields();
+    setCustomerDetailsToFields();
+    deleteCustomerDoubleClickRow();
 
 });
 
@@ -96,27 +97,74 @@ $("#btnCustomerRegister").click(function (){
 
 
 
+
 /*-------------------Delete Customer-----------------------------------*/
 
-$("#btnCustomerDelete").click(function (){
-    confirmMessage = confirm("Do you really want to remove this customer...?");
+$("#btnCustomerDelete").click(function () {
+    confirm("Do you really want to remove this customer...?");
 
-    if (confirmMessage){
-        for (let i = 0; i < customerArray.length; i++) {
-            if ( $(this).children(":eq(0)").text() == customerArray[i].cusId) {
-                customerArray.splice(i, 1);
+                for (let i = 0; i < customerArray.length; i++) {
+                    if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
+                        customerArray.splice(i, 1);
 
-                $("#customerTable>tr").remove();
-                $("#custName").val("");
-                $("#inputnewId").val("");
-                $("#custName").val("");
-                $("#custAddress").val("");
-                $("#inputCity").val("");
-                $("#postalCode").val("");
-            }
+                        clearTextFields();
+                    }
+                }
+});
+
+/*---------------------------------------------------------------------*/
+
+
+
+
+
+
+/*------------------------Update Customer---------------------------------------*/
+
+function updateCustomer(){
+    alert("Customer has been successfully updated");
+
+    $("#customerTable>tr").off("click");
+
+    let customerId = $("#inputnewId").val();
+    let customerName = $("#custName").val();
+    let customerAddress = $("#custAddress").val();
+    let city = $("#inputCity").val();
+    let province = $("#province").val();
+    let postalCode = $("#postalCode").val();
+
+
+    for (let i = 0; i < customerArray.length; i++) {
+        if ( $(this).children(':nth-child(1)').text() == customerArray[i].cusId) {
+            customerArray.splice(i, 1);
         }
     }
 
+
+    /*-----------------Adding values to table---------------------*/
+
+    let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
+    $("#customerTable").append(row);
+
+    /*------------------------------------------------------------*/
+
+
+    var Customer = {
+        cusId : customerId,
+        cusName : customerName,
+        cusAddress : customerAddress,
+        cusCity : city,
+        cusProvince : province,
+        cusPostalCode : postalCode,
+    }
+
+    customerArray.push(Customer);
+
+}
+
+
+$("#btnUpdateCustomer").click(function (){
+    updateCustomer();
 });
 
-
+/*------------------------------------------------------------------------------*/
