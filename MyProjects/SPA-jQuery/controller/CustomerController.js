@@ -2,7 +2,7 @@ function saveCustomer(){
 
     $("#customerTable>tr").off("click");
 
-    let customerId = $("#inputnewId").val();
+    let customerId = $("#cusLabel1").text();
     let customerName = $("#custName").val();
     let customerAddress = $("#custAddress").val();
     let city = $("#inputCity").val();
@@ -10,16 +10,12 @@ function saveCustomer(){
     let postalCode = $("#postalCode").val();
 
 
-    for (let i = 0; i < customerArray.length; i++) {
-        if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
-            alert("This customer has been added added");
-
-        }else {
             alert("Customer has been added successfully");
+
             var customer = new Customer(customerId,customerName,customerAddress,city,province,postalCode);
             customerArray.push(customer);
-        }
-    }
+            generateCustomerId();
+
 
 
     /*-----------------Adding values to table---------------------*/
@@ -69,23 +65,37 @@ function deleteCustomerDoubleClickRow(){
                     customerArray.splice(i, 1);
 
                     $(this).remove();
-
-                    $("#custName").val("");
-                    $("#inputnewId").val("");
-                    $("#custName").val("");
-                    $("#custAddress").val("");
-                    $("#inputCity").val("");
-                    $("#postalCode").val("");
+                    clearTextFields();
                 }
             }
     });
 }
 
+function generateCustomerId(){
+    if (customerArray.length !== 0){
+        var cusId = customerArray[customerArray.length-1].getCustomerId();
+        let splitTxt = cusId.split("C",2);
+        let newCusId = parseInt(splitTxt[1]) + 1;
+        console.log(newCusId);
 
+        if (parseInt(newCusId) <= 9){
+            $("#cusLabel1").text("C00" + newCusId);
+
+        }else if (parseInt(newCusId) <= 99){
+            $("#cusLabel1").text("C0" + newCusId);
+
+        }else if (parseInt(newCusId) <= 99){
+            $("#cusLabel1").text("C" + newCusId);
+        }
+    }else {
+        $("#cusLabel1").text("C001")
+    }
+}
 
 /*------------------Save Customer--------------------*/
 
 $("#btnCustomerRegister").click(function (){
+    generateCustomerId();
     saveCustomer();
     clearTextFields();
     setCustomerDetailsToFields();
@@ -116,9 +126,6 @@ $("#btnCustomerDelete").click(function () {
 
 
 
-
-
-
 /*------------------------Update Customer---------------------------------------*/
 
 function updateCustomer(){
@@ -134,11 +141,17 @@ function updateCustomer(){
     let postalCode = $("#postalCode").val();
 
 
-    for (let i = 0; i < customerArray.length; i++) {
-        if ( $(this).children(':nth-child(1)').text() == customerArray[i].cusId) {
-            customerArray.splice(i, 1);
+        for (let i = 0; i < customerArray.length; i++) {
+            if ( $("#inputnewId").val() === customerArray[i].getCustomerId()) {
+                customerArray.splice(i, 1);
+
+                clearTextFields();
+            }
         }
-    }
+
+        
+    var customer = new Customer(customerId,customerName,customerAddress,city,province,postalCode);
+    customerArray.push(customer);
 
 
     /*-----------------Adding values to table---------------------*/
@@ -147,18 +160,6 @@ function updateCustomer(){
     $("#customerTable").append(row);
 
     /*------------------------------------------------------------*/
-
-
-    var Customer = {
-        cusId : customerId,
-        cusName : customerName,
-        cusAddress : customerAddress,
-        cusCity : city,
-        cusProvince : province,
-        cusPostalCode : postalCode,
-    }
-
-    customerArray.push(Customer);
 
 }
 

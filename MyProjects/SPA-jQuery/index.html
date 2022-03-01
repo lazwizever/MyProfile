@@ -205,16 +205,16 @@
             color: black;
             font-size: 25px;
             position: absolute;
-            top: 42vh;
-            right: 35vw;
+            top: 52vh;
+            right: 55vw;
         }
 
         #cusLabel1{
             color: black;
             font-size: 25px;
             position: absolute;
-            top: 42vh;
-            right: 32vw;
+            top: 39vh;
+            right: 49vw;
         }
 
     </style>
@@ -327,10 +327,9 @@
 
 <main id="m2">
     <p id="cusLabel" class="text-start">Customer Id :</p>
-   <!-- <h1 id="cusLabel1">C-001</h1>-->
     <!--customer section-->
     <section class="container-fluid" id="customerSection">
-
+        <p id="cusLabel1" class="text-start"></p>
         <section>
             <nav class="navbar navbar-light  bg-dark">
                 <div class="container-fluid">
@@ -667,42 +666,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script src="db/DB.js"></script>
+
 <script src="controller/CustomerController.js"></script>
+<script src="controller/ItemController.js"></script>
+
 <script src="module/Customer.js"></script>
+<script src="module/Item.js"></script>
 
 
 <script>
-
-    /*document.getElementById("navCustomer").addEventListener("click",function (){
-        document.getElementById("m1").style.display = "none";
-        document.getElementById("m2").style.display = "block";
-        document.getElementById("m3").style.display = "none";
-        document.getElementById("m4").style.display = "none";
-        document.getElementById("navCustomer").style.fontWeight = "bold";
-        document.getElementById("item").style.fontWeight = "normal";
-        document.getElementById("navPlaceOrder").style.fontWeight = "normal";
-    });*/
-
-    /*document.getElementById("item").addEventListener("click",function () {
-        document.getElementById("m1").style.display="none";
-        document.getElementById("m2").style.display="none";
-        document.getElementById("m3").style.display="block"
-        document.getElementById("m4").style.display="none"
-        document.getElementById("item").style.fontWeight = "bold";
-        document.getElementById("navPlaceOrder").style.fontWeight = "normal";
-        document.getElementById("navCustomer").style.fontWeight = "normal";
-    });*/
-
-    /*document.getElementById("navPlaceOrder").addEventListener("click",function () {
-        document.getElementById("m1").style.display="none";
-        document.getElementById("m2").style.display="none";
-        document.getElementById("m3").style.display="none";
-        document.getElementById("m4").style.display="block";
-        document.getElementById("navPlaceOrder").style.fontWeight = "bold";
-        document.getElementById("navCustomer").style.fontWeight = "normal";
-        document.getElementById("item").style.fontWeight = "normal";
-    });*/
-
 
     /*-------------------------Using jQuery------------------*/
 
@@ -740,70 +712,6 @@
 
 
     });
-
-    /*--------------Adding Item Details To Table---------------------------*/
-
-    $("#btnItemRegister").click(function (){
-
-        $("#customerTable>tr").off("click");
-
-        let itemCode = $("#itemCode").val();
-        let itemDescription = $("#inputDescription").val();
-        let packSize = $("#packSize").val();
-        let unitPrice = $("#unitPrice").val();
-        let qty = $("#inputQTy").val();
-        let discount = $("#inputDiscount").val();
-
-
-        /*-----------------Set values for table----------------*/
-
-        let row = `<tr><td>${itemCode}</td><td>${itemDescription}</td><td>${packSize}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
-        $("#itemTable").append(row);
-        /*-----------------------------------------------------*/
-
-
-        /*-----------------Clear text fields-------------------------*/
-        $("#itemCode").val("");
-        $("#inputDescription").val("");
-        $("#packSize").val("");
-        $("#unitPrice").val("");
-        $("#inputQTy").val("");
-        $("#inputDiscount").val("");
-
-        /*------------------------------------------------------------*/
-
-
-
-        /*---------------Set table values to text fields--------------*/
-
-        $("#itemTable>tr").click(function(){
-
-            let itemCode = $(this).children(':nth-child(1)').text();
-            $("#itemCode").val(itemCode);
-
-            let description = $(this).children(':nth-child(2)').text();
-            $("#inputDescription").val(description);
-
-            let packSize = $(this).children(':nth-child(3)').text();
-            $("#packSize").val(packSize);
-
-            let unitPrice = $(this).children(':nth-child(4)').text();
-            $("#unitPrice").val(unitPrice);
-
-            let QTY = $(this).children(':nth-child(5)').text();
-            $("#inputQTy").val(QTY);
-
-            let discount = $(this).children(':nth-child(6)').text();
-            $("#inputDiscount").val(discount);
-
-        });
-
-        /*------------------------------------------------------------*/
-
-    });
-
-    /*---------------------------------------------------------------------*/
-
 
 
     /*--------------Adding placeOrder Details To Table---------------------------*/
