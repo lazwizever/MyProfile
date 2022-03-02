@@ -43,7 +43,7 @@ function loadCustomerDetailsToTbl() {
                 customerArray.splice(i, 1);
 
                 $(this).remove();
-                clearTextFields();
+                clearCustomerTextFields();
             }
         }
     });
@@ -86,7 +86,6 @@ function generateCustomerId() {
         var cusId = customerArray[customerArray.length - 1].getCustomerId();
         let splitTxt = cusId.split("C", 2);
         let newCusId = parseInt(splitTxt[1]) + 1;
-        console.log(newCusId);
 
         if (parseInt(newCusId) <= 9) {
             $("#inputnewId").val("C00" + newCusId);
@@ -98,7 +97,7 @@ function generateCustomerId() {
             $("#inputnewId").val("C" + newCusId);
         }
     } else {
-        $("#inputnewId").val("C001");
+        $("#inputnewId").val("C001").css('font-weight', 'bold');;
     }
 }
 
@@ -137,7 +136,7 @@ function deleteCustomer(){
     for (let i = 0; i < customerArray.length; i++) {
         if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
             customerArray.splice(i, 1);
-            clearTextFields();
+            clearCustomerTextFields();
         }
     }
     loadCustomerDetailsToTbl();
@@ -146,10 +145,106 @@ function deleteCustomer(){
 
 
 
-$("#btnCustomerRegister").click(function () {
-    saveCustomer();
 
-});
+
+/*-----------Validations--------------*/
+
+var regExCusName = /^([A-z\s]{3,20})$/;
+var regExCusAddress = /^([A-z0-9/,\s]{3,})$/;
+var regExCity = /^([A-z]{3,20})$/;
+var regExPostalCode = /^([0-9]{3,5})$/;
+
+
+function validateCustomerName(){
+    $("#custName").keyup(function () {
+        let input = $("#custName").val();
+
+        if (regExCusName.test(input)) {
+            $("#error1").text("");
+            $("#custName").css('border', '2px solid green');
+
+            $("#custName").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#custAddress").focus();
+                }
+            });
+
+        } else {
+            $("#custName").css('border', '2px solid red');
+            $("#error1").text("Wrong format : "+input);
+
+        }
+    });
+}
+
+function validateCusAddress(){
+    $("#custAddress").keyup(function () {
+        let input = $("#custAddress").val();
+
+        if (regExCusAddress.test(input)) {
+            $("#error2").text("");
+            $("#custAddress").css('border', '2px solid green');
+
+            $("#custAddress").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#inputCity").focus();
+                }
+            });
+
+        } else {
+            $("#custAddress").css('border', '2px solid red');
+            $("#error2").text("Wrong format : "+input);
+
+        }
+    });
+}
+
+function validateCustomerCity(){
+    $("#inputCity").keyup(function () {
+        let input = $("#inputCity").val();
+
+        if (regExCity.test(input)) {
+            $("#error3").text("");
+            $("#inputCity").css('border', '2px solid green');
+
+            $("#inputCity").keydown(function (e){
+                if (e.key == 'Enter'){
+                    $("#postalCode").focus();
+                }
+            });
+
+        } else {
+            $("#inputCity").css('border', '2px solid red');
+            $("#error3").text("Wrong format : "+input);
+
+        }
+    });
+}
+
+function validateCustomerPostalCode(){
+    $("#postalCode").keyup(function () {
+        let input = $("#postalCode").val();
+
+        if (regExPostalCode.test(input)) {
+            $("#error4").text("");
+            $("#postalCode").css('border', '2px solid green');
+
+        } else {
+            $("#postalCode").css('border', '2px solid red');
+            $("#error4").text("Wrong format : "+input);
+
+        }
+    });
+}
+
+
+    $("#btnCustomerRegister").click(function () {
+        saveCustomer();
+        generateCustomerId();
+    });
+
+
+
 
 $("#btnCustomerDelete").click(function () {
     deleteCustomer();
@@ -159,3 +254,8 @@ $("#btnUpdateCustomer").click(function () {
     updateCustomer();
     generateCustomerId();
 });
+
+
+
+
+
