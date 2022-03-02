@@ -1,42 +1,57 @@
-function saveCustomer(){
+generateCustomerId();
 
-    $("#customerTable>tr").off("click");
+function saveCustomer() {
 
-    let customerId = $("#cusLabel1").text();
+    let customerId = $("#inputnewId").val();
     let customerName = $("#custName").val();
     let customerAddress = $("#custAddress").val();
     let city = $("#inputCity").val();
     let province = $("#province").val();
     let postalCode = $("#postalCode").val();
 
+    $("#customerTable").empty();
 
-            alert("Customer has been added successfully");
+    var customer = new Customer(customerId, customerName, customerAddress, city, province, postalCode);
+    customerArray.push(customer);
+    clearCustomerTextFields();
 
-            var customer = new Customer(customerId,customerName,customerAddress,city,province,postalCode);
-            customerArray.push(customer);
-            generateCustomerId();
-
-
-
-    /*-----------------Adding values to table---------------------*/
-
-    let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
-    $("#customerTable").append(row);
-
-    /*------------------------------------------------------------*/
+    generateCustomerId();
+    loadCustomerDetailsToTbl();
+    alert("Customer has been added successfully");
 
 }
 
-function clearTextFields(){
-    $("#inputnewId").val("");
-    $("#custName").val("");
-    $("#custAddress").val("");
-    $("#inputCity").val("");
-    $("#postalCode").val("");
-}
+function loadCustomerDetailsToTbl() {
+    $("#customerTable>tr").off("click");
+    $("#customerTable>tr").off("dblclick");
 
-function setCustomerDetailsToFields(){
-    $("#customerTable>tr").click(function(){
+
+    for (let i of customerArray) {
+        let row = `<tr><td>${i.getCustomerId()}</td><td>${i.getCustomerName()}</td><td>${i.getCustomerAddress()}</td><td>${i.getCustomerCity()}</td><td>${i.getCustomerPostalCode()}</td></tr>`;
+        $("#customerTable").append(row);
+
+    }
+
+
+    /*-----Delete Details When Double Clicking----*/
+
+    $("#customerTable>tr").dblclick(function () {
+        confirm("Do you really want to remove this customer...?");
+
+        for (let i = 0; i < customerArray.length; i++) {
+            if ($(this).children(":eq(0)").text() == customerArray[i].getCustomerId()) {
+                customerArray.splice(i, 1);
+
+                $(this).remove();
+                clearTextFields();
+            }
+        }
+    });
+
+
+    /*-----Set customer details to tbl--------*/
+
+    $("#customerTable>tr").click(function () {
 
         let cusId = $(this).children(':nth-child(1)').text();
         $("#inputnewId").val(cusId);
@@ -54,82 +69,40 @@ function setCustomerDetailsToFields(){
         $("#postalCode").val(postalCode);
 
     });
+
 }
 
-function deleteCustomerDoubleClickRow(){
-    $("#customerTable>tr").dblclick(function (){
-       confirm("Do you really want to remove this customer...?");
-
-            for (let i = 0; i < customerArray.length; i++) {
-                if ( $(this).children(":eq(0)").text() == customerArray[i].getCustomerId()) {
-                    customerArray.splice(i, 1);
-
-                    $(this).remove();
-                    clearTextFields();
-                }
-            }
-    });
+function clearCustomerTextFields() {
+    $("#inputnewId").val("");
+    $("#custName").val("");
+    $("#custAddress").val("");
+    $("#inputCity").val("");
+    $("#postalCode").val("");
 }
 
-function generateCustomerId(){
-    if (customerArray.length !== 0){
-        var cusId = customerArray[customerArray.length-1].getCustomerId();
-        let splitTxt = cusId.split("C",2);
+function generateCustomerId() {
+
+    if (customerArray.length !== 0) {
+        var cusId = customerArray[customerArray.length - 1].getCustomerId();
+        let splitTxt = cusId.split("C", 2);
         let newCusId = parseInt(splitTxt[1]) + 1;
         console.log(newCusId);
 
-        if (parseInt(newCusId) <= 9){
-            $("#cusLabel1").text("C00" + newCusId);
+        if (parseInt(newCusId) <= 9) {
+            $("#inputnewId").val("C00" + newCusId);
 
-        }else if (parseInt(newCusId) <= 99){
-            $("#cusLabel1").text("C0" + newCusId);
+        } else if (parseInt(newCusId) <= 99) {
+            $("#inputnewId").val("C0" + newCusId);
 
-        }else if (parseInt(newCusId) <= 99){
-            $("#cusLabel1").text("C" + newCusId);
+        } else if (parseInt(newCusId) <= 99) {
+            $("#inputnewId").val("C" + newCusId);
         }
-    }else {
-        $("#cusLabel1").text("C001")
+    } else {
+        $("#inputnewId").val("C001");
     }
 }
 
-/*------------------Save Customer--------------------*/
-
-$("#btnCustomerRegister").click(function (){
-    generateCustomerId();
-    saveCustomer();
-    clearTextFields();
-    setCustomerDetailsToFields();
-    deleteCustomerDoubleClickRow();
-
-});
-
-/*--------------------------------------------------------------------------------------------------*/
-
-
-
-
-/*-------------------Delete Customer-----------------------------------*/
-
-$("#btnCustomerDelete").click(function () {
-    confirm("Do you really want to remove this customer...?");
-
-                for (let i = 0; i < customerArray.length; i++) {
-                    if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
-                        customerArray.splice(i, 1);
-
-                        clearTextFields();
-                    }
-                }
-});
-
-/*---------------------------------------------------------------------*/
-
-
-
-/*------------------------Update Customer---------------------------------------*/
-
-function updateCustomer(){
-    alert("Customer has been successfully updated");
+function updateCustomer() {
 
     $("#customerTable>tr").off("click");
 
@@ -141,31 +114,48 @@ function updateCustomer(){
     let postalCode = $("#postalCode").val();
 
 
-        for (let i = 0; i < customerArray.length; i++) {
-            if ( $("#inputnewId").val() === customerArray[i].getCustomerId()) {
-                customerArray.splice(i, 1);
+    $("#customerTable").empty();
+    for (let i = 0; i < customerArray.length; i++) {
+        if ($("#inputnewId").val() === customerArray[i].getCustomerId()) {
+            customerArray.splice(i, 1);
 
-                clearTextFields();
-            }
+            clearCustomerTextFields();
         }
+    }
 
-        
-    var customer = new Customer(customerId,customerName,customerAddress,city,province,postalCode);
+    var customer = new Customer(customerId, customerName, customerAddress, city, province, postalCode);
     customerArray.push(customer);
 
+    loadCustomerDetailsToTbl();
+    alert("Customer has been successfully updated");
+}
 
-    /*-----------------Adding values to table---------------------*/
+function deleteCustomer(){
+    confirm("Do you really want to remove this customer...?");
 
-    let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${city}</td><td>${postalCode}</td></tr>`;
-    $("#customerTable").append(row);
-
-    /*------------------------------------------------------------*/
-
+    $("#customerTable").empty();
+    for (let i = 0; i < customerArray.length; i++) {
+        if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
+            customerArray.splice(i, 1);
+            clearTextFields();
+        }
+    }
+    loadCustomerDetailsToTbl();
+    generateCustomerId();
 }
 
 
-$("#btnUpdateCustomer").click(function (){
-    updateCustomer();
+
+$("#btnCustomerRegister").click(function () {
+    saveCustomer();
+
 });
 
-/*------------------------------------------------------------------------------*/
+$("#btnCustomerDelete").click(function () {
+    deleteCustomer();
+});
+
+$("#btnUpdateCustomer").click(function () {
+    updateCustomer();
+    generateCustomerId();
+});

@@ -12,6 +12,7 @@ function saveItem(){
 
     var item = new Item(itemCode,itemDescription,packSize,unitPrice,qty,discount);
     itemArray.push(item);
+    generateItemIds();
 
     /*-----------------Set values for table----------------*/
 
@@ -30,7 +31,7 @@ function clearTextFields(){
     $("#inputDiscount").val("");
 }
 
-function setItemDetailsToTbl(){
+function setItemDetailsToTxtFields(){
 
     $("#itemTable>tr").click(function(){
 
@@ -55,11 +56,79 @@ function setItemDetailsToTbl(){
     });
 }
 
+function deleteItem(){
+    confirm("Do you really want to remove this customer...?");
+
+    for (let i = 0; i < itemArray.length; i++) {
+        if ($("#itemCode").val() == itemArray[i].getItemId()) {
+            itemArray.splice(i, 1);
+
+            clearTextFields();
+        }
+    }
+}
+
+function updateItem(){
+    alert("Item has been successfully updated");
+
+    $("#itemTable>tr").off("click");
+
+    let itemCode = $("#itemCode").val();
+    let itemDescription = $("#inputDescription").val();
+    let packSize = $("#packSize").val();
+    let unitPrice = $("#unitPrice").val();
+    let qty = $("#inputQTy").val();
+    let discount = $("#inputDiscount").val();
+
+
+    for (let i = 0; i < itemArray.length; i++) {
+        if ( $("#itemCode").val() === itemArray[i].getItemId()) {
+            itemArray.splice(i, 1);
+
+            clearTextFields();
+        }
+    }
+
+
+    var item = new Item(itemCode,itemDescription,packSize,unitPrice,qty,discount);
+    itemArray.push(item);
+
+
+    /*-----------------Adding values to table---------------------*/
+
+    let row = `<tr><td>${itemCode}</td><td>${itemDescription}</td><td>${packSize}</td><td>${unitPrice}</td><td>${qty}</td><td>${discount}</td></tr>`;
+    $("#customerTable").append(row);
+
+    /*------------------------------------------------------------*/
+
+}
+
+function generateItemIds(){
+    if (itemArray.length !== 0){
+        var itemId = itemArray[itemArray.length-1].getItemId();
+        let splitTxt = itemId.split("C",2);
+        let newItemId = parseInt(splitTxt[1]) + 1;
+
+        if (parseInt(newItemId) <= 9){
+            $("#itemIdLabel1").text("I00" + newItemId);
+
+        }else if (parseInt(newItemId) <= 99){
+            $("#itemIdLabel1").text("I0" + newItemId);
+
+        }else if (parseInt(newItemId) <= 99){
+            $("#itemIdLabel1").text("I" + newItemId);
+        }
+    }else {
+        $("#itemIdLabel1").text("I001")
+    }
+}
+
 /*------------------Save Item-----------------*/
 $("#btnItemRegister").click(function (){
     saveItem();
+    generateItemIds();
     clearTextFields();
-    setItemDetailsToTbl();
+    setItemDetailsToTxtFields();
 });
 
 /*--------------------------------------------*/
@@ -79,14 +148,16 @@ $("#itemTable>tr").dblclick(function (){
     });
 
 
-function deleteCustomer(){
-    confirm("Do you really want to remove this customer...?");
+/*-----------------Delete Item----------------*/
+$("#btnItemDelete").click(function (){
+    deleteItem();
+});
 
-    for (let i = 0; i < customerArray.length; i++) {
-        if ($("#inputnewId").val() == customerArray[i].getCustomerId()) {
-            customerArray.splice(i, 1);
+/*--------------------------------------------*/
 
-            clearTextFields();
-        }
-    }
-}
+
+$("#btnItemUpdate").click(function (){
+updateCustomer();
+
+});
+
