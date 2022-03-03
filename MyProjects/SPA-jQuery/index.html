@@ -348,8 +348,8 @@
             <nav class="navbar navbar-light  bg-dark">
                 <div class="container-fluid">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" id="txtSearchCustomer" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" id="btnSearchCustomer" type="button">Search</button>
                     </form>
                 </div>
             </nav>
@@ -445,8 +445,8 @@
             <nav class="navbar navbar-light  bg-dark">
                 <div class="container-fluid">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Search" id="txtItemSearch" aria-label="Search">
+                        <button class="btn btn-outline-success" id="btnItemSearch" type="button">Search</button>
                     </form>
                 </div>
             </nav>
@@ -585,8 +585,8 @@
                 <form class="row">
 
                     <div class="col-md-2">
-                        <label for="itemId" class="form-label">Item Code</label>
-                        <select id="itemId" class="form-select">
+                        <label for="cmbItemIds" class="form-label">Item Code</label>
+                        <select id="cmbItemIds" class="form-select">
                         </select>
                     </div>
 
@@ -721,7 +721,7 @@
         $("#item").css("fontWeight","normal");
         $("#navPlaceOrder").css("fontWeight","bold");
 
-
+        loadAllItemIds();
     });
 
 

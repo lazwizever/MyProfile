@@ -154,6 +154,15 @@ function updateItem(){
 
 }
 
+function searchItem(id){
+
+    for (let i = 0; i < itemArray.length; i++) {
+        if (id === itemArray[i].getItemId()){
+            return itemArray[i];
+        }
+    }
+}
+
 
 
 
@@ -170,6 +179,27 @@ $("#btnItemUpdate").click(function (){
     updateItem();
     generateItemIds();
 });
+
+$("#btnItemSearch").click(function (){
+
+    var obItem = searchItem($("#txtItemSearch").val());
+
+    if (obItem){
+        $("#itemCode").val(obItem.getItemId());
+        $("#inputDescription").val(obItem.getItemDescription());
+        $("#packSize").val(obItem.getPackSize());
+        $("#unitPrice").val(obItem.getUnitPrize());
+        $("#inputQTy").val(obItem.getQtyOnHand());
+        $("#inputDiscount").val(obItem.getDiscount());
+
+    }else {
+        clearCustomerTextFields();
+        alert("No such a item");
+    }
+
+});
+
+
 
 
 /*------Validations--------*/

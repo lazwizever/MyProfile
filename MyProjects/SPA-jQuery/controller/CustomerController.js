@@ -143,7 +143,14 @@ function deleteCustomer(){
     generateCustomerId();
 }
 
+function searchCustomer(cusId){
 
+    for (let i = 0; i < customerArray.length; i++) {
+        if (cusId === customerArray[i].getCustomerId()){
+            return customerArray[i];
+        }
+    }
+}
 
 
 
@@ -238,13 +245,10 @@ function validateCustomerPostalCode(){
 }
 
 
-    $("#btnCustomerRegister").click(function () {
+$("#btnCustomerRegister").click(function () {
         saveCustomer();
         generateCustomerId();
     });
-
-
-
 
 $("#btnCustomerDelete").click(function () {
     deleteCustomer();
@@ -255,7 +259,25 @@ $("#btnUpdateCustomer").click(function () {
     generateCustomerId();
 });
 
+$("#btnSearchCustomer").click(function (){
+    let txtId = $("#txtSearchCustomer").val();
 
+   var obCustomer = searchCustomer(txtId);
+
+   if (obCustomer){
+       $("#inputnewId").val(obCustomer.getCustomerId);
+       $("#custName").val(obCustomer.getCustomerName());
+       $("#custAddress").val(obCustomer.getCustomerAddress());
+       $("#inputCity").val(obCustomer.getCustomerCity());
+       $("#province").val(obCustomer.getCustomerProvince());
+       $("#postalCode").val(obCustomer.getCustomerPostalCode());
+
+   }else {
+       clearCustomerTextFields();
+       alert("No such a Customer");
+   }
+
+});
 
 
 
