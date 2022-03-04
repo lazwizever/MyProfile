@@ -75,9 +75,6 @@ function loadItemDetailsToTbl(){
         $("#inputDiscount").val(discount);
 
     });
-
-
-
 }
 
 function generateItemIds(){

@@ -534,8 +534,8 @@
             <nav class="navbar navbar-light  bg-dark">
                 <div class="container-fluid">
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search Order" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" id="txtSearchOrder" placeholder="Search Order" aria-label="Search">
+                        <button class="btn btn-outline-success" id="btnSearchOrder"  type="button">Search</button>
                     </form>
                 </div>
             </nav>
@@ -549,32 +549,31 @@
 
                     <div class="col-md-2">
                         <label for="orderId" class="form-label">Order Id</label>
-                        <input type="text" placeholder="O-001" class="form-control" id="orderId" >
+                        <input type="text" class="form-control" id="orderId" >
                     </div>
 
                     <div class="col-md-2">
                         <label for="customerId" class="form-label">Customer Id</label>
-                        <input type="text" placeholder="C-001" class="form-control" id="customerId">
+                        <select id="customerId" class="form-select">
+                        </select>
                     </div>
 
                     <div class="col-md-5">
                         <label for="customerName" class="form-label">Customer Name</label>
-                        <input type="text" placeholder="Lasan Kariyawasam" class="form-control" id="customerName">
+                        <input type="text" class="form-control" id="customerName">
                     </div>
 
 
                     <div class="col-md-4">
                         <label for="itemCodes" class="form-label">Item Code</label>
                         <select id="itemCodes" class="form-select">
-                            <option selected>I-001</option>
-                            <option>I-002</option>
                         </select>
                     </div>
 
 
                     <div class="col-md-5">
-                        <label for="oDate" class="form-label">Order Date</label>
-                        <input type="text" placeholder="18-01-2022" class="form-control" id="oDate">
+                        <label for="oDate"  class="form-label">Order Date</label>
+                        <input type="text" class="form-control" id="oDate">
                     </div>
 
                 </form>
@@ -725,6 +724,8 @@
         $("#navPlaceOrder").css("fontWeight","bold");
 
         loadAllItemIds();
+        loadAllCustomerIds();
+        setCurrentDate();
     });
 
 

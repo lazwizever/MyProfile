@@ -6,7 +6,7 @@ function ItemDetails(itemCode,description,customerQTY,unitPrice,discount){
     var __discount = discount;
 
 
-    this.getItemCode = function (){
+    this.getOrderItemCode = function (){
         return __itemCode;
     }
 
@@ -14,35 +14,35 @@ function ItemDetails(itemCode,description,customerQTY,unitPrice,discount){
         __itemCode = id;
     }
 
-    this.getItemDescription = function (){
+    this.getOrderItemDescription = function (){
         return __description;
     }
 
-    this.setItemDescription = function (description){
+    this.setOrderItemDescription = function (description){
         __description = description;
     }
 
-    this.getCustomerQTY = function (){
+    this.getOrderCustomerQTY = function (){
         return __customerQTY;
     }
 
-    this.setCustomerQTY = function (qty){
+    this.setOrderCustomerQTY = function (qty){
         __customerQTY = qty;
     }
 
-    this.getUnitPrice = function (){
+    this.getOrderUnitPrice = function (){
         return __unitPrice;
     }
 
-    this.setUnitPrice = function (unitPrice){
+    this.setOrderUnitPrice = function (unitPrice){
         __unitPrice = unitPrice;
     }
 
-    this.getDiscount = function (){
+    this.getOrderItemDiscount = function (){
         return __discount;
     }
 
-    this.setDiscount = function (discount){
+    this.setOrderItemDiscount = function (discount){
         __discount = discount;
     }
 
