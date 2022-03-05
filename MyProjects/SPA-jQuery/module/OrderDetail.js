@@ -1,6 +1,7 @@
-function OrderDetails(orderId,cusId,orderDate){
+function OrderDetails(orderId,cusId,itemId,orderDate){
     var __orderId = orderId;
     var __cusId = cusId;
+    var __itemId = itemId;
     var __orderDate = orderDate;
     var itemDetailsArray = new Array();
 
@@ -21,11 +22,19 @@ function OrderDetails(orderId,cusId,orderDate){
         __cusId = cId;
     }
 
+    this.getOrdItemId = function (){
+        return __itemId;
+    }
+
+    this.setOrdItemId = function (iId){
+        __itemId = iId;
+    }
+
     this.getOrdDate = function (){
         return __orderDate;
     }
 
-    this.setOdDate = function (oDate){
+    this.setOrdDate = function (oDate){
         __orderDate = oDate;
     }
 

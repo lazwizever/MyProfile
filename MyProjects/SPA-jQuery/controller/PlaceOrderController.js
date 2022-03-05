@@ -44,8 +44,8 @@ function setItemDetailsFromItemCode(){
 }
 
 function generateOrderId(){
-    if (ordersArray.length !== 0){
-        var orderId = ordersArray[ordersArray.length-1].getOrderId();
+    if (orderDetailsArray.length !== 0){
+        var orderId = orderDetailsArray[orderDetailsArray.length-1].getOrderId();
         let splitTxt = orderId.split("O",2);
         let newOrderId = parseInt(splitTxt[1]) + 1;
 
@@ -64,7 +64,7 @@ function generateOrderId(){
 }
 
 function clearPlaceOrderFields(){
-    $("#cmbItemIds").val("");
+    $("#cmbItemIds").empty()
     $("#description").val("");
     $("#custQTY").val("");
     $("#unitPrices").val("");
@@ -72,7 +72,8 @@ function clearPlaceOrderFields(){
 
     $("#orderId").val("");
     $("#customerName").val("");
-    $("#itemCodes").val("");
+    $("#itemCodes").empty();
+    $("#customerId").empty();
     $("#oDate").val("");
 
 }
@@ -98,11 +99,18 @@ function placeOrder(){
     let unitPrices = $("#unitPrices").val();
     let itemDiscount = $("#discount").val();
 
-    let orderId = $("#orderId").val();
-    let customerId = $("#customerId").val();
-    let itemCode = $("#itemCodes").val();
-    let orderDate = $("#oDate").val();
+    $("#itemCodes").on("change",function(){
+        let itemIds = $(this).find('option:selected').text();
+        let orderId = $("#orderId").val();
+        let customerId = $("#customerId").val();
+        let itemCode = $("#itemCodes").val();
+        let orderDate = $("#oDate").val();
 
+
+        var obOrderDetails =  new OrderDetails(orderId,customerId,itemIds,orderDate,itemDetailsArray);
+        orderDetailsArray.push(obOrderDetails);
+
+    });
 
     $("#placeOrderTable").empty();
 
@@ -115,11 +123,8 @@ function placeOrder(){
     itemDetailsArray.push(itemDetailsForOrder);
 
 
-    var obOrderDetails =  new OrderDetails(orderId,customerId,orderDate,itemDetailsArray);
-    orderDetailsArray.push(obOrderDetails);
 
-
-
+    orderCalculation();
     clearPlaceOrderFields();
     generateOrderId();
     loadOrderDetailsToTbl();
@@ -171,6 +176,56 @@ function setCustomerNameCusId(){
 
 }
 
+function updatePlaceOrder(){
+
+    $("#placeOrderTable>tr").off("click");
+
+    let itemId = $("#cmbItemIds").val();
+    let description = $("#description").val();
+    let cusQTY = $("#custQTY").val();
+    let unitPrices = $("#unitPrices").val();
+    let itemDiscount = $("#discount").val();
+
+
+    $("#placeOrderTable>tr").empty();
+    for (let i = 0; i < itemDetailsArray.length; i++) {
+        if ( $("#cmbItemIds").val() === itemDetailsArray[i].getOrderItemCode()) {
+            itemDetailsArray.splice(i, 1);
+
+            clearPlaceOrderFields();
+        }
+    }
+
+
+    var itemDetails = new ItemDetails(itemId,description,cusQTY,unitPrices,itemDiscount);
+    itemArray.push(itemDetails);
+
+    loadOrderDetailsToTbl();
+    alert("Order has been successfully updated");
+
+}
+
+function orderCalculation(){
+    let cusQTY = $("#custQTY").val();
+    let unitPrice = $("#unitPrices").val();
+
+    var grossTotal = (cusQTY)*(unitPrice);
+   $("#grossAmount").val(grossTotal);
+
+
+   var totalDiscount = $("#discount").val();
+   $("#orderDiscount").val(totalDiscount).css('font-weight', 'bold','color', '#4cd137');
+   $("#orderDiscount").css('color', '#4cd137');
+
+   var netAmount = (grossTotal) - (totalDiscount);
+    $("#netAmount").val(netAmount);
+
+   var balance = ($("#cash").val()) - (netAmount);
+   $("#balanceLabel").text(balance);
+}
+
+
+
 
 
 $("#btnPlaceOrder").click(function (){
@@ -187,13 +242,16 @@ $("#btnSearchOrder").click(function (){
         for (let i = 0; i < orderDetailsArray.length; i++) {
             for (let j = 0; j < customerArray.length; j++) {
 
+                var itemArrayss = obOrder.getItemArray();
+
+                for (let k = 0; k < itemArrayss.length; k++) {
 
                     $("#orderId").val(obOrder.getOrderId());
-                    $("#customerId").val(obOrder.getCusId());
-                    $("#customerName").val(customerArray[i].getCustomerName());
-                    $("#itemCodes").val(obOrder.getItemArray(i));
+                    $("#customerId").append(new Option(customerArray[j].getCustomerId()));
+                    $("#customerName").val(customerArray[j].getCustomerName());
+                    $("#itemCodes").append(new Option(itemArrayss[k].getOrderItemCode()));
                     $("#oDate").val(obOrder.getOrdDate());
-
+                }
             }
 
             /*$("#cmbItemIds").val(obOrder.getOrderDate());
@@ -210,4 +268,9 @@ $("#btnSearchOrder").click(function (){
         }
     }*/
 
+});
+
+$("#btnUpdateOrder").click(function (){
+    generateOrderId();
+    updatePlaceOrder();
 });

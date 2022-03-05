@@ -124,7 +124,7 @@
             top: 13vh;
         }
 
-        #m4>section:nth-child(4){
+        /*#m4>section:nth-child(4){
             top: 81vh;
             position: absolute;
             width: 20vw;
@@ -133,7 +133,7 @@
             left: 1vw;
             border-radius: 18px;
 
-        }
+        }*/
 
         #m4>section:nth-child(3){
             position: absolute;
@@ -193,44 +193,20 @@
             position: absolute;
             font-size: 28px;
             color: red;
-            left: 40vw;
-            top: 70vh;
+            left: 58vw;
+            top: 68vh;
         }
+
+        #balanceLabel{
+            position: absolute;
+            font-size: 28px;
+            left: 62vw;
+            top: 68vh;
+        }
+
 
         .carousel-caption{
             bottom: 17rem;
-        }
-
-        #cusLabel{
-            color: black;
-            font-size: 25px;
-            position: absolute;
-            top: 52vh;
-            right: 55vw;
-        }
-
-        #cusLabel1{
-            color: black;
-            font-size: 25px;
-            position: absolute;
-            top: 39vh;
-            right: 49vw;
-        }
-
-        #ItemIdLabel{
-            color: black;
-            font-size: 25px;
-            position: absolute;
-            top: 52vh;
-            right: 55vw;
-        }
-
-        #ItemIdLabel1{
-            color: black;
-            font-size: 25px;
-            position: absolute;
-            top: 39vh;
-            right: 49vw;
         }
 
     </style>
@@ -654,20 +630,39 @@
 
     <section></section>
 
-    <section>
-        <ul>
-            <li>
-                <h2>Gross Amount :</h2>
-                <h2>Total Discount :</h2>
-                <h2>Net Amount :</h2>
-                <h2>Cash :</h2>
-            </li>
-        </ul>
-
-    </section>
-
     <h2>Balance :</h2>
 
+    <h2 id="balanceLabel">    </h2>
+
+    <section>
+
+        <div class="col-6" >
+            <form class="row g-3">
+
+                <div class="col-md-3">
+                    <label for="grossAmount" class="form-label">Gross Amount (Rs)</label>
+                    <input type="text" class="form-control" id="grossAmount" >
+                </div>
+
+                <div class="col-md-3">
+                    <label for="orderDiscount" class="form-label">Discount (Rs)</label>
+                    <input type="text" class="form-control" id="orderDiscount">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="netAmount"  class="form-label">Net Amount (Rs)</label>
+                    <input type="text" class="form-control" id="netAmount">
+                </div>
+
+                <div class="col-md-3">
+                    <label for="cash"  class="form-label">Cash (Rs)</label>
+                    <input type="text" class="form-control" id="cash">
+                </div>
+
+            </form>
+        </div>
+
+    </section>
 
 </main>
 
