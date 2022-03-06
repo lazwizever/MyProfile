@@ -33,6 +33,7 @@ function setItemDetailsFromItemCode(){
         for (let i = 0; i < itemArray.length; i++) {
             if (itemId === itemArray[i].getItemId()){
 
+                $("#itemId").val(itemId);
                 $("#qTY").val(itemArray[i].getQtyOnHand());
                 $("#discount").val(itemArray[i].getDiscount());
                 $("#unitPrices").val(itemArray[i].getUnitPrize());
@@ -64,11 +65,7 @@ function generateOrderId(){
 }
 
 function clearPlaceOrderFields(){
-    $("#cmbItemIds").empty()
-    $("#description").val("");
-    $("#custQTY").val("");
-    $("#unitPrices").val("");
-    $("#discount").val("");
+    clearItemsFieldsPlaceOrder();
 
     $("#orderId").val("");
     $("#customerName").val("");
@@ -78,7 +75,7 @@ function clearPlaceOrderFields(){
 
 }
 
-function loadOrderDetailsToTbl(){
+/*function loadOrderDetailsToTbl(){
     $("#placeOrderTable>tr").off("click");
     $("#placeOrderTable>tr").off("dblclick");
 
@@ -87,11 +84,11 @@ function loadOrderDetailsToTbl(){
         let row = `<tr><td>${i.getOrderItemCode()}</td><td>${i.getOrderItemDescription()}</td><td>${i.getOrderCustomerQTY()}</td><td>${i.getOrderUnitPrice()}</td><td>${i.getOrderItemDiscount()}</td></tr>`;
         $("#placeOrderTable").append(row);
     }
-}
+}*/
 
 function placeOrder(){
 
-    $("#placeOrderTable>tr").off("click");
+    /*$("#placeOrderTable>tr").off("click");
 
     let itemId = $("#cmbItemIds").val();
     let description = $("#description").val();
@@ -114,11 +111,11 @@ function placeOrder(){
 
     $("#placeOrderTable").empty();
 
-    /*var order = new Order(orderId,itemCode,customerId,orderDate);
+    /!*var order = new Order(orderId,itemCode,customerId,orderDate);
     ordersArray.push(order);
-*/
+*!/
 
-    /*---------Item details for an Order---------------*/
+    /!*---------Item details for an Order---------------*!/
     var itemDetailsForOrder = new ItemDetails(itemId,description,cusQTY,unitPrices,itemDiscount);
     itemDetailsArray.push(itemDetailsForOrder);
 
@@ -128,15 +125,32 @@ function placeOrder(){
     clearPlaceOrderFields();
     generateOrderId();
     loadOrderDetailsToTbl();
-    alert("Order has been place successful");
+    alert("Order has been place successful");*/
+
+    let orderId = $("#orderId").val();
+    let cusId = $("#customerId").find('option:selected').text();
+    let itemCode = $("#itemCodes").val();
+    let orderDate = $("#oDate").val();
+
+
+    var tempArray = itemDetailsArray;
+
+    var orderDetails = new OrderDetails(orderId,cusId,itemCode,orderDate,tempArray);
+    orderDetailsArray.push(orderDetails);
+
+    itemDetailsArray = [];
+    generateOrderId();
+    clearPlaceOrderFields();
+
+
 }
 
-function setCurrentDate(){
+/*function setCurrentDate(){
     var d = new Date();
     var strDate = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
 
     $("#oDate").val(strDate);
-}
+}*/
 
 function setCustomerDetailsFromCusId(){
     $("#customerId").on("change",function(){
@@ -224,6 +238,102 @@ function orderCalculation(){
    $("#balanceLabel").text(balance);
 }
 
+function clearItemsFieldsPlaceOrder(){
+    $("#description").val("");
+    $("#custQTY").val("");
+    $("#qTY").val("");
+    $("#unitPrices").val("");
+    $("#discount").val("");
+}
+
+function setGrossAmount(){
+
+    var grossTotal = 0;
+
+    for (let i = 0; i < itemDetailsArray.length; i++) {
+
+        console.log(grossTotal);
+        console.log(itemDetailsArray[i].getItemTotal());
+        grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
+        console.log(grossTotal);
+    }
+    $("#grossAmount").val(grossTotal);
+
+}
+
+function addToCart(){
+
+    let itemId = $("#itemId").val();
+    let description = $("#description").val();
+    let cusQTY = $("#custQTY").val();
+    let unitPrices = $("#unitPrices").val();
+    let total = (cusQTY) * (unitPrices);
+
+
+    for (let i = 0; i < itemDetailsArray.length; i++) {
+        if (itemId === itemDetailsArray[i].getOrderItemCode()){
+
+            var newCusQTY = parseInt(itemDetailsArray[i].getOrderCustomerQTY())  + parseInt(cusQTY);
+            var newTotal = (newCusQTY) * (unitPrices);
+
+            itemDetailsArray[i].setOrderCustomerQTY(newCusQTY);
+            itemDetailsArray[i].setItemTotal(newTotal);
+            clearItemsFieldsPlaceOrder();
+            loadTable();
+            return;
+        }
+
+    }
+
+
+    var itemDetails = new ItemDetails(itemId,description,cusQTY,unitPrices,total);
+    itemDetailsArray.push(itemDetails);
+    clearItemsFieldsPlaceOrder();
+    loadTable();
+    setGrossAmount();
+}
+
+function loadTable(){
+
+    $("#placeOrderTable").empty();
+
+    for (let i of itemDetailsArray) {
+        let row = `<tr><td>${i.getOrderItemCode()}</td><td>${i.getOrderItemDescription()}</td><td>${i.getOrderCustomerQTY()}</td><td>${i.getOrderUnitPrice()}</td><td>${i.getItemTotal()}</td></tr>`;
+        $("#placeOrderTable").append(row);
+    }
+
+
+    /*-----------------Set cart details when clicking-----------------------*/
+
+    $("#placeOrderTable>tr").off('click')
+
+    $("#placeOrderTable>tr").click(function (){
+
+        let itemCode = $(this).children(':nth-child(1)').text();
+        $("#itemId").val(itemCode);
+
+        let description = $(this).children(':nth-child(2)').text();
+        $("#description").val(description);
+
+
+        let cusQTY = $(this).children(':nth-child(3)').text();
+        $("#custQTY").val(cusQTY);
+
+
+        let unitPrice = $(this).children(':nth-child(4)').text();
+        $("#unitPrices").val(unitPrice);
+
+
+        for (let i = 0; i < itemArray.length; i++) {
+            if ($("#itemId").val() === itemArray[i].getItemId()){
+                $("#qTY").val(itemArray[i].getQtyOnHand());
+            }
+            continue;
+        }
+
+
+    });
+}
 
 
 
@@ -242,15 +352,18 @@ $("#btnSearchOrder").click(function (){
         for (let i = 0; i < orderDetailsArray.length; i++) {
             for (let j = 0; j < customerArray.length; j++) {
 
+                $("#orderId").val(obOrder.getOrderId());
+                $("#customerId").append(new Option(customerArray[j].getCustomerId()));
+                $("#customerName").val(customerArray[j].getCustomerName());
+                /*$("#itemCodes").append(new Option(itemArrayss[k].getOrderItemCode()));*/
+                $("#oDate").val(obOrder.getOrdDate());
+
+
                 var itemArrayss = obOrder.getItemArray();
 
                 for (let k = 0; k < itemArrayss.length; k++) {
 
-                    $("#orderId").val(obOrder.getOrderId());
-                    $("#customerId").append(new Option(customerArray[j].getCustomerId()));
-                    $("#customerName").val(customerArray[j].getCustomerName());
-                    $("#itemCodes").append(new Option(itemArrayss[k].getOrderItemCode()));
-                    $("#oDate").val(obOrder.getOrdDate());
+
                 }
             }
 
@@ -273,4 +386,56 @@ $("#btnSearchOrder").click(function (){
 $("#btnUpdateOrder").click(function (){
     generateOrderId();
     updatePlaceOrder();
+});
+
+
+$("#addToCart").click(function (){
+
+    addToCart();
+
+
+    /*$("#placeOrderTable>tr").off("click");
+
+    let itemId = $("#cmbItemIds").val();
+    let description = $("#description").val();
+    let cusQTY = $("#custQTY").val();
+    let unitPrices = $("#unitPrices").val();
+    let itemDiscount = $("#discount").val();
+
+    $("#itemCodes").on("change",function(){
+        let itemIds = $(this).find('option:selected').text();
+        let orderId = $("#orderId").val();
+        let customerId = $("#customerId").val();
+        let itemCode = $("#itemCodes").val();
+        let orderDate = $("#oDate").val();
+
+
+        var obOrderDetails =  new OrderDetails(orderId,customerId,itemIds,orderDate,itemDetailsArray);
+        orderDetailsArray.push(obOrderDetails);
+
+    });
+
+    $("#placeOrderTable").empty();
+
+    /!*var order = new Order(orderId,itemCode,customerId,orderDate);
+    ordersArray.push(order);
+*!/
+
+    /!*---------Item details for an Order---------------*!/
+    var itemDetailsForOrder = new ItemDetails(itemId,description,cusQTY,unitPrices,itemDiscount);
+    itemDetailsArray.push(itemDetailsForOrder);
+
+
+
+    orderCalculation();
+    clearPlaceOrderFields();
+    generateOrderId();
+    loadOrderDetailsToTbl();
+    alert("Order has been place successful");*/
+});
+
+$("#discount").keyup(function (){
+
+
+
 });

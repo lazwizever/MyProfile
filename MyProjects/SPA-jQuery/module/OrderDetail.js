@@ -1,4 +1,4 @@
-function OrderDetails(orderId,cusId,itemId,orderDate){
+function OrderDetails(orderId,cusId,itemId,orderDate,itemArray){
     var __orderId = orderId;
     var __cusId = cusId;
     var __itemId = itemId;

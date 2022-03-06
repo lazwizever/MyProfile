@@ -539,17 +539,9 @@
                         <input type="text" class="form-control" id="customerName">
                     </div>
 
-
-                    <div class="col-md-4">
-                        <label for="itemCodes" class="form-label">Item Code</label>
-                        <select id="itemCodes" class="form-select">
-                        </select>
-                    </div>
-
-
                     <div class="col-md-5">
                         <label for="oDate"  class="form-label">Order Date</label>
-                        <input type="text" class="form-control" id="oDate">
+                        <input type="date" class="form-control" id="oDate">
                     </div>
 
                 </form>
@@ -560,10 +552,16 @@
                 <form class="row">
 
                     <div class="col-md-2">
-                        <label for="cmbItemIds" class="form-label">Item Code</label>
+                        <label for="cmbItemIds" class="form-label">Item</label>
                         <select id="cmbItemIds" class="form-select">
                         </select>
                     </div>
+
+                    <div class="col-md-2">
+                        <label for="itemId" class="form-label">Item Code</label>
+                        <input type="text" class="form-control" id="itemId">
+                    </div>
+
 
                     <div class="col-md-2">
                         <label for="qTY" class="form-label">QTY On Hand</label>
@@ -572,20 +570,14 @@
                     </div>
 
                     <div class="col-md-2">
-                        <label for="discount" class="form-label">Discount (Rs)</label>
-                        <input type="text" class="form-control" id="discount">
-                        <p><small id="error001" class="text-danger pl-1"></small></p>
-                    </div>
-
-                    <div class="col-md-2">
                         <label for="custQTY" class="form-label">Customer QTY</label>
-                        <input type="text" class="form-control" id="custQTY">
+                        <input type="number" class="form-control" id="custQTY">
                         <p><small id="error002" class="text-danger pl-1"></small></p>
                     </div>
 
                     <div class="col-2">
                         <label for="unitPrices" class="form-label">Unit Price (Rs)</label>
-                        <input type="text" class="form-control" id="unitPrices">
+                        <input type="number" class="form-control" id="unitPrices">
                         <p><small id="error003" class="text-danger pl-1"></small></p>
                     </div>
 
@@ -593,6 +585,10 @@
                         <label for="description" class="form-label">Description</label>
                         <input type="text" class="form-control" id="description">
                         <p><small id="error004" class="text-danger pl-1"></small></p>
+                    </div>
+
+                    <div class="col-12 d-grid gap-1 d-md-flex justify-content-md-end col mt-5">
+                        <button type="button" style="background-color:royalblue" id="addToCart" class="btn btn-secondary">Add To Cart</button>
                     </div>
 
                 </form>
@@ -610,7 +606,7 @@
                         <th scope="col">Description</th>
                         <th scope="col">Customer QTY</th>
                         <th scope="col">Unit Price (Rs)</th>
-                        <th scope="col">Discount (Rs)</th>
+                        <th scope="col">Total (Rs)</th>
                     </tr>
                     </thead>
                     <tbody id="placeOrderTable">

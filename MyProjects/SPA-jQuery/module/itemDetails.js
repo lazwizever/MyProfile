@@ -1,9 +1,9 @@
-function ItemDetails(itemCode,description,customerQTY,unitPrice,discount){
+function ItemDetails(itemCode,description,customerQTY,unitPrice,total){
     var __itemCode = itemCode;
     var __description = description;
     var __customerQTY = customerQTY;
     var __unitPrice = unitPrice;
-    var __discount = discount;
+    var __total = total;
 
 
     this.getOrderItemCode = function (){
@@ -38,12 +38,12 @@ function ItemDetails(itemCode,description,customerQTY,unitPrice,discount){
         __unitPrice = unitPrice;
     }
 
-    this.getOrderItemDiscount = function (){
-        return __discount;
+    this.getItemTotal = function (){
+        return __total;
     }
 
-    this.setOrderItemDiscount = function (discount){
-        __discount = discount;
+    this.setItemTotal = function (total){
+        __total = total;
     }
 
 
