@@ -2,7 +2,7 @@ function OrderDetails(orderId,cusId,orderDate,itemArray){
     var __orderId = orderId;
     var __cusId = cusId;
     var __orderDate = orderDate;
-    var itemDetailsArray = new Array();
+    var itemDetailsArray = itemArray;
 
 
     this.getOrderId = function (){

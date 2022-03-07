@@ -175,11 +175,11 @@ function validateCustomerName(){
                     $("#custAddress").focus();
                 }
             });
-
+                return true;
         } else {
             $("#custName").css('border', '2px solid red');
             $("#error1").text("Wrong format : "+input);
-
+            return false;
         }
     });
 }
@@ -197,11 +197,11 @@ function validateCusAddress(){
                     $("#inputCity").focus();
                 }
             });
-
+            return true;
         } else {
             $("#custAddress").css('border', '2px solid red');
             $("#error2").text("Wrong format : "+input);
-
+            return false;
         }
     });
 }
@@ -219,11 +219,11 @@ function validateCustomerCity(){
                     $("#postalCode").focus();
                 }
             });
-
+        return true;
         } else {
             $("#inputCity").css('border', '2px solid red');
             $("#error3").text("Wrong format : "+input);
-
+            return false;
         }
     });
 }
@@ -236,19 +236,26 @@ function validateCustomerPostalCode(){
             $("#error4").text("");
             $("#postalCode").css('border', '2px solid green');
 
+            return true;
         } else {
             $("#postalCode").css('border', '2px solid red');
             $("#error4").text("Wrong format : "+input);
-
+            return false;
         }
     });
 }
 
-
-$("#btnCustomerRegister").click(function () {
+if (validateCustomerName() && validateCusAddress() && validateCustomerCity() && validateCustomerPostalCode()){
+    $("#btnCustomerRegister").click(function () {
         saveCustomer();
         generateCustomerId();
     });
+
+}else {
+    $("#btnCustomerRegister").attr('disabled', false);
+}
+
+
 
 $("#btnCustomerDelete").click(function () {
     deleteCustomer();

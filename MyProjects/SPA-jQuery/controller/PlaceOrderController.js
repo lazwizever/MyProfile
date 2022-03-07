@@ -87,59 +87,20 @@ function clearPlaceOrderFields(){
 
 function placeOrder(){
 
-    /*$("#placeOrderTable>tr").off("click");
-
-    let itemId = $("#cmbItemIds").val();
-    let description = $("#description").val();
-    let cusQTY = $("#custQTY").val();
-    let unitPrices = $("#unitPrices").val();
-    let itemDiscount = $("#discount").val();
-
-    $("#itemCodes").on("change",function(){
-        let itemIds = $(this).find('option:selected').text();
-        let orderId = $("#orderId").val();
-        let customerId = $("#customerId").val();
-        let itemCode = $("#itemCodes").val();
-        let orderDate = $("#oDate").val();
-
-
-        var obOrderDetails =  new OrderDetails(orderId,customerId,itemIds,orderDate,itemDetailsArray);
-        orderDetailsArray.push(obOrderDetails);
-
-    });
-
-    $("#placeOrderTable").empty();
-
-    /!*var order = new Order(orderId,itemCode,customerId,orderDate);
-    ordersArray.push(order);
-*!/
-
-    /!*---------Item details for an Order---------------*!/
-    var itemDetailsForOrder = new ItemDetails(itemId,description,cusQTY,unitPrices,itemDiscount);
-    itemDetailsArray.push(itemDetailsForOrder);
-
-
-
-    orderCalculation();
-    clearPlaceOrderFields();
-    generateOrderId();
-    loadOrderDetailsToTbl();
-    alert("Order has been place successful");*/
-
     let orderId = $("#orderId").val();
     let cusId = $("#customerId").find('option:selected').text();
     let orderDate = $("#oDate").val();
 
 
-    var tempArray = itemDetailsArray;
-
-    var orderDetails = new OrderDetails(orderId,cusId,orderDate,tempArray);
+    var orderDetails = new OrderDetails(orderId,cusId,orderDate,itemDetailsArray);
     orderDetailsArray.push(orderDetails);
 
     itemDetailsArray = [];
     generateOrderId();
     clearPlaceOrderFields();
     alert("Order has been place successful");
+
+    $("#placeOrderTable>tr").remove();
 
 }
 
@@ -237,6 +198,7 @@ function clearItemsFieldsPlaceOrder(){
     $("#qTY").val("");
     $("#unitPrices").val("");
     $("#discount").val("");
+    $("#itemId").val("");
 }
 
 function setGrossAmount(){
@@ -245,15 +207,16 @@ function setGrossAmount(){
     let itemId = $("#itemId").val();
 
     for (let i = 0; i < itemDetailsArray.length; i++) {
-        if(itemId === itemDetailsArray[i].getOrderItemCode()){
+       /* if(itemId === itemDetailsArray[i].getOrderItemCode()){
 
-            grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
-            $("#grossAmount").val(grossTotal);
         }else{
             grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
             $("#grossAmount").val(grossTotal);
-        }
+        }*/
 
+
+        grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
+        $("#grossAmount").val(grossTotal);
     }
 
 
@@ -268,16 +231,27 @@ function addToCart(){
     let total = (cusQTY) * (unitPrices);
 
 
+
+
     for (let i = 0; i < itemDetailsArray.length; i++) {
         if (itemId === itemDetailsArray[i].getOrderItemCode()){
 
-            var newCusQTY = parseInt(itemDetailsArray[i].getOrderCustomerQTY())  + parseInt(cusQTY);
+            var newCusQTY = 0;
+
+            if ($("#addToCart").text() === "Update"){
+                newCusQTY = cusQTY;
+            }else {
+                newCusQTY = parseInt(itemDetailsArray[i].getOrderCustomerQTY())  + parseInt(cusQTY);
+            }
+
+
             var newTotal = (newCusQTY) * (unitPrices);
 
             itemDetailsArray[i].setOrderCustomerQTY(newCusQTY);
             itemDetailsArray[i].setItemTotal(newTotal);
             clearItemsFieldsPlaceOrder();
             loadTable();
+            setGrossAmount();
             return;
         }
 
@@ -293,7 +267,7 @@ function addToCart(){
 
 function loadTable(){
 
-    $("#placeOrderTable").empty();
+    $("#placeOrderTable>tr").empty();
 
     for (let i of itemDetailsArray) {
         let row = `<tr><td>${i.getOrderItemCode()}</td><td>${i.getOrderItemDescription()}</td><td>${i.getOrderCustomerQTY()}</td><td>${i.getOrderUnitPrice()}</td><td>${i.getItemTotal()}</td></tr>`;
@@ -306,6 +280,8 @@ function loadTable(){
     $("#placeOrderTable>tr").off('click')
 
     $("#placeOrderTable>tr").click(function (){
+
+        $("#addToCart").text("Update");
 
         let itemCode = $(this).children(':nth-child(1)').text();
         $("#itemId").val(itemCode);
@@ -339,7 +315,6 @@ function loadTable(){
 $("#btnPlaceOrder").click(function (){
     generateOrderId();
     placeOrder();
-    clearPlaceOrderFields();
 });
 
 $("#btnSearchOrder").click(function (){
@@ -348,7 +323,7 @@ $("#btnSearchOrder").click(function (){
 
     if (obOrder){
 
-        let cusId = $("#customerId1").val();
+        /*let cusId = $("#customerId1").val();
 
         for (let i = 0; i < orderDetailsArray.length; i++) {
             for (let j = 0; j < customerArray.length; j++) {
@@ -362,20 +337,30 @@ $("#btnSearchOrder").click(function (){
                 }
             }
 
-            /*$("#cmbItemIds").val(obOrder.getOrderDate());
+            /!*$("#cmbItemIds").val(obOrder.getOrderDate());
             $("#oDate").val(obOrder.getOrderDate());
             $("#oDate").val(obOrder.getOrderDate());
             $("#oDate").val(obOrder.getOrderDate());
-            $("#oDate").val(obOrder.getOrderDate());*/
+            $("#oDate").val(obOrder.getOrderDate());*!/
+        }*/
+
+
+        for (let i = 0; i < customerArray.length; i++) {
+            if (obOrder.getCusId() === customerArray[i].getCustomerId()){
+                $("#customerName").val(customerArray[i].getCustomerName());
+            }
         }
+
+        $("#orderId").val(obOrder.getOrderId());
+        $("#customerId1").val(obOrder.getCusId());
+        $("#oDate").val(obOrder.getOrdDate());
+
+
+        itemDetailsArray = obOrder.getItemArray();
+        console.log(itemDetailsArray);
+        loadTable();
+
     }
-
-    /*for (let i = 0; i < customerArray.length; i++) {
-        if (obOrder.getCustomerId() === customerArray[i].getCustomerId()){
-            $("#customerId").val(customerArray[i].getCustomerId());
-        }
-    }*/
-
 });
 
 $("#btnUpdateOrder").click(function (){
@@ -387,7 +372,7 @@ $("#btnUpdateOrder").click(function (){
 $("#addToCart").click(function (){
 
     addToCart();
-
+    $("#addToCart").text("Add To Cart");
 
     /*$("#placeOrderTable>tr").off("click");
 
