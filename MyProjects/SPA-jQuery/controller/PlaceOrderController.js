@@ -67,9 +67,8 @@ function generateOrderId(){
 function clearPlaceOrderFields(){
     clearItemsFieldsPlaceOrder();
 
-    $("#orderId").val("");
     $("#customerName").val("");
-    $("#itemCodes").empty();
+    $("#customerId1").val("");
     $("#customerId").empty();
     $("#oDate").val("");
 
@@ -129,37 +128,31 @@ function placeOrder(){
 
     let orderId = $("#orderId").val();
     let cusId = $("#customerId").find('option:selected').text();
-    let itemCode = $("#itemCodes").val();
     let orderDate = $("#oDate").val();
 
 
     var tempArray = itemDetailsArray;
 
-    var orderDetails = new OrderDetails(orderId,cusId,itemCode,orderDate,tempArray);
+    var orderDetails = new OrderDetails(orderId,cusId,orderDate,tempArray);
     orderDetailsArray.push(orderDetails);
 
     itemDetailsArray = [];
     generateOrderId();
     clearPlaceOrderFields();
-
+    alert("Order has been place successful");
 
 }
-
-/*function setCurrentDate(){
-    var d = new Date();
-    var strDate = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
-
-    $("#oDate").val(strDate);
-}*/
 
 function setCustomerDetailsFromCusId(){
     $("#customerId").on("change",function(){
 
         let cusId = $(this).find('option:selected').text();
+        console.log(cusId);
 
         for (let i = 0; i < customerArray.length; i++) {
             if (cusId === customerArray[i].getCustomerId()){
 
+                $("#customerId1").val(cusId);
                 $("#customerName").val(customerArray[i].getCustomerName());
             }
         }
@@ -249,15 +242,20 @@ function clearItemsFieldsPlaceOrder(){
 function setGrossAmount(){
 
     var grossTotal = 0;
+    let itemId = $("#itemId").val();
 
     for (let i = 0; i < itemDetailsArray.length; i++) {
+        if(itemId === itemDetailsArray[i].getOrderItemCode()){
 
-        console.log(grossTotal);
-        console.log(itemDetailsArray[i].getItemTotal());
-        grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
-        console.log(grossTotal);
+            grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
+            $("#grossAmount").val(grossTotal);
+        }else{
+            grossTotal = parseInt(grossTotal) + parseInt(itemDetailsArray[i].getItemTotal());
+            $("#grossAmount").val(grossTotal);
+        }
+
     }
-    $("#grossAmount").val(grossTotal);
+
 
 }
 
@@ -341,6 +339,7 @@ function loadTable(){
 $("#btnPlaceOrder").click(function (){
     generateOrderId();
     placeOrder();
+    clearPlaceOrderFields();
 });
 
 $("#btnSearchOrder").click(function (){
@@ -349,21 +348,17 @@ $("#btnSearchOrder").click(function (){
 
     if (obOrder){
 
+        let cusId = $("#customerId1").val();
+
         for (let i = 0; i < orderDetailsArray.length; i++) {
             for (let j = 0; j < customerArray.length; j++) {
 
-                $("#orderId").val(obOrder.getOrderId());
-                $("#customerId").append(new Option(customerArray[j].getCustomerId()));
-                $("#customerName").val(customerArray[j].getCustomerName());
-                /*$("#itemCodes").append(new Option(itemArrayss[k].getOrderItemCode()));*/
-                $("#oDate").val(obOrder.getOrdDate());
+                if (cusId === customerArray[j].getCustomerId()){
 
-
-                var itemArrayss = obOrder.getItemArray();
-
-                for (let k = 0; k < itemArrayss.length; k++) {
-
-
+                    $("#orderId").val(obOrder.getOrderId());
+                    $("#customerId").append(new Option(customerArray[j].getCustomerId()));
+                    $("#customerName").val(customerArray[j].getCustomerName());
+                    $("#oDate").val(obOrder.getOrdDate());
                 }
             }
 
@@ -434,8 +429,26 @@ $("#addToCart").click(function (){
     alert("Order has been place successful");*/
 });
 
-$("#discount").keyup(function (){
 
 
+/*-------------Set netAmount----------------*/
+
+$("#orderDiscount").keyup(function (){
+
+    let discount = parseInt($("#orderDiscount").val());
+    let grossAmount = parseInt($("#grossAmount").val());
+
+    $("#netAmount").val(grossAmount - discount);
+});
+
+
+/*--------------Set balance----------------*/
+
+$("#cash").keyup(function (){
+
+    let cash = parseInt($("#cash").val());
+    let netAmount = $("#netAmount").val();
+
+    $("#balanceLabel").text(cash - netAmount);
 
 });
