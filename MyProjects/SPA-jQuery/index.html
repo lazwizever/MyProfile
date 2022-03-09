@@ -376,7 +376,7 @@
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" id="btnCustomerRegister" class="btn btn-secondary">Register</button>
+                        <button type="button" id="btnCustomerRegister" class="btn btn-secondary" disabled >Register</button>
                         <button type="button" style="background-color:#4cd137; color:white" id="btnUpdateCustomer" class="btn">Update</button>
                         <button type="button" id="btnCustomerDelete" class="btn btn-danger">Delete </button>
                     </div>
@@ -672,7 +672,6 @@
 
 <script src="module/Customer.js"></script>
 <script src="module/Item.js"></script>
-<script src="module/Order.js"></script>
 <script src="module/OrderDetail.js"></script>
 <script src="module/itemDetails.js"></script>
 
@@ -715,104 +714,8 @@
 
         loadAllItemIds();
         loadAllCustomerIds();
-        setCurrentDate();
     });
 
-    /*------------------Validating Fields (Customer form, Item form, PlaceOrder form)-------------------*/
-
-
-    /*---PlaceOrder Form-----*/
-
-    var regExQtyOnHand = /^([0-9]{1,10})$/;
-    var regExDiscounts = /^([0-9.]{1,})$/;
-    var regExCustomerQty = /^([0-9]{1,10})$/;
-    var regExUnitPrices = /^([0-9.]{1,})$/;
-    var regExItemDescription = /^([A-z0-9/,\s]{3,})$/;
-
-    $("#qTY").keyup(function (e) {
-        let input = $("#qTY").val();
-
-        if (regExQtyOnHand.test(input)) {
-             $("#error00").text("");
-            $("#qTY").css('border', '2px solid green');
-
-            $("#qTY").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#discount").focus();
-                }
-            });
-        } else {
-            $("#qTY").css('border', '2px solid red');
-            $("#error00").text("Wrong format : "+input);
-        }
-    });
-
-    $("#discount").keyup(function (e) {
-        let input = $("#discount").val();
-
-        if (regExDiscounts.test(input)) {
-             $("#error001").text("");
-            $("#discount").css('border', '2px solid green');
-
-            $("#discount").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#custQTY").focus();
-                }
-            });
-        } else {
-            $("#discount").css('border', '2px solid red');
-             $("#error001").text("Wrong format : "+input);
-        }
-    });
-
-    $("#custQTY").keyup(function (e) {
-        let input = $("#custQTY").val();
-
-        if (regExCustomerQty.test(input)) {
-             $("#error002").text("");
-            $("#custQTY").css('border', '2px solid green');
-
-            $("#custQTY").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#discount").focus();
-                }
-            });
-        } else {
-            $("#custQTY").css('border', '2px solid red');
-             $("#error002").text("Wrong format : "+input);
-        }
-    });
-
-    $("#unitPrices").keyup(function (e) {
-        let input = $("#unitPrices").val();
-
-        if (regExUnitPrices.test(input)) {
-             $("#error003").text("");
-            $("#unitPrices").css('border', '2px solid green');
-
-            $("#unitPrices").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#description").focus();
-                }
-            });
-        } else {
-            $("#unitPrices").css('border', '2px solid red');
-             $("#error003").text("Wrong format : "+input);
-        }
-    });
-
-    $("#description").keyup(function (e) {
-        let input = $("#description").val();
-
-        if (regExItemDescription.test(input)) {
-             $("#error004").text("");
-            $("#description").css('border', '2px solid green');
-
-        } else {
-            $("#description").css('border', '2px solid red');
-             $("#error004").text("Wrong format : "+input);
-        }
-    });
 
 </script>
 

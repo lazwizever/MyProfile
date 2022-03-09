@@ -163,98 +163,130 @@ var regExPostalCode = /^([0-9]{3,5})$/;
 
 
 function validateCustomerName(){
-    $("#custName").keyup(function () {
-        let input = $("#custName").val();
+    let input = $("#custName").val();
 
-        if (regExCusName.test(input)) {
-            $("#error1").text("");
-            $("#custName").css('border', '2px solid green');
+    if (regExCusName.test(input)) {
+        $("#error1").text("");
+        $("#custName").css('border', '2px solid green');
 
-            $("#custName").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#custAddress").focus();
-                }
-            });
-                return true;
-        } else {
-            $("#custName").css('border', '2px solid red');
-            $("#error1").text("Wrong format : "+input);
-            return false;
-        }
-    });
+        $("#custName").keydown(function (e){
+            if (e.key == 'Enter'){
+                $("#custAddress").focus();
+            }
+        });
+        return true;
+    } else {
+        $("#custName").css('border', '2px solid red');
+        $("#error1").text("Wrong format : "+input);
+        return false;
+    }
 }
+
+$("#custName").keyup(function () {
+disableCusRegisterBtn();
+});
+
 
 function validateCusAddress(){
-    $("#custAddress").keyup(function () {
-        let input = $("#custAddress").val();
+    let input = $("#custAddress").val();
 
-        if (regExCusAddress.test(input)) {
-            $("#error2").text("");
-            $("#custAddress").css('border', '2px solid green');
+    if (regExCusAddress.test(input)) {
+        $("#error2").text("");
+        $("#custAddress").css('border', '2px solid green');
 
-            $("#custAddress").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#inputCity").focus();
-                }
-            });
-            return true;
-        } else {
-            $("#custAddress").css('border', '2px solid red');
-            $("#error2").text("Wrong format : "+input);
-            return false;
-        }
-    });
+        $("#custAddress").keydown(function (e){
+            if (e.key == 'Enter'){
+                $("#inputCity").focus();
+            }
+        });
+        return true;
+    } else {
+        $("#custAddress").css('border', '2px solid red');
+        $("#error2").text("Wrong format : "+input);
+        return false;
+    }
 }
+
+$("#custAddress").keyup(function () {
+    disableCusRegisterBtn();
+});
+
 
 function validateCustomerCity(){
-    $("#inputCity").keyup(function () {
-        let input = $("#inputCity").val();
 
-        if (regExCity.test(input)) {
-            $("#error3").text("");
-            $("#inputCity").css('border', '2px solid green');
+    let input = $("#inputCity").val();
 
-            $("#inputCity").keydown(function (e){
-                if (e.key == 'Enter'){
-                    $("#postalCode").focus();
-                }
-            });
+    if (regExCity.test(input)) {
+        $("#error3").text("");
+        $("#inputCity").css('border', '2px solid green');
+
+        $("#inputCity").keydown(function (e){
+            if (e.key == 'Enter'){
+                $("#postalCode").focus();
+            }
+        });
         return true;
-        } else {
-            $("#inputCity").css('border', '2px solid red');
-            $("#error3").text("Wrong format : "+input);
-            return false;
-        }
-    });
+    } else {
+        $("#inputCity").css('border', '2px solid red');
+        $("#error3").text("Wrong format : "+input);
+        return false;
+    }
 }
+
+$("#inputCity").keyup(function () {
+    disableCusRegisterBtn();
+});
+
 
 function validateCustomerPostalCode(){
-    $("#postalCode").keyup(function () {
-        let input = $("#postalCode").val();
+    let input = $("#postalCode").val();
 
-        if (regExPostalCode.test(input)) {
-            $("#error4").text("");
-            $("#postalCode").css('border', '2px solid green');
+    if (regExPostalCode.test(input)) {
+        $("#error4").text("");
+        $("#postalCode").css('border', '2px solid green');
 
-            return true;
-        } else {
-            $("#postalCode").css('border', '2px solid red');
-            $("#error4").text("Wrong format : "+input);
+        return true;
+    } else {
+        $("#postalCode").css('border', '2px solid red');
+        $("#error4").text("Wrong format : "+input);
+        return false;
+    }
+}
+
+$("#postalCode").keyup(function () {
+    disableCusRegisterBtn();
+});
+
+
+function disableCusRegisterBtn(){
+    if (validateAll()){
+        $("#btnCustomerRegister").attr('disabled', false);
+    }else {
+        $("#btnCustomerRegister").attr('disabled', true);
+    }
+}
+
+function validateAll(){
+    if (validateCustomerName()){
+        if (validateCusAddress()){
+            if (validateCustomerCity()){
+                if (validateCustomerPostalCode()){
+                    return true;
+                }else {
+                    return false;
+                }
+            }else {
+                return false;
+            }
+        }else {
             return false;
         }
-    });
+        return false;
+
+    }else {
+        return false;
+    }
 }
-
-if (validateCustomerName() && validateCusAddress() && validateCustomerCity() && validateCustomerPostalCode()){
-    $("#btnCustomerRegister").click(function () {
-        saveCustomer();
-        generateCustomerId();
-    });
-
-}else {
-    $("#btnCustomerRegister").attr('disabled', false);
-}
-
 
 
 $("#btnCustomerDelete").click(function () {
@@ -286,5 +318,9 @@ $("#btnSearchCustomer").click(function (){
 
 });
 
+$("#btnCustomerRegister").click(function (){
+    saveCustomer();
+    generateCustomerId();
+});
 
 
