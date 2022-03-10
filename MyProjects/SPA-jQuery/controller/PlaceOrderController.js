@@ -337,6 +337,12 @@ $("#orderDiscount").keyup(function (){
     let grossAmount = parseInt($("#grossAmount").val());
 
     $("#netAmount").val(grossAmount - discount);
+
+    let cash = $("#cash").val();
+    let netAmount = $("#netAmount").val();
+    let total = (cash) - (netAmount);
+    $("#balanceLabel").val(total);
+
 });
 
 
@@ -358,42 +364,6 @@ $("#cash").keyup(function (){
 var regExDiscounts = /^([0-9.]{1,})$/;
 var regExCustomerQty = /^([0-9]{1,10})$/;
 
-
-/*$("#discount").keyup(function (e) {
-    let input = $("#discount").val();
-
-    if (regExDiscounts.test(input)) {
-        $("#error001").text("");
-        $("#discount").css('border', '2px solid green');
-
-        $("#discount").keydown(function (e){
-            if (e.key == 'Enter'){
-                $("#custQTY").focus();
-            }
-        });
-    } else {
-        $("#discount").css('border', '2px solid red');
-        $("#error001").text("Wrong format : "+input);
-    }
-});
-
-$("#custQTY").keyup(function (e) {
-    let input = $("#custQTY").val();
-
-    if (regExCustomerQty.test(input)) {
-        $("#error002").text("");
-        $("#custQTY").css('border', '2px solid green');
-
-        $("#custQTY").keydown(function (e){
-            if (e.key == 'Enter'){
-                $("#discount").focus();
-            }
-        });
-    } else {
-        $("#custQTY").css('border', '2px solid red');
-        $("#error002").text("Wrong format : "+input);
-    }
-});*/
 
 $("#custQTY").keyup(function (){
 
