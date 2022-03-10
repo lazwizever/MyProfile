@@ -72,6 +72,12 @@ function clearPlaceOrderFields(){
     $("#customerId").empty();
     $("#oDate").val("");
 
+    $("#grossAmount").val();
+    $("#netAmount").val();
+    $("#cash").val();
+    $("#balanceLabel").val();
+    $("#discount").val();
+
 }
 
 function placeOrder(){
@@ -342,7 +348,7 @@ $("#cash").keyup(function (){
     let cash = parseInt($("#cash").val());
     let netAmount = $("#netAmount").val();
 
-    $("#balanceLabel").text(cash - netAmount);
+    $("#balanceLabel").val(cash - netAmount);
 
 });
 
