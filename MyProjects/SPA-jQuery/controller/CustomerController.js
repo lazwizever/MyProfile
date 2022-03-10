@@ -73,7 +73,7 @@ function loadCustomerDetailsToTbl() {
 }
 
 function clearCustomerTextFields() {
-    $("#inputnewId").val("");
+    generateCustomerId();
     $("#custName").val("");
     $("#custAddress").val("");
     $("#inputCity").val("");

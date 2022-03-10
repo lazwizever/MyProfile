@@ -69,7 +69,6 @@ function clearPlaceOrderFields(){
 
     $("#customerName").val("");
     $("#customerId1").val("");
-    $("#customerId").empty();
     $("#oDate").val("");
 
     $("#grossAmount").val();
