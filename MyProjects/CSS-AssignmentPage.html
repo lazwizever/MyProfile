@@ -2,264 +2,213 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSS Assigment Page</title>
+    <title>Title</title>
     <link rel="stylesheet" href="../assets/css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-
     <style>
-           section{
-               position: absolute;
-               width: 100%;
-               height: 100vh;
 
-               /*background-color: black;*/
-           }
+      body{
+          margin: 0;
+          overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+          background-color: black;
 
-           section>h1{
-               position: absolute;
-               color: #B8B8B8;
-               font-size: 40px;
-               font-family: Quicksand;
-           }
+      }
 
 
-           section>h1:nth-child(1){
-               margin: 0;
-               top: 69vh;
-               left: 30vw;
-           }
+      body>section{
+          left: 0;
+          right: 0;
+          position: relative;
+          width: 70%;
+          margin: auto;
+      }
 
-           section>h1:nth-child(2){
-               left: 42vw;
-               top: 3vh;
-               margin: 0;
-               top: 2vh;
-           }
+      body>section:nth-child(2){
+          margin-top: 10vh;
+      }
 
-           section>h1:nth-child(3){
-               left: 39vw;
-               margin: 0;
-               top: 34vh;
-           }
+        body > section > section > section {
 
-           /*---------Squars-------------*/
-           body>section>div{
-               position: absolute;
-               border: #44bd32 solid 4px;
-               width: 115px;
-               height: 115px;
-               border-radius: 12px;
-           }
+            display: flex;
+            width: 100%;
+            height: max-content;
+            justify-content: space-evenly;
+        }
 
-           section>div:nth-child(4){
-               top: 5vw;
-               left: 2vw;
-           }
+        div {
+            position: relative;
+            border: #44bd32 solid 4px;
+            width: 20vh;
+            height: 20vh;
+            border-radius: 12px;
+        }
 
-           section>div:nth-child(5){
-               top: 5vw;
-               left: 11vw;
-           }
+        a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: max-content;
+            height: max-content;
+            text-decoration: none;
+            text-align: center;
+        }
 
-           section>div:nth-child(6){
-               top: 5vw;
-               left: 20vw;
-           }
+        h2{
+            text-align: center;
+            width: 100%;
+            color: #B8B8B8;
+            font-size: 15px;
+            font-family: Quicksand;
+        }
 
-           section>div:nth-child(7){
-               top: 5vw;
-               left: 29vw;
-           }
+        h1{
+            text-align: center;
+            width: 100%;
+            color: #d63031;
+            font-size: 30px;
+            font-family: Quicksand;
+        }
 
-           section>div:nth-child(8){
-               top: 20vw;
-               left: 38vw;
-           }
+        #JsSec{
+            width: 100%;
+            display: flex;
+            height: max-content;
+            justify-content: space-evenly;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
 
-           section>div:nth-child(9){
-               top: 20vw;
-               left: 39vw;
-           }
 
-           section>div:nth-child(10){
-               top: 36vw;
-               left: 39vw;
-           }
-
-           section>div:nth-child(11){
-               top: 36vw;
-               left: 49vw;
-           }
-
-           section>div:nth-child(12){
-               top: 36vw;
-               left: 29vw;
-           }
-
-           section>div:nth-child(13){
-               top: 36vw;
-               left: 59vw;
-           }
-
-           /*---------Assignments Topics----------------*/
-
-           section>a>h2{
-               position: absolute;
-               color: #7f8fa6;
-               font-family: Quicksand;
-               text-align: center;
-               margin: 0;
-               font-size: 15px;
-           }
-
-           section>a:nth-child(14)>h2:nth-child(1){
-               margin: 0;
-               left: 3.4vw;
-               top: 17vh;
-           }
-
-           section>a:nth-child(15)>h2{
-               margin: 0;
-               left: 40.5vw;
-               top: 17vh;
-           }
-
-           section>a:nth-child(16)>h2{
-               margin: 0;
-               left: 50.5vw;
-               top: 17vh;
-           }
-
-           section>a:nth-child(17)>h2{
-               margin: 0;
-               left: 60.5vw;
-               top: 17vh;
-           }
-
-           section>a:nth-child(18)>h2{
-               margin: 0;
-               left: 40.5vw;
-               top: 50vh;
-           }
-
-           section>a:nth-child(19)>h2{
-               margin: 0;
-               left: 50.5vw;
-               top: 50vh;
-           }
-
-           section>a:nth-child(20)>h2{
-               margin: 0;
-               left: 30.5vw;
-               top: 83vh;
-           }
-
-           section>a:nth-child(21)>h2{
-               margin: 0;
-               left: 40.5vw;
-               top: 83vh;
-           }
-
-           section>a:nth-child(22)>h2{
-               margin: 0;
-               left: 50.5vw;
-               top: 83vh;
-           }
-
-           section>a:nth-child(23)>h2{
-               margin: 0;
-               left: 60.5vw;
-               top: 83vh;
-           }
-
-           section>a:nth-child(24)>h2{
-               margin: 0;
-               left: 70.5vw;
-               top: 83vh;
-           }
-
-           /*----------------------------------------------*/
 
     </style>
+
 
 </head>
 
 <body>
+
 <section>
-    <h1>ANIMATIONS</h1>
-    <h1>LAYOUTS</h1>
-    <h1>TRANSITIONS</h1>
+    <h1>CSS</h1>
+
+    <section>
+        <h2>ANIMATIONS</h2>
+
+        <section id="sec01">
+            <div>
+                <a href="CSS/Layouts/Assignment_01/index.html">
+                    <h2>Assignment <br>01</h2>
+                </a>
+            </div>
+
+            <div>
+                <a href="CSS/Layouts/Assignment_02/index.html">
+                    <h2>Assignment <br>02</h2>
+                </a>
+            </div>
+
+            <div>
+                <a href="CSS/Layouts/Assignment_03/index.html">
+                    <h2>Assignment <br>03</h2>
+                </a>
+            </div>
+
+            <div><a href="CSS/Layouts/Assignment_04/index.html">
+                <h2>Assignment <br>04</h2>
+            </a></div>
+        </section>
+
+    </section>
 
 
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <section>
+        <h2>LAYOUTS</h2>
+
+        <section>
+            <div>
+                <a href="CSS/Transition/Transition_01/index.html">
+                    <h2>Assignment <br>01</h2>
+                </a>
+            </div>
+
+            <div>
+                <a href="CSS/Transition/Transition_02/index.html">
+                    <h2>Assignment <br>02</h2>
+                </a>
+            </div>
+        </section>
+
+    </section>
 
 
-        <div></div>
-        <div></div>
+    <section>
+        <h2>TRANSITIONS</h2>
 
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+        <section>
+            <div>
+                <a href="CSS/Animation/CarAnimation/index.html">
+                    <h2>Assignment <br>01</h2>
+                </a>
+            </div>
 
+            <div>
+                <a href="CSS/Animation/Rotation-Animation/index.html">
+                    <h2>Assignment <br>02</h2>
+                </a>
+            </div>
 
-    <a href="CSS/Layouts/Assignment_01/index.html">
-        <h2>Assignment <br>01</h2>
-    </a>
+            <div>
+                <a href="CSS/Animation/SliderAnimation/index.html">
+                    <h2>Assignment <br>03</h2>
+                </a>
+            </div>
 
-    <a href="CSS/Layouts/Assignment_02/index.html">
-        <h2>Assignment <br>02</h2>
-    </a>
+            <div>
+                <a href="CSS/Animation/WaterDrop/index.html">
+                    <h2>Assignment <br>04</h2>
+                </a>
+            </div>
+        </section>
 
-    <a href="CSS/Layouts/Assignment_03/index.html">
-        <h2>Assignment <br>03</h2>
-    </a>
-
-    <a href="CSS/Layouts/Assignment_04/index.html">
-        <h2>Assignment <br>04</h2>
-    </a>
-
-    <a href="CSS/Transition/Transition_01/index.html">
-        <h2>Assignment <br>01</h2>
-    </a>
-
-    <a href="CSS/Transition/Transition_02/index.html">
-        <h2>Assignment <br>02</h2>
-    </a>
-
-    <a href="CSS/Animation/CarAnimation/index.html">
-        <h2>Assignment <br>01</h2>
-    </a>
-
-    <a href="CSS/Animation/Rotation-Animation/index.html">
-        <h2>Assignment <br>02</h2>
-    </a>
-
-    <a href="CSS/Animation/SliderAnimation/index.html">
-        <h2>Assignment <br>03</h2>
-    </a>
-
-    <a href="CSS/Animation/WaterDrop/index.html">
-        <h2>Assignment <br>04</h2>
-    </a>
-
-
-    <!--<a href="Js-Queue/index.html">
-        <h2>Js <br>04</h2>
-    </a>
-
-    <a href="Knight-Rider(KITT)/index.html">
-        <h2>Assignment <br>04</h2>
-    </a>
-
-    <a href="SPA-jQuery/index.html">
-        <h2>Assignment <br>04</h2>
-    </a>-->
-
+    </section>
 
 </section>
+
+
+<section>
+<h1>Java Script</h1>
+    <section id="JsSec">
+          <div>
+            <a href="Js-Queue/index.html">
+              <h2>Js-Queue</h2>
+            </a>
+          </div>
+
+            <div>
+                <a href="Knight-Rider(KITT)/index.html">
+                    <h2>Knight Rider<br>(Kiit)</h2>
+                </a>
+            </div>
+
+            <div>
+                <a href="SPA-jQuery/index.html">
+                    <h2>SPA</h2>
+                </a>
+            </div>
+
+
+        </section>
+
+</section>
+
+
+
 </body>
 </html>
