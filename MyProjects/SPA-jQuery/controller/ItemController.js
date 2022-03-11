@@ -41,7 +41,7 @@ function loadItemDetailsToTbl(){
         confirm("Do you really want to remove this item...?");
 
         for (let i = 0; i < itemArray.length; i++) {
-            if ( $(this).children(":eq(0)").text() == itemArray[i].getItemId()) {
+            if ( $(this).children(":eq(0)").text() === itemArray[i].getItemId()) {
                 itemArray.splice(i, 1);
 
                 $(this).remove();
@@ -111,7 +111,7 @@ function deleteItem(){
 
     $("#itemTable").empty();
     for (let i = 0; i < itemArray.length; i++) {
-        if ($("#itemCode").val() == itemArray[i].getItemId()) {
+        if ($("#itemCode").val() === itemArray[i].getItemId()) {
             itemArray.splice(i, 1);
 
             clearItemTextFields();
@@ -161,7 +161,7 @@ function searchItem(id){
 }
 
 function disableItemRegisterBtn(){
-    if (validateAllItemFields()){
+    if (validateAllItem()){
         $("#btnItemRegister").attr('disabled', false);
     }else {
         $("#btnItemRegister").attr('disabled', true);
@@ -191,7 +191,6 @@ function validateItemDescription(){
 $("#inputDescription").keyup(function (e) {
 disableItemRegisterBtn();
 });
-
 
 function validatePackSize(){
     let input = $("#packSize").val();
@@ -266,12 +265,27 @@ $("#inputQTy").keyup(function (e) {
 disableItemRegisterBtn();
 });
 
-function validateAllItemFields(){
-    if (validateItemDescription()){
-        if (validatePackSize()){
-            if (validateUnitPrice()){
-                if (validateQTY()){
-                    return true;
+
+function isItemIdExists(){
+    for (let i = 0; i < itemArray.length; i++) {
+        if ($("#itemCode").val() === itemArray[i].getItemId()) {
+            return false;
+        }
+    }
+        return true;
+}
+
+function validateAllItem(){
+
+    if (isItemIdExists()){
+        if (validateItemDescription()){
+            if (validatePackSize()){
+                if (validateUnitPrice()){
+                    if (validateQTY()){
+                        return true;
+                    }else {
+                        return false;
+                    }
                 }else {
                     return false;
                 }
@@ -281,11 +295,11 @@ function validateAllItemFields(){
         }else {
             return false;
         }
-        return false;
-
     }else {
         return false;
     }
+
+
 }
 
 $("#btnItemRegister").click(function (){
@@ -321,6 +335,9 @@ $("#btnItemSearch").click(function (){
 
 });
 
+$("#btnClearCustomerFields").click(function (){
+    clearItemTextFields();
+});
 
 /*------Validations--------*/
 
@@ -330,6 +347,7 @@ var regExPackSize = /^([0-9]{1,10})$/;
 var regExUnitPrice = /^([0-9.]{1,})$/;
 var regExQty = /^([0-9]{1,10})$/;
 var regExDiscount = /^([0-9.]{1,})$/;
+
 
 
 

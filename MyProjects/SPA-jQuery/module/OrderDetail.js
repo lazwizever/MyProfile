@@ -1,7 +1,8 @@
-function OrderDetails(orderId,cusId,orderDate,itemArray){
+function OrderDetails(orderId,cusId,orderDate,totals,itemArray){
     var __orderId = orderId;
     var __cusId = cusId;
     var __orderDate = orderDate;
+    var __total = totals;
     var itemDetailsArray = itemArray;
 
 
@@ -27,6 +28,14 @@ function OrderDetails(orderId,cusId,orderDate,itemArray){
 
     this.setOrdDate = function (oDate){
         __orderDate = oDate;
+    }
+
+    this.getTotal = function (){
+        return __total;
+    }
+
+    this.setTotal = function (t){
+        __total = t;
     }
 
     this.getItemArray = function (){

@@ -84,9 +84,10 @@ function placeOrder(){
     let orderId = $("#orderId").val();
     let cusId = $("#customerId").find('option:selected').text();
     let orderDate = $("#oDate").val();
+    let total = $("#balanceLabel").val();
 
 
-    var orderDetails = new OrderDetails(orderId,cusId,orderDate,itemDetailsArray);
+    var orderDetails = new OrderDetails(orderId,cusId,orderDate,total,itemDetailsArray);
     orderDetailsArray.push(orderDetails);
 
     itemDetailsArray = [];
@@ -338,10 +339,16 @@ $("#orderDiscount").keyup(function (){
 
     $("#netAmount").val(grossAmount - discount);
 
+
     let cash = $("#cash").val();
     let netAmount = $("#netAmount").val();
-    let total = (cash) - (netAmount);
-    $("#balanceLabel").val(total);
+
+    if (!isNaN(cash)){
+        let balance = (cash) - (netAmount);
+        $("#balanceLabel").val(balance);
+    }
+
+
 
 });
 

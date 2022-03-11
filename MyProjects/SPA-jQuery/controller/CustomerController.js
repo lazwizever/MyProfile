@@ -78,6 +78,8 @@ function clearCustomerTextFields() {
     $("#custAddress").val("");
     $("#inputCity").val("");
     $("#postalCode").val("");
+    $("#cusForm input").css('border','silver 1px solid');
+
 }
 
 function generateCustomerId() {
@@ -266,26 +268,42 @@ function disableCusRegisterBtn(){
     }
 }
 
+function isCustomerIdExist(){
+    for (let i = 0; i < customerArray.length; i++) {
+
+        if ($("#inputnewId").val() === customerArray[i].getCustomerId()){
+            return false;
+        }
+    }
+    return true;
+}
+
 function validateAll(){
-    if (validateCustomerName()){
-        if (validateCusAddress()){
-            if (validateCustomerCity()){
-                if (validateCustomerPostalCode()){
-                    return true;
+
+    if (isCustomerIdExist()){
+        if (validateCustomerName()){
+            if (validateCusAddress()){
+                if (validateCustomerCity()){
+                    if (validateCustomerPostalCode()){
+                        return true;
+                    }else {
+                        return false;
+                    }
                 }else {
                     return false;
                 }
             }else {
                 return false;
             }
+
         }else {
             return false;
         }
-        return false;
-
     }else {
         return false;
     }
+
+
 }
 
 
@@ -323,4 +341,6 @@ $("#btnCustomerRegister").click(function (){
     generateCustomerId();
 });
 
-
+$("#btnClearCustomerFields").click(function (){
+    clearCustomerTextFields();
+});

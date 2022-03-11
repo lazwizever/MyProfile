@@ -317,7 +317,7 @@
 
         <section class="row mt-4">
             <div class="col-12">
-                <form class="row g-3">
+                <form class="row g-3" id="cusForm">
 
                     <div class="col-md-2">
                         <label for="inputnewId" class="form-label">Customer Id</label>
@@ -360,6 +360,7 @@
                     </div>
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="button" id="btnClearCustomerFields" style="background-color:#273c75; color: white" class="btn" >Clear</button>
                         <button type="button" id="btnCustomerRegister" class="btn btn-secondary" disabled >Register</button>
                         <button type="button" style="background-color:#4cd137; color:white" id="btnUpdateCustomer" class="btn">Update</button>
                         <button type="button" id="btnCustomerDelete" class="btn btn-danger">Delete </button>
@@ -448,7 +449,8 @@
 
 
                     <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" id="btnItemRegister" disabled class="btn btn-secondary">Add new Item</button>
+                        <button type="button" id="btnClearItemFields" style="background-color:#273c75; color:white" class="btn btn-secondary">Clear</button>
+                        <button type="button" id="btnItemRegister" disabled class="btn btn-secondary">Add</button>
                         <button type="button" style="background-color:#4cd137; color:white" class="btn" id="btnItemUpdate" >Update</button>
                         <button type="button" class="btn btn-danger" id="btnItemDelete" >Remove</button>
                     </div>
@@ -466,7 +468,6 @@
                         <th scope="col">Pack Size</th>
                         <th scope="col">Unit Price (Rs)</th>
                         <th scope="col">Qty On Hand</th>
-                        <th scope="col">Discount (Rs)</th>
                     </tr>
                     </thead>
                     <tbody id="itemTable">
