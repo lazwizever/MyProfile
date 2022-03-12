@@ -346,7 +346,7 @@ $("#orderDiscount").keyup(function (){
     let cash = $("#cash").val();
     let netAmount = $("#netAmount").val();
 
-    if (!isNaN(cash)){
+    if (cash!==""){
         let balance = (cash) - (netAmount);
         $("#balanceLabel").val(balance);
     }
