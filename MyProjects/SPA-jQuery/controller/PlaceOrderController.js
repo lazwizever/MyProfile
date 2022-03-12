@@ -71,11 +71,11 @@ function clearPlaceOrderFields(){
     $("#customerId1").val("");
     $("#oDate").val("");
 
-    $("#grossAmount").val();
-    $("#netAmount").val();
-    $("#cash").val();
-    $("#balanceLabel").val();
-    $("#discount").val();
+    $("#grossAmount").val("");
+    $("#netAmount").val("");
+    $("#cash").val("");
+    $("#balanceLabel").val("");
+    $("#orderDiscount").val("");
 
 }
 
@@ -291,6 +291,9 @@ function loadTable(){
 $("#btnPlaceOrder").click(function (){
     generateOrderId();
     placeOrder();
+
+    clearPlaceOrderFields();
+
 });
 
 $("#btnSearchOrder").click(function (){
@@ -347,8 +350,6 @@ $("#orderDiscount").keyup(function (){
         let balance = (cash) - (netAmount);
         $("#balanceLabel").val(balance);
     }
-
-
 
 });
 

@@ -29,7 +29,7 @@ function loadItemDetailsToTbl(){
     $("#itemTable>tr").off("dblclick");
 
     for (let i of itemArray) {
-        let row = `<tr><td>${i.getItemId()}</td><td>${i.getItemDescription()}</td><td>${i.getPackSize()}</td><td>${i.getUnitPrize()}</td><td>${i.getQtyOnHand()}</td><td>${i.getDiscount()}</td></tr>`;
+        let row = `<tr><td>${i.getItemId()}</td><td>${i.getItemDescription()}</td><td>${i.getPackSize()}</td><td>${i.getUnitPrize()}</td><td>${i.getQtyOnHand()}</td></tr>`;
         $("#itemTable").append(row);
 
     }
