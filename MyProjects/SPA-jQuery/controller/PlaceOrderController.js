@@ -218,6 +218,12 @@ function addToCart(){
                 newCusQTY = cusQTY;
             }else {
                 newCusQTY = parseInt(itemDetailsArray[i].getOrderCustomerQTY())  + parseInt(cusQTY);
+
+                if(newCusQTY > itemArray[i].getQtyOnHand()){
+                    $("#custQTY").css('border', '2px solid red');
+                    $("#error002").text("Exceed the QTY On Hand");
+                    return;
+                }
             }
 
 
@@ -232,13 +238,12 @@ function addToCart(){
         }
 
     }
-
-
     var itemDetails = new ItemDetails(itemId,description,cusQTY,unitPrices,total);
     itemDetailsArray.push(itemDetails);
     clearItemsFieldsPlaceOrder();
     loadTable();
     setGrossAmount();
+    $("#btnPlaceOrder").attr('disabled',true);
 }
 
 function loadTable(){
@@ -349,6 +354,7 @@ $("#orderDiscount").keyup(function (){
     if (cash!==""){
         let balance = (cash) - (netAmount);
         $("#balanceLabel").val(balance);
+
     }
 
 });
@@ -362,6 +368,15 @@ $("#cash").keyup(function (){
     let netAmount = $("#netAmount").val();
 
     $("#balanceLabel").val(cash - netAmount);
+
+
+    let discount = $("#orderDiscount").val();
+    let grossAmount = parseInt($("#grossAmount").val());
+
+    if (discount==""){
+        $("#balanceLabel").val(cash - grossAmount);
+    }
+
 
 });
 
